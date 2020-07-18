@@ -1,6 +1,9 @@
 <span 
     id="editor" 
-    contenteditable="true" 
+    contenteditable="true"
+    (keydown)="onKeyDown($event)"
+    (keyup)="onKeyUp($event)"
+    (click)="onMouseClick($event)"
     #editor
 >
     <div class="view-line">
