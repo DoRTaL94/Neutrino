@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/neutrino",
       "sourceRoot": "projects/neutrino/src",
-      "prefix": "lib",
+      "prefix": "nt",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
@@ -138,24 +138,11 @@
           "options": {
             "tsConfig": [
               "projects/neutrino-example/tsconfig.app.json",
-              "projects/neutrino-example/tsconfig.spec.json",
-              "projects/neutrino-example/e2e/tsconfig.json"
+              "projects/neutrino-example/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/neutrino-example/e2e/protractor.conf.js",
-            "devServerTarget": "neutrino-example:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "neutrino-example:serve:production"
-            }
           }
         }
       }

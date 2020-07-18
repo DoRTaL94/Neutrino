@@ -1,20 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'neutrino',
-  template: `
-    <p>
-      neutrino works!
-    </p>
-  `,
-  styles: [
-  ]
+  selector: 'nt-editor',
+  templateUrl: './neutrino.component.html',
+  styleUrls: ['./neutrino.component.css']
 })
 export class NeutrinoComponent implements OnInit {
+  @Input()
+  public tabSpaces = 2;
 
-  constructor() { }
+  private tab = '';
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+    this.initTab();
+  }
+
+  initTab() {
+    for (let i = 0; i < this.tabSpaces; i++) {
+      this.tab += '\u00a0';
+    }
+  }
 }
