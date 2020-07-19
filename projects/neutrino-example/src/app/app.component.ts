@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'neutrino-example';
+  value = '';
+
+  public onValueChanged(value: string) {
+    this.value = value;
+  }
+
+  public onKeyUp(event: KeyboardEvent) {
+    this.value = (event.target as HTMLTextAreaElement).value;
+    console.log(this.value);
+  }
 }

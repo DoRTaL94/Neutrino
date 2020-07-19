@@ -175,14 +175,20 @@ export class NeutrinoService {
     return anchorLine as HTMLDivElement;
   }
 
-  private render(editor: ElementRef): void {
+  public render(editor: ElementRef, value?: string): void {
     const editorNative = editor.nativeElement as HTMLSpanElement;
-    const textSegments = this.getTextSegments(editorNative, true);
-    const editorText = Array.from(
-      textSegments
-      .map(segment => segment.text)
-      .join('\n')
-    );
+    let editorText;
+
+    if (value) {
+      editorText = Array.from(value);
+    } else {
+      const textSegments = this.getTextSegments(editorNative, true);
+      editorText = Array.from(
+        textSegments
+        .map(segment => segment.text)
+        .join('\n')
+      );
+    }
 
     editorText.push('\n');
     editorNative.innerHTML = '';

@@ -4,10 +4,12 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  OnChanges,
   OnDestroy,
   OnInit,
   Output,
   Renderer2,
+  SimpleChanges,
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
@@ -20,14 +22,16 @@ import { EventType, NeutrinoService } from './neutrino.service';
   styleUrls: ['./neutrino.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit {
-  @ViewChild('editor', { read: ElementRef })
+export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnChanges {
+  @ViewChild('editor')
   editor: ElementRef;
 
   @Input()
   public tabSpaces = 2;
   @Input()
   public showLineNumber: boolean;
+  @Input()
+  public value: string;
   @Output()
   public valueChanged = new EventEmitter<string>();
 
@@ -38,6 +42,13 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit {
     private neutrinoService: NeutrinoService,
     private renderer: Renderer2
   ) { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.value && this.editor) {
+      this.neutrinoService.render(this.editor, this.value);
+      this.refreshLines();
+    }
+  }
 
   ngOnInit(): void {
     this.showLineNumber = this.showLineNumber !== undefined;
@@ -51,16 +62,14 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit {
     this.valueChangedSub = this.neutrinoService
     .getValueChangedListener(this.editor)
     .subscribe(value => this.valueChanged.emit(value));
-
     this.neutrinoService.setEditorOptions(this.editor, {
       tabSpaces: this.tabSpaces
     });
-
     this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
-    }
+  }
 
   public handleEvent(event: Event) {
     this.neutrinoService.handleEvent(this.editor, event);
