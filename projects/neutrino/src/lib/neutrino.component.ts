@@ -44,7 +44,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.value && this.editor) {
+    if (changes.value && this.editor && this.neutrinoService.getEditorText(this.editor) !== this.value) {
       this.neutrinoService.render(this.editor, this.value);
       this.refreshLines();
     }
