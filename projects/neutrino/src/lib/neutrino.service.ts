@@ -23,6 +23,10 @@ export class NeutrinoService {
     ElementRef,
     Map<string, ((event: Event) => void)[]>
   >();
+  private eventsCallbacksToExecLast: Map<ElementRef, Map<string, ((event: Event) => void)[]>> = new Map<
+    ElementRef,
+    Map<string, ((event: Event) => void)[]>
+  >();
   private valueChangedSubjects: Map<ElementRef, Subject<string>> = new Map<ElementRef, Subject<string>>();
   private editorsOptions: Map<ElementRef, EditorOptions> = new Map<ElementRef, EditorOptions>();
   private renderer: Renderer2;
@@ -46,9 +50,19 @@ export class NeutrinoService {
     return this.valueChangedSubjects.get(editor).asObservable();
   }
 
-  public addEventHandler(editor: ElementRef, eventType: EventType, callback: (event: Event) => void): void {
-    if (this.eventsCallbacks.get(editor)) {
-      const eventHandlers = this.eventsCallbacks.get(editor);
+  public addEventHandler(
+    editor: ElementRef,
+    eventType: EventType,
+    callback: (event: Event) => void,
+    executeAfterRender?: boolean
+  ): void {
+    if (
+      (executeAfterRender && this.eventsCallbacksToExecLast.get(editor)) ||
+      (!executeAfterRender && this.eventsCallbacks.get(editor))
+    ) {
+      const eventHandlers = executeAfterRender ?
+        this.eventsCallbacksToExecLast.get(editor) :
+        this.eventsCallbacks.get(editor);
       const callbacks = eventHandlers.get(eventType);
 
       if (callbacks) {
@@ -59,13 +73,37 @@ export class NeutrinoService {
     } else {
       const eventHandlers = new Map<string, ((event: Event) => void)[]>();
       eventHandlers.set(eventType, [callback]);
-      this.eventsCallbacks.set(editor, eventHandlers);
+
+      if (executeAfterRender) {
+        this.eventsCallbacksToExecLast.set(editor, eventHandlers);
+      } else {
+        this.eventsCallbacks.set(editor, eventHandlers);
+      }
     }
   }
 
   public handleEvent(editor: ElementRef, event: Event): void {
-    const eventHandlers = this.eventsCallbacks.get(editor);
+    let eventHandlers = this.eventsCallbacks.get(editor);
+    this.executeEvents(event, eventHandlers);
+    this.refreshEditorState(editor);
 
+    if (
+      event instanceof KeyboardEvent &&
+      this.checkKeyToRender(event as KeyboardEvent)
+    ) {
+      this.render(editor);
+      this.restoreSelection(editor);
+
+      if (event.type === 'keyup') {
+        this.valueChangedSubjects.get(editor).next(this.getEditorText(editor));
+      }
+    }
+
+    eventHandlers = this.eventsCallbacksToExecLast.get(editor);
+    this.executeEvents(event, eventHandlers);
+  }
+
+  private executeEvents(event: Event, eventHandlers: Map<string, ((event: Event) => void)[]>) {
     if (eventHandlers) {
       const callBacks = eventHandlers.get(event.type);
 
@@ -73,17 +111,6 @@ export class NeutrinoService {
         callBacks.forEach((callback) => {
           callback(event);
         });
-      }
-    }
-
-    this.refreshEditorState(editor);
-
-    if (this.checkKeyToRender(event as KeyboardEvent)) {
-      this.render(editor);
-      this.restoreSelection(editor);
-
-      if (event.type === 'keyup') {
-        this.valueChangedSubjects.get(editor).next(this.getEditorText(editor));
       }
     }
   }
@@ -195,7 +222,8 @@ export class NeutrinoService {
   }
 
   private checkKeyToRender(event: KeyboardEvent): boolean {
-    return  event.key !== 'ArrowUp'    &&
+    return  event                      &&
+            event.key !== 'ArrowUp'    &&
             event.key !== 'ArrowRight' &&
             event.key !== 'ArrowDown'  &&
             event.key !== 'ArrowLeft'  &&

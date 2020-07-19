@@ -1,27 +1,47 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  Renderer2,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { EventType, NeutrinoService } from './neutrino.service';
 
 @Component({
   selector: 'nt-editor',
   templateUrl: './neutrino.component.html',
-  styleUrls: ['./neutrino.component.css']
+  styleUrls: ['./neutrino.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
-export class NeutrinoComponent implements OnDestroy, AfterViewInit {
+export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit {
   @ViewChild('editor', { read: ElementRef })
   editor: ElementRef;
 
   @Input()
   public tabSpaces = 2;
+  @Input()
+  public showLineNumber: boolean;
   @Output()
   public valueChanged = new EventEmitter<string>();
 
+  public lines = [1];
   private valueChangedSub: Subscription;
 
   constructor(
     private neutrinoService: NeutrinoService,
     private renderer: Renderer2
   ) { }
+
+  ngOnInit(): void {
+    this.showLineNumber = this.showLineNumber !== undefined;
+  }
 
   ngOnDestroy(): void {
     this.valueChangedSub.unsubscribe();
@@ -36,21 +56,22 @@ export class NeutrinoComponent implements OnDestroy, AfterViewInit {
       tabSpaces: this.tabSpaces
     });
 
+    this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
-  }
+    }
 
-  onKeyDown(event: KeyboardEvent): void {
+  public handleEvent(event: Event) {
     this.neutrinoService.handleEvent(this.editor, event);
   }
 
-  onKeyUp(event: KeyboardEvent): void {
-    this.neutrinoService.handleEvent(this.editor, event);
-  }
+  private refreshLines(event?: KeyboardEvent): void {
+    let num = 1;
 
-  onMouseClick(event: MouseEvent): void {
-    this.neutrinoService.handleEvent(this.editor, event);
+    this.lines = [];
+    Array.from(this.editor.nativeElement.querySelectorAll('.view-line')).forEach((node, index) => this.lines.push(num++));
+    console.log(this.lines);
   }
 
   private handleAutoComplete(event: KeyboardEvent): void {

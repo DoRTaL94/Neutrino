@@ -1,9 +1,14 @@
+<div *ngIf="showLineNumber" class="numbers-container" #numbers>
+    <div *ngFor="let line of lines" class="line-number">{{ line }}</div>
+</div>
 <span 
     id="editor" 
     contenteditable="true"
-    (keydown)="onKeyDown($event)"
-    (keyup)="onKeyUp($event)"
-    (click)="onMouseClick($event)"
+    (keydown)="handleEvent($event)"
+    (keyup)="handleEvent($event)"
+    (input)="handleEvent($event)"
+    (change)="handleEvent($event)"
+    (click)="handleEvent($event)"
     #editor
 >
     <div class="view-line">
