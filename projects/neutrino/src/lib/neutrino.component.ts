@@ -13,7 +13,6 @@ export class NeutrinoComponent implements OnInit {
   @Input()
   public tabSpaces = 2;
 
-  private tab = '';
   private currentLine = 0;
   private anchorIndex = 0;
   private focusIndex = 0;
@@ -25,7 +24,6 @@ export class NeutrinoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initTab();
   }
 
   onKeyDown(event: KeyboardEvent): void {
@@ -38,14 +36,14 @@ export class NeutrinoComponent implements OnInit {
     this.refreshEditorState();
 
     if (
-      event.key !== 'ArrowUp' &&
+      event.key !== 'ArrowUp'    &&
       event.key !== 'ArrowRight' &&
-      event.key !== 'ArrowDown' &&
-      event.key !== 'ArrowLeft' &&
-      event.key !== 'Shift' &&
-      event.key !== 'Control' &&
-      event.key !== 'Alt' &&
-      event.key !== 'End' &&
+      event.key !== 'ArrowDown'  &&
+      event.key !== 'ArrowLeft'  &&
+      event.key !== 'Shift'      &&
+      event.key !== 'Control'    &&
+      event.key !== 'Alt'        &&
+      event.key !== 'End'        &&
       event.key !== 'Home'
     ) {
       this.render();
@@ -70,7 +68,8 @@ export class NeutrinoComponent implements OnInit {
     editor.innerHTML = '';
 
     const editorTextLength = editorText.length;
-    let line = this.appendLine();
+    let lineNumber = 1;
+    let line = this.appendLine(lineNumber);
     let currentText = '';
 
     editorText.forEach((char, index) => {
@@ -86,7 +85,8 @@ export class NeutrinoComponent implements OnInit {
         }
 
         if (index < editorTextLength - 1) {
-          line = this.appendLine();
+          lineNumber++;
+          line = this.appendLine(lineNumber);
         }
       } else if (char === '\t') {
         if (currentText !== '') {
@@ -101,9 +101,13 @@ export class NeutrinoComponent implements OnInit {
     });
   }
 
-  private appendLine(): HTMLDivElement {
-    const line = this.renderer.createElement('div');
-    const br = this.renderer.createElement('br');
+  private appendLine(lineNumber?: number): HTMLDivElement {
+    const line: HTMLDivElement = this.renderer.createElement('div');
+    const br: HTMLBRElement = this.renderer.createElement('br');
+
+    if (lineNumber) {
+      line.id = `line-${lineNumber}`;
+    }
 
     this.renderer.addClass(line, 'view-line');
     this.renderer.appendChild(line, br);
@@ -167,11 +171,6 @@ export class NeutrinoComponent implements OnInit {
           this.focusIndex = currentIndex + sel.focusOffset - range.startOffset;
         }
 
-        if (line.textContent === this.tab) {
-          this.focusIndex++;
-          this.anchorIndex++;
-        }
-
         currentIndex += text.length;
       });
     }
@@ -187,12 +186,6 @@ export class NeutrinoComponent implements OnInit {
       if (lines[i] === lineElement) {
         break;
       }
-    }
-  }
-
-  private initTab(): void {
-    for (let i = 0; i < this.tabSpaces; i++) {
-      this.tab += '\u00a0';
     }
   }
 
@@ -213,12 +206,32 @@ export class NeutrinoComponent implements OnInit {
     if (event.key === 'Tab') {
       const sel = document.getSelection();
       const range = sel.getRangeAt(0);
-      const tab = this.renderer.createText(this.tab);
+      const anchorLine: HTMLDivElement = this.neutrinoService
+        .getParentLine(this.editor, sel.anchorNode as HTMLElement);
+      const focusLine: HTMLDivElement = this.neutrinoService
+        .getParentLine(this.editor, sel.focusNode as HTMLElement);
 
-      sel.deleteFromDocument();
-      range.insertNode(tab);
-      range.setStartAfter(tab);
-      range.collapse(true);
+      // In case user selected text and pressed 'Tab', the text should be deleted and be replaced with a tab
+      range.extractContents();
+
+      // Multiline selection
+      if (!anchorLine.isSameNode(focusLine)) {
+        // extractContents function doesn't remove anchor line if it's empty after extraction
+        if (anchorLine.textContent === '') {
+          anchorLine.remove();
+        }
+
+        range.setStartAfter(focusLine.lastChild);
+        range.collapse(true);
+      }
+
+      for (let i = 0 ; i < this.tabSpaces; i++) {
+        const nonBreakingSpace = this.renderer.createText('\u00a0');
+        range.insertNode(nonBreakingSpace);
+        range.setStartAfter(nonBreakingSpace);
+        range.collapse(true);
+      }
+
       sel.removeAllRanges();
       sel.addRange(range);
 
@@ -227,7 +240,9 @@ export class NeutrinoComponent implements OnInit {
   }
 
   private appendTab(line: HTMLDivElement) {
-    this.renderer.appendChild(line, this.renderer.createText(this.tab));
+    for (let i = 0; i < this.tabSpaces; i++) {
+      this.renderer.appendChild(line, this.renderer.createText('\u00a0'));
+    }
   }
 
   private appendText(line: HTMLDivElement, text: string): void {
