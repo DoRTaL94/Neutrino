@@ -82,6 +82,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
+    this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.addNewLineOnEnter.bind(this));
   }
 
   /**
@@ -197,5 +198,63 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
 
       event.preventDefault();
     }
+  }
+
+  /**
+   * Adds a new line on "Enter" clicked and prevents default new line insertion of contenteditable attribute.
+   * The new line content gets aligned, thus, tabs are inserted to the start of the new line to fit the previous line tabs count.
+   */
+  private addNewLineOnEnter(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      const sel: Selection = document.getSelection();
+      const range: Range = sel.getRangeAt(0);
+      const currentLine: HTMLDivElement = this.neutrinoService.getClosestViewLine(this.editor);
+
+      range.setEndAfter(currentLine.lastChild);
+      const content = range.extractContents();
+      range.collapse(false);
+      const textContent = content.textContent;
+      const closureIndex = this.findFirstIndexOfClosureAfterOpening(currentLine.textContent, textContent);
+      let newLine;
+
+      if (closureIndex !== -1) {
+        const insideContent = textContent.substring(0, closureIndex);
+        const afterContent = textContent.substring(closureIndex);
+        const lineWithClosure = this.neutrinoService.addNewLine(this.editor, true, afterContent, currentLine);
+        this.neutrinoService.keepTextAligned(this.editor, lineWithClosure);
+        newLine = this.neutrinoService.addNewLine(this.editor, true, insideContent, currentLine);
+      } else {
+        newLine = this.neutrinoService.addNewLine(this.editor, true, textContent, currentLine);
+      }
+
+      this.neutrinoService.keepTextAligned(this.editor, newLine);
+      this.refreshLines();
+      event.preventDefault();
+    }
+  }
+
+  /**
+   * @internal
+   *
+   * Finds the first index of '}' in "currentLineText" input (if exists),
+   * but only if there is a '{' in "previousLineText".
+   * If the conditions above are not met this function return -1.
+   */
+  private findFirstIndexOfClosureAfterOpening(previousLineText: string, currentLineText: string): number {
+    let i = -1;
+
+    if (previousLineText.lastIndexOf('{') !== -1) {
+      for (i = 0; i < currentLineText.length; i++) {
+        if (currentLineText[i] === '}') {
+          break;
+        }
+      }
+    }
+
+    if (i === currentLineText.length) {
+      i = -1;
+    }
+
+    return i;
   }
 }

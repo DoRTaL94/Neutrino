@@ -71,6 +71,75 @@ export class NeutrinoService {
   }
 
   /**
+   * Adds a new line to a given editor.
+   *
+   * @param editor An editor reference to add add new line to.
+   * @param setCaretInside If true the new line is focused and the caret is inside.
+   * @param text A text to insert into the new line.
+   * @param lineToAddAfter A line to insert the new line after.
+   */
+  public addNewLine(editor: ElementRef, setCaretInside?: boolean, text?: string, lineToAddAfter?: HTMLDivElement) {
+    const newLine: HTMLDivElement = this.createLine();
+
+    if (text) {
+      this.renderer.appendChild(newLine, this.renderer.createText(text));
+    }
+
+    if (lineToAddAfter) {
+      if (lineToAddAfter.nextSibling) {
+        this.renderer.insertBefore(editor.nativeElement, newLine, lineToAddAfter.nextSibling);
+      } else {
+        this.renderer.appendChild(editor.nativeElement, newLine);
+      }
+    } else {
+      this.renderer.appendChild(editor.nativeElement, newLine);
+    }
+
+    if (setCaretInside) {
+      const sel = document.getSelection();
+
+      if (sel && sel.anchorNode) {
+        const range = sel.getRangeAt(0);
+        range.setStart(newLine, 0);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+    }
+
+    return newLine;
+  }
+
+  /**
+   * @param editor The parent editor reference of the given "lineToAline" input.
+   * @param lineToAlign A line to align its content based on the amount of non-breaking spaces at the beginning of the previous line.
+   */
+  public keepTextAligned(editor: ElementRef, lineToAlign: HTMLDivElement): void {
+    if (lineToAlign.previousSibling) {
+      const prevLineContent: string = lineToAlign.previousSibling.textContent;
+      let nonBreakingSpaceCounter = this.getCountOfNBSAtTheStartOfText(prevLineContent);
+
+      if (lineToAlign.nextSibling) {
+        const nextLineContent: string = lineToAlign.nextSibling.textContent;
+
+        if (
+          nextLineContent.lastIndexOf('}') !== -1 &&
+          prevLineContent.lastIndexOf('{') !== -1 &&
+          lineToAlign.textContent[lineToAlign.textContent.length - 1] !== '}'
+        ) {
+          if (nonBreakingSpaceCounter === 0) {
+            nonBreakingSpaceCounter = this.editorsOptions.get(editor).tabSpaces;
+          } else {
+            nonBreakingSpaceCounter += this.editorsOptions.get(editor).tabSpaces;
+          }
+        }
+      }
+
+      this.insertNBSAtStartOfLine(lineToAlign, nonBreakingSpaceCounter);
+    }
+  }
+
+  /**
    * Adds event handlers for a given editor.
    *
    * @param editor The editor reference to add an event handler to.
@@ -142,23 +211,6 @@ export class NeutrinoService {
 
     eventCallbacks = this.eventsCallbacksToExecLast.get(editor);
     this.executeEvents(event, eventCallbacks);
-  }
-
-  /**
-   * @internal
-   *
-   * Executes all of the callbacks bound to a given event.
-   */
-  private executeEvents(event: Event, eventCallbacks: Map<string, ((event: Event) => void)[]>) {
-    if (eventCallbacks) {
-      const callBacks = eventCallbacks.get(event.type);
-
-      if (callBacks) {
-        callBacks.forEach((callback) => {
-          callback(event);
-        });
-      }
-    }
   }
 
   /**
@@ -302,6 +354,86 @@ export class NeutrinoService {
   }
 
   /**
+   * @param lineNumber If given the created line will be created with an id of "line-[lineNumber]".
+   */
+  public createLine(lineNumber?: number): HTMLDivElement {
+    const line: HTMLDivElement = this.renderer.createElement('div');
+    const br: HTMLBRElement = this.renderer.createElement('br');
+
+    if (lineNumber) {
+      line.id = `line-${lineNumber}`;
+    }
+
+    this.renderer.addClass(line, 'view-line');
+    this.renderer.appendChild(line, br);
+
+    return line;
+  }
+
+  /**
+   * @internal
+   *
+   * Counts the amount of non-breaking spaces at the start of the given text.
+   */
+  private getCountOfNBSAtTheStartOfText(text: string): number {
+    let nonBreakingSpaceCounter = 0;
+
+    for (const char of text) {
+      if (char === '\u00a0') {
+        nonBreakingSpaceCounter++;
+      } else {
+        break;
+      }
+    }
+
+    return nonBreakingSpaceCounter;
+  }
+
+  /**
+   * @internal
+   *
+   * @param line A Line to insert non-breaking spaces at the beginning.
+   * @param nonBreakingSpaceCount The amount of non-breaking spaces to insert.
+   */
+  private insertNBSAtStartOfLine(line: HTMLDivElement, nonBreakingSpaceCount: number) {
+    if (nonBreakingSpaceCount !== 0) {
+      const sel: Selection = document.getSelection();
+      const range: Range = new Range();
+
+      range.setStart(line, 0);
+      range.collapse(true);
+
+      for (let i = 0; i < nonBreakingSpaceCount; i++) {
+        const nonBreakingSpace = this.renderer.createText('\u00a0');
+        range.insertNode(nonBreakingSpace);
+        range.setStartAfter(nonBreakingSpace);
+        range.collapse(true);
+      }
+
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+  }
+
+
+  /**
+   * @internal
+   *
+   * Executes all of the callbacks bound to a given event.
+   */
+  private executeEvents(event: Event, eventCallbacks: Map<string, ((event: Event) => void)[]>) {
+    if (eventCallbacks) {
+      const callBacks = eventCallbacks.get(event.type);
+
+      if (callBacks) {
+        callBacks.forEach((callback) => {
+          callback(event);
+        });
+      }
+    }
+  }
+
+  /**
    * @internal
    */
   private checkKeyToRender(event: KeyboardEvent): boolean {
@@ -327,15 +459,7 @@ export class NeutrinoService {
    * @param lineNumber If given the created line will be created with an id of "line-[lineNumber]".
    */
   private appendLine(editor: ElementRef, lineNumber?: number): HTMLDivElement {
-    const line: HTMLDivElement = this.renderer.createElement('div');
-    const br: HTMLBRElement = this.renderer.createElement('br');
-
-    if (lineNumber) {
-      line.id = `line-${lineNumber}`;
-    }
-
-    this.renderer.addClass(line, 'view-line');
-    this.renderer.appendChild(line, br);
+    const line = this.createLine(lineNumber);
     this.renderer.appendChild(editor.nativeElement, line);
 
     return line;
