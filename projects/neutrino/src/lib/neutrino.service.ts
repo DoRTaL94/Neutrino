@@ -1,7 +1,12 @@
-import { ElementRef, EventEmitter, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
+import { ElementRef, Injectable, Renderer2, RendererFactory2 } from '@angular/core';
 import { Subject } from 'rxjs';
+import { EditorState } from './editor-state';
 import { DefaultEditorOptions, EditorOptions } from './editor.options';
 
+
+/**
+ * Event types controlled by {@link NeutrinoService}.
+ */
 export enum EventType {
   KeyUp = 'keyup',
   KeyDown = 'keydown',
@@ -15,24 +20,39 @@ export enum EventType {
   Cut = 'cut'
 }
 
+/**
+ * Offers DOM maniplations service methods for a given editor.
+ * Handles editor's events instead of the component for simplification of the component itself.
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class NeutrinoService {
+  /**
+   * A map to store event handlers callbacks for each editor.
+   * Key: ElementRef of the editor,
+   * Value: A map whose key is the event type name, and value is the callback for this event.
+   */
   private eventsCallbacks: Map<ElementRef, Map<string, ((event: Event) => void)[]>> = new Map<
     ElementRef,
     Map<string, ((event: Event) => void)[]>
   >();
+
+  /**
+   * A map to store event handlers callbacks, for each editor, to be executed after the events
+   * specified in {@link NeutrinoService.eventsCallbacks}, and after the editor was rendered.
+   * Key: ElementRef of the editor,
+   * Value: A map whose key is the event type name, and value is the callback for this event.
+   */
   private eventsCallbacksToExecLast: Map<ElementRef, Map<string, ((event: Event) => void)[]>> = new Map<
     ElementRef,
     Map<string, ((event: Event) => void)[]>
   >();
+
+  private editorsState: Map<ElementRef, EditorState> = new Map<ElementRef, EditorState>();
   private valueChangedSubjects: Map<ElementRef, Subject<string>> = new Map<ElementRef, Subject<string>>();
   private editorsOptions: Map<ElementRef, EditorOptions> = new Map<ElementRef, EditorOptions>();
   private renderer: Renderer2;
-  private currentLine = 0;
-  private anchorIndex = 0;
-  private focusIndex = 0;
 
   constructor(private rendererFactory: RendererFactory2) {
     this.renderer = rendererFactory.createRenderer(null, null);
@@ -50,12 +70,24 @@ export class NeutrinoService {
     return this.valueChangedSubjects.get(editor).asObservable();
   }
 
+  /**
+   * Adds event handlers for a given editor.
+   *
+   * @param editor The editor reference to add an event handler to.
+   * @param eventType The type of the event to be handled.
+   * @param callback The calleback to be executed after an event of type "eventType" is fired.
+   * @param executeAfterRender If "true" the callback will be called after render, else, before it.
+   */
   public addEventHandler(
     editor: ElementRef,
     eventType: EventType,
     callback: (event: Event) => void,
     executeAfterRender?: boolean
   ): void {
+    if (!this.editorsState.has(editor)) {
+      this.editorsState.set(editor, new EditorState());
+    }
+
     if (
       (executeAfterRender && this.eventsCallbacksToExecLast.get(editor)) ||
       (!executeAfterRender && this.eventsCallbacks.get(editor))
@@ -82,9 +114,18 @@ export class NeutrinoService {
     }
   }
 
+  /**
+   * Handles a DOM fired event of a given editor.
+   * Calls all of the callbacks bound to this event (with {@link addEventHandler} method).
+   * Right after all of the callbacks is executed this method renders the new changes,
+   * and then calls all of the callbacks in {@link eventsCallbacksToExecLast} map.
+   *
+   * @param editor The editor reference whose event was fired.
+   * @param event The event that fired.
+   */
   public handleEvent(editor: ElementRef, event: Event): void {
-    let eventHandlers = this.eventsCallbacks.get(editor);
-    this.executeEvents(event, eventHandlers);
+    let eventCallbacks = this.eventsCallbacks.get(editor);
+    this.executeEvents(event, eventCallbacks);
     this.refreshEditorState(editor);
 
     if (
@@ -99,13 +140,18 @@ export class NeutrinoService {
       }
     }
 
-    eventHandlers = this.eventsCallbacksToExecLast.get(editor);
-    this.executeEvents(event, eventHandlers);
+    eventCallbacks = this.eventsCallbacksToExecLast.get(editor);
+    this.executeEvents(event, eventCallbacks);
   }
 
-  private executeEvents(event: Event, eventHandlers: Map<string, ((event: Event) => void)[]>) {
-    if (eventHandlers) {
-      const callBacks = eventHandlers.get(event.type);
+  /**
+   * @internal
+   *
+   * Executes all of the callbacks bound to a given event.
+   */
+  private executeEvents(event: Event, eventCallbacks: Map<string, ((event: Event) => void)[]>) {
+    if (eventCallbacks) {
+      const callBacks = eventCallbacks.get(event.type);
 
       if (callBacks) {
         callBacks.forEach((callback) => {
@@ -115,7 +161,15 @@ export class NeutrinoService {
     }
   }
 
-  public getTextSegments(element: Node, downOneLevel: boolean): { text: string; node: Node }[] {
+  /**
+   * Loops through all the elements inside a given node
+   * and creates an array of pairs of text and its containing node.
+   *
+   * @param element The element node to return its text segments.
+   * @param downOneLevel If true this method returns the text content of the direct childs of the "element" input.
+   * Else, it traverses the children node tree until it reached a node of type "TEXT_NODE".
+   */
+  public getTextSegments(element: Node, downOneLevel?: boolean): { text: string; node: Node }[] {
     const textSegments: { text: string; node: Node }[] = [];
 
     if (element) {
@@ -142,6 +196,9 @@ export class NeutrinoService {
     return textSegments;
   }
 
+  /**
+   * @param editor A editor reference to returns its text content.
+   */
   public getEditorText(editor: ElementRef): string {
     const lines: string[] = [];
 
@@ -153,11 +210,21 @@ export class NeutrinoService {
     return lines.join('\n');
   }
 
+  /**
+   * @param editor The editor reference to find its focused line.
+   * @returns The focused line element.
+   */
   public getClosestViewLine(editor: ElementRef): HTMLDivElement {
     const sel = document.getSelection();
     return this.getParentLine(editor, sel.focusNode as HTMLElement);
   }
 
+  /**
+   *  Returns the parent line element of a given child.
+   *
+   * @param editor The parent editor reference of a given "child" input.
+   * @param child An element inside a line element.
+   */
   public getParentLine(editor: ElementRef, child: HTMLElement): HTMLDivElement {
     let anchorLine: HTMLElement = child;
 
@@ -175,6 +242,13 @@ export class NeutrinoService {
     return anchorLine as HTMLDivElement;
   }
 
+  /**
+   * Renders a given editor view.
+   * Occurs after every change.
+   *
+   * @param editor The editor reference to be rendered.
+   * @param value If given the editor will be rendered with this initial text.
+   */
   public render(editor: ElementRef, value?: string): void {
     const editorNative = editor.nativeElement as HTMLSpanElement;
     let editorText;
@@ -227,6 +301,9 @@ export class NeutrinoService {
     });
   }
 
+  /**
+   * @internal
+   */
   private checkKeyToRender(event: KeyboardEvent): boolean {
     return  event                      &&
             event.key !== 'ArrowUp'    &&
@@ -240,6 +317,15 @@ export class NeutrinoService {
             event.key !== 'Home';
   }
 
+  /**
+   * @internal
+   *
+   * Creates a div element with a br element inside and sets a "view-line" class name to it,
+   * then appends it to a given editor.
+   *
+   * @param editor The parent editor reference to append the line to.
+   * @param lineNumber If given the created line will be created with an id of "line-[lineNumber]".
+   */
   private appendLine(editor: ElementRef, lineNumber?: number): HTMLDivElement {
     const line: HTMLDivElement = this.renderer.createElement('div');
     const br: HTMLBRElement = this.renderer.createElement('br');
@@ -255,6 +341,15 @@ export class NeutrinoService {
     return line;
   }
 
+  /**
+   * @internal
+   *
+   * Insert a number of non-breaking spaces into a given line.
+   * This number can be changed with {@link setEditorOptions} method (The default number is 2).
+   *
+   * @param editor The parent editor reference of the "line" input.
+   * @param line A line element to append a tab to.
+   */
   private appendTab(editor: ElementRef, line: HTMLDivElement) {
     let editorOptions = this.editorsOptions.get(editor);
 
@@ -267,15 +362,32 @@ export class NeutrinoService {
     }
   }
 
+  /**
+   * @internal
+   *
+   * Creates a text node for a given text and append that node as the last child of a given line.
+   *
+   * @param line A line to append the text to.
+   * @param text The text to append.
+   */
   private appendText(line: HTMLDivElement, text: string): void {
     const textNode = this.renderer.createText(text);
     this.renderer.appendChild(line, textNode);
   }
 
+  /**
+   * @internal
+   *
+   * Restore a given editor selection.
+   * Occurs after every render.
+   *
+   * @param editor A editor reference to restore its selection.
+   */
   private restoreSelection(editor: ElementRef): void {
     const sel: Selection = window.getSelection();
     const lines: NodeList = editor.nativeElement.querySelectorAll('.view-line');
-    const line: Node = lines[this.currentLine];
+    const state: EditorState = this.editorsState.get(editor);
+    const line: Node = lines[state.currentLine];
     const textSegments = this.getTextSegments(line, false);
 
     let anchorNode = line;
@@ -288,14 +400,14 @@ export class NeutrinoService {
       const startIndexOfNode = currentIndex;
       const endIndexOfNode = startIndexOfNode + text.length;
 
-      if (startIndexOfNode <= this.anchorIndex && this.anchorIndex <= endIndexOfNode) {
+      if (startIndexOfNode <= state.anchorIndex && state.anchorIndex <= endIndexOfNode) {
         anchorNode = node;
-        anchorIndex = this.anchorIndex - startIndexOfNode;
+        anchorIndex = state.anchorIndex - startIndexOfNode;
       }
 
-      if (startIndexOfNode <= this.focusIndex && this.focusIndex <= endIndexOfNode) {
+      if (startIndexOfNode <= state.focusIndex && state.focusIndex <= endIndexOfNode) {
         focusNode = node;
-        focusIndex = this.focusIndex - startIndexOfNode;
+        focusIndex = state.focusIndex - startIndexOfNode;
       }
 
       currentIndex += text.length;
@@ -311,12 +423,22 @@ export class NeutrinoService {
     sel.setBaseAndExtent(anchorNode, anchorIndex, focusNode, focusIndex);
   }
 
+  /**
+   * @internal
+   *
+   * Adds focus class name to a line classes list.
+   * Removes the focus class name for the other lines in the editor if presented.
+   *
+   * @param editor The parent editor reference of the "line" input.
+   * @param line A line element to focus.
+   */
   private focusLine(editor: ElementRef, line: HTMLDivElement) {
     const lines = editor.nativeElement.querySelectorAll('.view-line');
+    const state: EditorState = this.editorsState.get(editor);
 
     if (line) {
       let currentLineSet = false;
-      this.currentLine = 0;
+      state.currentLine = 0;
 
       lines.forEach((currLine) => {
         if (currLine === line) {
@@ -327,15 +449,23 @@ export class NeutrinoService {
         }
 
         if (!currentLineSet) {
-          this.currentLine++;
+          state.currentLine++;
         }
       });
     }
   }
 
+  /**
+   * @internal
+   *
+   * Refreshes the state of a given editor.
+   *
+   * @param editor A editor reference to refresh its state.
+   */
   private refreshEditorState(editor: ElementRef) {
     const sel: Selection = document.getSelection();
     const line: HTMLDivElement = this.getClosestViewLine(editor);
+    const state: EditorState = this.editorsState.get(editor);
 
     if (line) {
       this.refreshCurrentLine(editor, line);
@@ -344,19 +474,19 @@ export class NeutrinoService {
 
       textSegments.forEach(({ text, node }) => {
         if (node === sel.anchorNode) {
-          this.anchorIndex = currentIndex + sel.anchorOffset;
+          state.anchorIndex = currentIndex + sel.anchorOffset;
         } else if (node.parentElement === sel.anchorNode) {
           const range = new Range();
           range.selectNode(node);
-          this.anchorIndex = currentIndex + sel.anchorOffset - range.startOffset;
+          state.anchorIndex = currentIndex + sel.anchorOffset - range.startOffset;
         }
 
         if (node === sel.focusNode) {
-          this.focusIndex = currentIndex + sel.focusOffset;
+          state.focusIndex = currentIndex + sel.focusOffset;
         } else if (node.parentElement === sel.focusNode) {
           const range = new Range();
           range.selectNode(node);
-          this.focusIndex = currentIndex + sel.focusOffset - range.startOffset;
+          state.focusIndex = currentIndex + sel.focusOffset - range.startOffset;
         }
 
         currentIndex += text.length;
@@ -364,12 +494,21 @@ export class NeutrinoService {
     }
   }
 
+  /**
+   * @internal
+   *
+   * Sets {@link currentLine} to be the line number of "lineElement" input.
+   *
+   * @param editor The parent editor of the "lineElement" input.
+   * @param lineElement An element which represents a line.
+   */
   private refreshCurrentLine(editor: ElementRef, lineElement: Node): void {
     const lines: NodeList = editor.nativeElement.querySelectorAll('.view-line');
     const linesCount = lines.length;
+    const state: EditorState = this.editorsState.get(editor);
 
     for (let i = 0; i < linesCount; i++) {
-      this.currentLine = i;
+      state.currentLine = i;
 
       if (lines[i] === lineElement) {
         break;

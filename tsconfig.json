@@ -25,5 +25,9 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
+  },
+  "typedocOptions": {
+    "mode": "modules",
+    "out": "docs"
   }
 }

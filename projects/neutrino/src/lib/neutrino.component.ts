@@ -16,6 +16,10 @@ import {
 import { Subscription } from 'rxjs';
 import { EventType, NeutrinoService } from './neutrino.service';
 
+
+/**
+ * This class is a component that controls Neutrino view.
+ */
 @Component({
   selector: 'nt-editor',
   templateUrl: './neutrino.component.html',
@@ -44,7 +48,11 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.value && this.editor && this.neutrinoService.getEditorText(this.editor) !== this.value) {
+    if (
+      changes.value &&
+      this.editor &&
+      this.neutrinoService.getEditorText(this.editor) !== this.value
+    ) {
       this.neutrinoService.render(this.editor, this.value);
       this.refreshLines();
     }
@@ -58,31 +66,50 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     this.valueChangedSub.unsubscribe();
   }
 
+  /**
+   * Adds configurations and controls for the editor view.
+   */
   ngAfterViewInit(): void {
     this.valueChangedSub = this.neutrinoService
     .getValueChangedListener(this.editor)
     .subscribe(value => this.valueChanged.emit(value));
+
     this.neutrinoService.setEditorOptions(this.editor, {
       tabSpaces: this.tabSpaces
     });
+
     this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
   }
 
-  public handleEvent(event: Event) {
+  /**
+   * Handles any editor's event by calling {@link NeutrinoService.handleEvent}.
+   * This method bound to the editor's events described in the template.
+   */
+  public handleEvent(event: Event): void {
     this.neutrinoService.handleEvent(this.editor, event);
   }
 
+  /**
+   * Refreshes {@link NeutrinoComponent.lines} array.
+   * Called whenever there's a change in the editor.
+   */
   private refreshLines(event?: KeyboardEvent): void {
     let num = 1;
 
     this.lines = [];
-    Array.from(this.editor.nativeElement.querySelectorAll('.view-line')).forEach((node, index) => this.lines.push(num++));
-    console.log(this.lines);
+    Array.from(
+      this.editor.nativeElement
+      .querySelectorAll('.view-line')
+    )
+    .forEach(() => this.lines.push(num++));
   }
 
+  /**
+   * Handles auto completion of certain keywords once inserted.
+   */
   private handleAutoComplete(event: KeyboardEvent): void {
     let opening: Text;
     let closure: Text;
@@ -112,6 +139,10 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     }
   }
 
+  /**
+   * Handles click event of the "Backspace" button.
+   * Prevents line deletion if it's the last one.
+   */
   private handleDeletion(event: KeyboardEvent): void {
     if (event.key === 'Backspace') {
       const line = this.neutrinoService.getClosestViewLine(this.editor);
@@ -125,6 +156,12 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     }
   }
 
+  /**
+   * Handles click event of the "Tab" button and insert a number of
+   * non-breaking spaces defined in {@link NeutrinoComponent.tabSpaces}.
+   *
+   * Note: by default contenteditable DOM element doesn't allow tab insertion.
+   */
   private handleInsertTab(event: KeyboardEvent): void {
     if (event.key === 'Tab') {
       const sel = document.getSelection();
