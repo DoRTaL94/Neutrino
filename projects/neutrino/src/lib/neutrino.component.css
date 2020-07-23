@@ -34,6 +34,7 @@ nt-editor {
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .numbers-container {
@@ -66,7 +67,7 @@ nt-editor {
   }
   
   .structural {
-    color: rgb(195, 204, 218);
+    color: rgb(128, 135, 146);
   }
   
   .string-literal {

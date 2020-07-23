@@ -43,7 +43,11 @@ export class JavaHighlighter implements Highlighter {
   private checkForKeywords(currentIndex: number, builder: any[]): void {
     const currentChar = this.code.charAt(currentIndex);
 
-    if (currentChar === ' ' || currentIndex + 1 === this.codeLength) {
+    if (
+      currentChar === ' ' ||
+      currentChar === '\u00a0' ||
+      currentIndex + 1 === this.codeLength
+    ) {
       if (currentChar !== ' ' && currentIndex + 1 === this.codeLength) {
         builder.push(currentChar);
       }
@@ -79,9 +83,9 @@ export class JavaHighlighter implements Highlighter {
         }
       }
 
-      if (currentChar === ' ') {
+      if (currentChar === ' ' || currentChar === '\u00a0') {
         builder = [];
-        this.addSpace();
+        this.addSpace(currentChar === '\u00a0');
       }
     } else {
       builder.push(currentChar);
@@ -196,11 +200,16 @@ export class JavaHighlighter implements Highlighter {
     }
   }
 
-  private addSpace(): void {
-    const space = this.renderer.createText(' ');
-    const span = this.renderer.createElement('span');
-    this.renderer.appendChild(span, space);
-    this.renderer.appendChild(this.line, span);
+  private addSpace(nonBreaking?: boolean): void {
+    const space = this.renderer.createText(nonBreaking ? '\u00a0' : ' ');
+
+    if (!nonBreaking) {
+      const span = this.renderer.createElement('span');
+      this.renderer.appendChild(span, space);
+      this.renderer.appendChild(this.line, span);
+    } else {
+      this.renderer.appendChild(this.line, space);
+    }
   }
 
   private getEndOfMultiLineComment(currentIndex: number): number {
