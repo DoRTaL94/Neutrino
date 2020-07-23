@@ -40,6 +40,8 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   public value: string;
   @Input()
   public codeType;
+  @Input()
+  public editable: boolean;
   @Output()
   public valueChanged = new EventEmitter<string>();
 
@@ -61,14 +63,18 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     ) {
       this.neutrinoService.render(this.editor, this.value);
       this.refreshLines();
+      this.hightlightCode();
     }
   }
 
   ngOnInit(): void {
     if (this.codeType) {
-      this.hightlighter = this.highlightsService.getByCodeType(this.editor, this.codeType.toLowerCase(), this.renderer);
+      this.hightlighter = this.highlightsService
+      .getByCodeType(this.editor, this.codeType.toLowerCase(), this.renderer);
     }
+
     this.showLineNumber = this.showLineNumber !== undefined;
+    this.editable = this.editable !== undefined;
   }
 
   ngOnDestroy(): void {
@@ -79,21 +85,28 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    * Adds configurations and controls for the editor view.
    */
   ngAfterViewInit(): void {
-    this.valueChangedSub = this.neutrinoService
-    .getValueChangedListener(this.editor)
-    .subscribe(value => this.valueChanged.emit(value));
-
     this.neutrinoService.setEditorOptions(this.editor, {
       tabSpaces: this.tabSpaces
     });
 
-    this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
-    this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.hightlightCode.bind(this), true);
-    this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.hightlightCode.bind(this), true);
-    this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
-    this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
-    this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
-    this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.addNewLineOnEnter.bind(this));
+    if (this.editable) {
+      this.valueChangedSub = this.neutrinoService
+      .getValueChangedListener(this.editor)
+      .subscribe(value => {
+        console.log(value);
+        this.valueChanged.emit(value);
+      });
+
+      this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.hightlightCode.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.hightlightCode.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.addNewLineOnEnter.bind(this));
+    } else {
+      this.renderer.setAttribute(this.editor.nativeElement, 'contenteditable', 'false');
+    }
   }
 
   /**
@@ -104,11 +117,14 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     this.neutrinoService.handleEvent(this.editor, event);
   }
 
-  private hightlightCode(event: KeyboardEvent): void {
+  private hightlightCode(event?: KeyboardEvent): void {
     if (this.hightlighter) {
       const lines: NodeList = this.editor.nativeElement.querySelectorAll('.view-line');
       lines.forEach(line => this.hightlighter.highlightLine(line as HTMLDivElement));
-      this.neutrinoService.restoreSelection(this.editor);
+
+      if (event) {
+        this.neutrinoService.restoreSelection(this.editor);
+      }
     }
   }
 

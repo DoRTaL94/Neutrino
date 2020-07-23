@@ -194,24 +194,28 @@ export class NeutrinoService {
    * @param event The event that fired.
    */
   public handleEvent(editor: ElementRef, event: Event): void {
-    let eventCallbacks = this.eventsCallbacks.get(editor);
-    this.executeEvents(event, eventCallbacks);
-    this.refreshEditorState(editor);
+    if (editor.nativeElement.getAttribute('contenteditable') === 'true') {
+      let eventCallbacks = this.eventsCallbacks.get(editor);
+      this.executeEvents(event, eventCallbacks);
+      this.refreshEditorState(editor);
 
-    if (
-      event instanceof KeyboardEvent &&
-      this.checkKeyToRender(event as KeyboardEvent)
-    ) {
-      this.render(editor);
-      this.restoreSelection(editor);
+      if (
+        event instanceof KeyboardEvent &&
+        this.checkKeyToRender(event as KeyboardEvent) &&
+        event.type !== 'keyup'
+      ) {
+        this.render(editor);
+        this.restoreSelection(editor);
+
+      }
 
       if (event.type === 'keyup') {
         this.valueChangedSubjects.get(editor).next(this.getEditorText(editor));
       }
-    }
 
-    eventCallbacks = this.eventsCallbacksToExecLast.get(editor);
-    this.executeEvents(event, eventCallbacks);
+      eventCallbacks = this.eventsCallbacksToExecLast.get(editor);
+      this.executeEvents(event, eventCallbacks);
+    }
   }
 
   /**
@@ -484,8 +488,9 @@ export class NeutrinoService {
    */
   private checkKeyToRender(event: KeyboardEvent): boolean {
     return  event                      &&
-            event.ctrlKey              &&
-            event.altKey               &&
+            !event.shiftKey            &&
+            !event.ctrlKey             &&
+            !event.altKey              &&
             event.key !== 'ArrowUp'    &&
             event.key !== 'ArrowRight' &&
             event.key !== 'ArrowDown'  &&
