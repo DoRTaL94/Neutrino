@@ -14,6 +14,8 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Highlighter } from './highlighters/highlighter';
+import { HightlightsService } from './highlighters/highlights.service';
 import { EventType, NeutrinoService } from './neutrino.service';
 
 
@@ -36,15 +38,19 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   public showLineNumber: boolean;
   @Input()
   public value: string;
+  @Input()
+  public codeType;
   @Output()
   public valueChanged = new EventEmitter<string>();
 
   public lines = [1];
   private valueChangedSub: Subscription;
+  private hightlighter: Highlighter;
 
   constructor(
     private neutrinoService: NeutrinoService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private highlightsService: HightlightsService
   ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -59,6 +65,9 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   }
 
   ngOnInit(): void {
+    if (this.codeType) {
+      this.hightlighter = this.highlightsService.getByCodeType(this.editor, this.codeType.toLowerCase(), this.renderer);
+    }
     this.showLineNumber = this.showLineNumber !== undefined;
   }
 
@@ -79,6 +88,8 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     });
 
     this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
+    this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.hightlightCode.bind(this), true);
+    this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.hightlightCode.bind(this), true);
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
     this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
@@ -91,6 +102,14 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    */
   public handleEvent(event: Event): void {
     this.neutrinoService.handleEvent(this.editor, event);
+  }
+
+  private hightlightCode(event: KeyboardEvent): void {
+    if (this.hightlighter) {
+      const lines: NodeList = this.editor.nativeElement.querySelectorAll('.view-line');
+      lines.forEach(line => this.hightlighter.highlightLine(line as HTMLDivElement));
+      this.neutrinoService.restoreSelection(this.editor);
+    }
   }
 
   /**
@@ -151,6 +170,10 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       const oneLine = this.editor.nativeElement.querySelectorAll('.view-line').length === 1;
 
       if (emptyLine && oneLine) {
+        if (!line.firstChild) {
+          this.renderer.appendChild(line, this.renderer.createElement('br'));
+        }
+
         event.preventDefault();
         return;
       }

@@ -82,6 +82,7 @@ export class NeutrinoService {
     const newLine: HTMLDivElement = this.createLine();
 
     if (text) {
+      newLine.innerHTML = '';
       this.renderer.appendChild(newLine, this.renderer.createText(text));
     }
 
@@ -211,6 +212,52 @@ export class NeutrinoService {
 
     eventCallbacks = this.eventsCallbacksToExecLast.get(editor);
     this.executeEvents(event, eventCallbacks);
+  }
+
+  /**
+   * Restore a given editor selection.
+   * Occurs after every render.
+   *
+   * @param editor A editor reference to restore its selection.
+   */
+  public restoreSelection(editor: ElementRef): void {
+    const sel: Selection = window.getSelection();
+    const lines: NodeList = editor.nativeElement.querySelectorAll('.view-line');
+    const state: EditorState = this.editorsState.get(editor);
+    const line: Node = lines[state.currentLine];
+    const textSegments = this.getTextSegments(line, false);
+
+    let anchorNode = line;
+    let anchorIndex = 0;
+    let focusNode = line;
+    let focusIndex = 0;
+    let currentIndex = 0;
+
+    textSegments.forEach(({ text, node }) => {
+      const startIndexOfNode = currentIndex;
+      const endIndexOfNode = startIndexOfNode + text.length;
+
+      if (startIndexOfNode <= state.anchorIndex && state.anchorIndex <= endIndexOfNode) {
+        anchorNode = node;
+        anchorIndex = state.anchorIndex - startIndexOfNode;
+      }
+
+      if (startIndexOfNode <= state.focusIndex && state.focusIndex <= endIndexOfNode) {
+        focusNode = node;
+        focusIndex = state.focusIndex - startIndexOfNode;
+      }
+
+      currentIndex += text.length;
+    });
+
+    if (focusNode) {
+      this.focusLine(
+        editor,
+        this.getParentLine(editor, focusNode as HTMLElement) as HTMLDivElement
+      );
+    }
+
+    sel.setBaseAndExtent(anchorNode, anchorIndex, focusNode, focusIndex);
   }
 
   /**
@@ -438,7 +485,6 @@ export class NeutrinoService {
   private checkKeyToRender(event: KeyboardEvent): boolean {
     return  event                      &&
             event.ctrlKey              &&
-            event.shiftKey             &&
             event.altKey               &&
             event.key !== 'ArrowUp'    &&
             event.key !== 'ArrowRight' &&
@@ -499,54 +545,6 @@ export class NeutrinoService {
   private appendText(line: HTMLDivElement, text: string): void {
     const textNode = this.renderer.createText(text);
     this.renderer.appendChild(line, textNode);
-  }
-
-  /**
-   * @internal
-   *
-   * Restore a given editor selection.
-   * Occurs after every render.
-   *
-   * @param editor A editor reference to restore its selection.
-   */
-  private restoreSelection(editor: ElementRef): void {
-    const sel: Selection = window.getSelection();
-    const lines: NodeList = editor.nativeElement.querySelectorAll('.view-line');
-    const state: EditorState = this.editorsState.get(editor);
-    const line: Node = lines[state.currentLine];
-    const textSegments = this.getTextSegments(line, false);
-
-    let anchorNode = line;
-    let anchorIndex = 0;
-    let focusNode = line;
-    let focusIndex = 0;
-    let currentIndex = 0;
-
-    textSegments.forEach(({ text, node }) => {
-      const startIndexOfNode = currentIndex;
-      const endIndexOfNode = startIndexOfNode + text.length;
-
-      if (startIndexOfNode <= state.anchorIndex && state.anchorIndex <= endIndexOfNode) {
-        anchorNode = node;
-        anchorIndex = state.anchorIndex - startIndexOfNode;
-      }
-
-      if (startIndexOfNode <= state.focusIndex && state.focusIndex <= endIndexOfNode) {
-        focusNode = node;
-        focusIndex = state.focusIndex - startIndexOfNode;
-      }
-
-      currentIndex += text.length;
-    });
-
-    if (focusNode) {
-      this.focusLine(
-        editor,
-        this.getParentLine(editor, focusNode as HTMLElement) as HTMLDivElement
-      );
-    }
-
-    sel.setBaseAndExtent(anchorNode, anchorIndex, focusNode, focusIndex);
   }
 
   /**

@@ -1,4 +1,4 @@
 <main>
-    <nt-editor [value]="value" (valueChanged)="onValueChanged($event)" showLineNumber></nt-editor>
+    <nt-editor codeType="java" [value]="value" (valueChanged)="onValueChanged($event)" showLineNumber></nt-editor>
     <textarea class="output" (keyup)="onKeyUp($event)">{{ value }}</textarea>
 </main>

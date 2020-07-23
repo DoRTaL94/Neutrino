@@ -39,3 +39,44 @@ nt-editor {
 .numbers-container {
     margin-right: 0.25rem;
 }
+
+.access-modifier {
+    color: rgb(103, 194, 255);
+  }
+  
+  .non-access-modifier {
+    color: rgb(103, 194, 255);
+  }
+  
+  .reserved {
+    color: rgb(255, 79, 108);
+    text-shadow: 0 0px 2px rgba(0, 0, 0, 0.253);
+  }
+  
+  .literal {
+    color: rgb(245, 114, 186);
+  }
+  
+  .primitive {
+    color: rgb(255, 186, 121);
+  }
+  
+  .primitive-wrapper {
+    color: rgb(255, 186, 121);
+  }
+  
+  .structural {
+    color: rgb(195, 204, 218);
+  }
+  
+  .string-literal {
+    color: rgb(255, 186, 121);
+  }
+  
+  .annotation {
+    color: rgb(255, 242, 121);
+  }
+  
+  .comment {
+    color: rgb(121, 255, 132);
+  }
