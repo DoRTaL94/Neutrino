@@ -87,7 +87,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
 
   /**
    * Handles any editor's event by calling {@link NeutrinoService.handleEvent}.
-   * This method bound to the editor's events described in the template.
+   * This method is bound to the editor's events described in the template.
    */
   public handleEvent(event: Event): void {
     this.neutrinoService.handleEvent(this.editor, event);

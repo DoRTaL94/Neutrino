@@ -415,7 +415,6 @@ export class NeutrinoService {
     }
   }
 
-
   /**
    * @internal
    *
@@ -438,6 +437,9 @@ export class NeutrinoService {
    */
   private checkKeyToRender(event: KeyboardEvent): boolean {
     return  event                      &&
+            event.ctrlKey              &&
+            event.shiftKey             &&
+            event.altKey               &&
             event.key !== 'ArrowUp'    &&
             event.key !== 'ArrowRight' &&
             event.key !== 'ArrowDown'  &&
