@@ -1,27 +1,27 @@
 main {
-    width: 80vw;
-    margin: auto;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  width: 80vw;
+  margin: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 nt-editor {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
 .output {
-    margin-top: 2rem;
-    background-color: rgb(243, 243, 243);
-    min-height: 2rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding-left: 1rem;
-    width: 100%;
-    flex: 1;
-    resize: none;
-    outline: none;
+  margin-top: 2rem;
+  background-color: rgb(243, 243, 243);
+  min-height: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 1rem;
+  width: 100%;
+  flex: 1;
+  resize: none;
+  outline: none;
 }

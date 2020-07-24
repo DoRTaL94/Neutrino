@@ -26,5 +26,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Lint
-        run: npm run lint
+      - name: TSLint Lint
+        run: npm run tslint:lint
+
+      - name: Prettier Lint
+        run: npm run prettier:lint

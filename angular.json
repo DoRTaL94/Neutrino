@@ -32,13 +32,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/neutrino/tsconfig.lib.json",
-              "projects/neutrino/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["projects/neutrino/tsconfig.lib.json", "projects/neutrino/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
@@ -59,13 +54,8 @@
             "polyfills": "projects/neutrino-example/src/polyfills.ts",
             "tsConfig": "projects/neutrino-example/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "projects/neutrino-example/src/favicon.ico",
-              "projects/neutrino-example/src/assets"
-            ],
-            "styles": [
-              "projects/neutrino-example/src/styles.css"
-            ],
+            "assets": ["projects/neutrino-example/src/favicon.ico", "projects/neutrino-example/src/assets"],
+            "styles": ["projects/neutrino-example/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -123,29 +113,20 @@
             "polyfills": "projects/neutrino-example/src/polyfills.ts",
             "tsConfig": "projects/neutrino-example/tsconfig.spec.json",
             "karmaConfig": "projects/neutrino-example/karma.conf.js",
-            "assets": [
-              "projects/neutrino-example/src/favicon.ico",
-              "projects/neutrino-example/src/assets"
-            ],
-            "styles": [
-              "projects/neutrino-example/src/styles.css"
-            ],
+            "assets": ["projects/neutrino-example/src/favicon.ico", "projects/neutrino-example/src/assets"],
+            "styles": ["projects/neutrino-example/src/styles.css"],
             "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/neutrino-example/tsconfig.app.json",
-              "projects/neutrino-example/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": ["projects/neutrino-example/tsconfig.app.json", "projects/neutrino-example/tsconfig.spec.json"],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "neutrino"
 }

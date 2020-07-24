@@ -1,1 +1,1989 @@
-{"kinds":{"1":"Module","4":"Enumeration","16":"Enumeration member","32":"Variable","64":"Function","128":"Class","256":"Interface","512":"Constructor","1024":"Property","2048":"Method","65536":"Type literal","2097152":"Object literal","16777216":"Reference"},"rows":[{"id":0,"kind":1,"name":"\"projects/neutrino/src/lib/editor-state\"","url":"modules/_projects_neutrino_src_lib_editor_state_.html","classes":"tsd-kind-module"},{"id":1,"kind":128,"name":"EditorState","url":"classes/_projects_neutrino_src_lib_editor_state_.editorstate.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/editor-state\""},{"id":2,"kind":1024,"name":"currentLine","url":"classes/_projects_neutrino_src_lib_editor_state_.editorstate.html#currentline","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/editor-state\".EditorState"},{"id":3,"kind":1024,"name":"anchorIndex","url":"classes/_projects_neutrino_src_lib_editor_state_.editorstate.html#anchorindex","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/editor-state\".EditorState"},{"id":4,"kind":1024,"name":"focusIndex","url":"classes/_projects_neutrino_src_lib_editor_state_.editorstate.html#focusindex","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/editor-state\".EditorState"},{"id":5,"kind":1,"name":"\"projects/neutrino/src/lib/editor.options\"","url":"modules/_projects_neutrino_src_lib_editor_options_.html","classes":"tsd-kind-module"},{"id":6,"kind":256,"name":"EditorOptions","url":"interfaces/_projects_neutrino_src_lib_editor_options_.editoroptions.html","classes":"tsd-kind-interface tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/editor.options\""},{"id":7,"kind":1024,"name":"tabSpaces","url":"interfaces/_projects_neutrino_src_lib_editor_options_.editoroptions.html#tabspaces","classes":"tsd-kind-property tsd-parent-kind-interface","parent":"\"projects/neutrino/src/lib/editor.options\".EditorOptions"},{"id":8,"kind":128,"name":"DefaultEditorOptions","url":"classes/_projects_neutrino_src_lib_editor_options_.defaulteditoroptions.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/editor.options\""},{"id":9,"kind":1024,"name":"tabSpaces","url":"classes/_projects_neutrino_src_lib_editor_options_.defaulteditoroptions.html#tabspaces","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/editor.options\".DefaultEditorOptions"},{"id":10,"kind":1,"name":"\"projects/neutrino/src/lib/neutrino.service\"","url":"modules/_projects_neutrino_src_lib_neutrino_service_.html","classes":"tsd-kind-module"},{"id":11,"kind":4,"name":"EventType","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html","classes":"tsd-kind-enum tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/neutrino.service\""},{"id":12,"kind":16,"name":"KeyUp","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#keyup","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":13,"kind":16,"name":"KeyDown","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#keydown","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":14,"kind":16,"name":"KeyPressed","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#keypressed","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":15,"kind":16,"name":"MouseDown","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#mousedown","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":16,"kind":16,"name":"MouseUp","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#mouseup","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":17,"kind":16,"name":"Click","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#click","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":18,"kind":16,"name":"Input","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#input","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":19,"kind":16,"name":"Copy","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#copy","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":20,"kind":16,"name":"Paste","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#paste","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":21,"kind":16,"name":"Cut","url":"enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#cut","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/neutrino.service\".EventType"},{"id":22,"kind":128,"name":"NeutrinoService","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/neutrino.service\""},{"id":23,"kind":1024,"name":"eventsCallbacks","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#eventscallbacks","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":24,"kind":1024,"name":"eventsCallbacksToExecLast","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#eventscallbackstoexeclast","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":25,"kind":1024,"name":"editorsState","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#editorsstate","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":26,"kind":1024,"name":"valueChangedSubjects","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#valuechangedsubjects","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":27,"kind":1024,"name":"editorsOptions","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#editorsoptions","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":28,"kind":1024,"name":"renderer","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#renderer","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":29,"kind":512,"name":"constructor","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":30,"kind":1024,"name":"rendererFactory","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#rendererfactory","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":31,"kind":2048,"name":"setEditorOptions","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#seteditoroptions","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":32,"kind":2048,"name":"getValueChangedListener","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#getvaluechangedlistener","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":33,"kind":2048,"name":"addNewLine","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#addnewline","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":34,"kind":2048,"name":"keepTextAligned","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#keeptextaligned","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":35,"kind":2048,"name":"addEventHandler","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#addeventhandler","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":36,"kind":2048,"name":"handleEvent","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#handleevent","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":37,"kind":2048,"name":"restoreSelection","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#restoreselection","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":38,"kind":2048,"name":"getTextSegments","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#gettextsegments","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":39,"kind":2048,"name":"getEditorText","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#geteditortext","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":40,"kind":2048,"name":"getClosestViewLine","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#getclosestviewline","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":41,"kind":2048,"name":"getParentLine","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#getparentline","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":42,"kind":2048,"name":"render","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#render","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":43,"kind":2048,"name":"createLine","url":"classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#createline","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"},{"id":44,"kind":1,"name":"\"projects/neutrino/src/lib/highlighters/highlighter\"","url":"modules/_projects_neutrino_src_lib_highlighters_highlighter_.html","classes":"tsd-kind-module"},{"id":45,"kind":256,"name":"Highlighter","url":"interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html","classes":"tsd-kind-interface tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/highlighters/highlighter\""},{"id":46,"kind":2048,"name":"highlightLine","url":"interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html#highlightline","classes":"tsd-kind-method tsd-parent-kind-interface","parent":"\"projects/neutrino/src/lib/highlighters/highlighter\".Highlighter"},{"id":47,"kind":1,"name":"\"projects/neutrino/src/lib/highlighters/code.type\"","url":"modules/_projects_neutrino_src_lib_highlighters_code_type_.html","classes":"tsd-kind-module"},{"id":48,"kind":4,"name":"CodeType","url":"enums/_projects_neutrino_src_lib_highlighters_code_type_.codetype.html","classes":"tsd-kind-enum tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/highlighters/code.type\""},{"id":49,"kind":16,"name":"Java","url":"enums/_projects_neutrino_src_lib_highlighters_code_type_.codetype.html#java","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/highlighters/code.type\".CodeType"},{"id":50,"kind":1,"name":"\"projects/neutrino/src/lib/highlighters/keyword.type\"","url":"modules/_projects_neutrino_src_lib_highlighters_keyword_type_.html","classes":"tsd-kind-module"},{"id":51,"kind":4,"name":"KeywordType","url":"enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html","classes":"tsd-kind-enum tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/highlighters/keyword.type\""},{"id":52,"kind":16,"name":"AccessModifier","url":"enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#accessmodifier","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"},{"id":53,"kind":16,"name":"NonAccessModifier","url":"enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#nonaccessmodifier","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"},{"id":54,"kind":16,"name":"Primitive","url":"enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#primitive","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"},{"id":55,"kind":16,"name":"PrimitiveWrapper","url":"enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#primitivewrapper","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"},{"id":56,"kind":16,"name":"Literal","url":"enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#literal","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"},{"id":57,"kind":16,"name":"Structural","url":"enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#structural","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"},{"id":58,"kind":16,"name":"Reserved","url":"enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#reserved","classes":"tsd-kind-enum-member tsd-parent-kind-enum","parent":"\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"},{"id":59,"kind":1,"name":"\"projects/neutrino/src/lib/highlighters/java/keywords\"","url":"modules/_projects_neutrino_src_lib_highlighters_java_keywords_.html","classes":"tsd-kind-module"},{"id":60,"kind":32,"name":"keywords","url":"modules/_projects_neutrino_src_lib_highlighters_java_keywords_.html#keywords","classes":"tsd-kind-variable tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/highlighters/java/keywords\""},{"id":61,"kind":1,"name":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\"","url":"modules/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.html","classes":"tsd-kind-module"},{"id":62,"kind":128,"name":"JavaHighlighter","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\""},{"id":63,"kind":1024,"name":"renderer","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#renderer","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":64,"kind":1024,"name":"codeLength","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#codelength","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":65,"kind":1024,"name":"code","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#code","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":66,"kind":1024,"name":"line","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#line","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":67,"kind":1024,"name":"isMultiCommentOpened","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismulticommentopened","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":68,"kind":1024,"name":"isQuoteOpened","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquoteopened","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":69,"kind":512,"name":"constructor","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":70,"kind":2048,"name":"highlightLine","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlightline","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":71,"kind":2048,"name":"highlightHelper","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlighthelper","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":72,"kind":2048,"name":"checkForKeywords","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#checkforkeywords","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":73,"kind":2048,"name":"handleQuote","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlequote","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":74,"kind":2048,"name":"getEndIndexOfQuote","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofquote","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":75,"kind":2048,"name":"handleAnnotation","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleannotation","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":76,"kind":2048,"name":"handleOneLineComment","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleonelinecomment","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":77,"kind":2048,"name":"handleMultiLineComment","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlemultilinecomment","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":78,"kind":2048,"name":"isQuote","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquote","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":79,"kind":2048,"name":"isOneLineComment","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isonelinecomment","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":80,"kind":2048,"name":"isMultiLineComment","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismultilinecomment","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":81,"kind":2048,"name":"isAnnotation","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isannotation","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":82,"kind":2048,"name":"appendText","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendtext","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":83,"kind":2048,"name":"addSpace","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#addspace","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":84,"kind":2048,"name":"getEndOfMultiLineComment","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendofmultilinecomment","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":85,"kind":2048,"name":"getEndIndexOfAnnotation","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofannotation","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":86,"kind":2048,"name":"appendSubstring","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendsubstring","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":87,"kind":2048,"name":"createTextElement","url":"classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#createtextelement","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"},{"id":88,"kind":1,"name":"\"projects/neutrino/src/lib/highlighters/highlights.service\"","url":"modules/_projects_neutrino_src_lib_highlighters_highlights_service_.html","classes":"tsd-kind-module"},{"id":89,"kind":128,"name":"HightlightsService","url":"classes/_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/highlighters/highlights.service\""},{"id":90,"kind":1024,"name":"highlighters","url":"classes/_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html#highlighters","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/highlighters/highlights.service\".HightlightsService"},{"id":91,"kind":2048,"name":"getByCodeType","url":"classes/_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html#getbycodetype","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/highlighters/highlights.service\".HightlightsService"},{"id":92,"kind":1,"name":"\"projects/neutrino/src/lib/neutrino.component\"","url":"modules/_projects_neutrino_src_lib_neutrino_component_.html","classes":"tsd-kind-module"},{"id":93,"kind":128,"name":"NeutrinoComponent","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/neutrino.component\""},{"id":94,"kind":1024,"name":"editor","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#editor","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":95,"kind":1024,"name":"tabSpaces","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#tabspaces","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":96,"kind":1024,"name":"showLineNumber","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#showlinenumber","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":97,"kind":1024,"name":"value","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#value","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":98,"kind":1024,"name":"codeType","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#codetype","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":99,"kind":1024,"name":"editable","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#editable","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":100,"kind":1024,"name":"valueChanged","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#valuechanged","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":101,"kind":1024,"name":"lines","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#lines","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":102,"kind":1024,"name":"valueChangedSub","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#valuechangedsub","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":103,"kind":1024,"name":"hightlighter","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#hightlighter","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":104,"kind":512,"name":"constructor","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#constructor","classes":"tsd-kind-constructor tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":105,"kind":1024,"name":"neutrinoService","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#neutrinoservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":106,"kind":1024,"name":"renderer","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#renderer","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":107,"kind":1024,"name":"highlightsService","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#highlightsservice","classes":"tsd-kind-property tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":108,"kind":2048,"name":"ngOnChanges","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#ngonchanges","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":109,"kind":2048,"name":"ngOnInit","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#ngoninit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":110,"kind":2048,"name":"ngOnDestroy","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#ngondestroy","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":111,"kind":2048,"name":"ngAfterViewInit","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#ngafterviewinit","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":112,"kind":2048,"name":"handleEvent","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#handleevent","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":113,"kind":2048,"name":"hightlightCode","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#hightlightcode","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":114,"kind":2048,"name":"refreshLines","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#refreshlines","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":115,"kind":2048,"name":"handleAutoComplete","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#handleautocomplete","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":116,"kind":2048,"name":"handleDeletion","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#handledeletion","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":117,"kind":2048,"name":"handleInsertTab","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#handleinserttab","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":118,"kind":2048,"name":"addNewLineOnEnter","url":"classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#addnewlineonenter","classes":"tsd-kind-method tsd-parent-kind-class tsd-is-private","parent":"\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"},{"id":119,"kind":1,"name":"\"projects/neutrino/src/lib/neutrino.module\"","url":"modules/_projects_neutrino_src_lib_neutrino_module_.html","classes":"tsd-kind-module"},{"id":120,"kind":128,"name":"NeutrinoModule","url":"classes/_projects_neutrino_src_lib_neutrino_module_.neutrinomodule.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino/src/lib/neutrino.module\""},{"id":121,"kind":1,"name":"\"projects/neutrino/src/public-api\"","url":"modules/_projects_neutrino_src_public_api_.html","classes":"tsd-kind-module"},{"id":122,"kind":16777216,"name":"EventType","url":"modules/_projects_neutrino_src_public_api_.html#eventtype","classes":"tsd-kind-reference tsd-parent-kind-module","parent":"\"projects/neutrino/src/public-api\""},{"id":123,"kind":16777216,"name":"NeutrinoService","url":"modules/_projects_neutrino_src_public_api_.html#neutrinoservice","classes":"tsd-kind-reference tsd-parent-kind-module","parent":"\"projects/neutrino/src/public-api\""},{"id":124,"kind":16777216,"name":"NeutrinoComponent","url":"modules/_projects_neutrino_src_public_api_.html#neutrinocomponent","classes":"tsd-kind-reference tsd-parent-kind-module","parent":"\"projects/neutrino/src/public-api\""},{"id":125,"kind":16777216,"name":"NeutrinoModule","url":"modules/_projects_neutrino_src_public_api_.html#neutrinomodule","classes":"tsd-kind-reference tsd-parent-kind-module","parent":"\"projects/neutrino/src/public-api\""},{"id":126,"kind":1,"name":"\"projects/neutrino/src/test\"","url":"modules/_projects_neutrino_src_test_.html","classes":"tsd-kind-module"},{"id":127,"kind":32,"name":"require","url":"modules/_projects_neutrino_src_test_.html#require","classes":"tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported","parent":"\"projects/neutrino/src/test\""},{"id":128,"kind":65536,"name":"__type","url":"modules/_projects_neutrino_src_test_.html#require.__type-1","classes":"tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported","parent":"\"projects/neutrino/src/test\".require"},{"id":129,"kind":64,"name":"context","url":"modules/_projects_neutrino_src_test_.html#require.__type-1.context-1","classes":"tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported","parent":"\"projects/neutrino/src/test\".require.__type"},{"id":130,"kind":32,"name":"context","url":"modules/_projects_neutrino_src_test_.html#context","classes":"tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported","parent":"\"projects/neutrino/src/test\""},{"id":131,"kind":65536,"name":"__type","url":"modules/_projects_neutrino_src_test_.html#context.__type","classes":"tsd-kind-type-literal tsd-parent-kind-variable tsd-has-type-parameter tsd-is-not-exported","parent":"\"projects/neutrino/src/test\".context"},{"id":132,"kind":64,"name":"keys","url":"modules/_projects_neutrino_src_test_.html#context.__type.keys","classes":"tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported","parent":"\"projects/neutrino/src/test\".context.__type"},{"id":133,"kind":1,"name":"\"projects/neutrino/src/lib/neutrino.component.spec\"","url":"modules/_projects_neutrino_src_lib_neutrino_component_spec_.html","classes":"tsd-kind-module"},{"id":134,"kind":1,"name":"\"projects/neutrino/src/lib/neutrino.service.spec\"","url":"modules/_projects_neutrino_src_lib_neutrino_service_spec_.html","classes":"tsd-kind-module"},{"id":135,"kind":1,"name":"\"projects/neutrino-example/src/app/app.component\"","url":"modules/_projects_neutrino_example_src_app_app_component_.html","classes":"tsd-kind-module"},{"id":136,"kind":128,"name":"AppComponent","url":"classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino-example/src/app/app.component\""},{"id":137,"kind":1024,"name":"title","url":"classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html#title","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino-example/src/app/app.component\".AppComponent"},{"id":138,"kind":1024,"name":"value","url":"classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html#value","classes":"tsd-kind-property tsd-parent-kind-class","parent":"\"projects/neutrino-example/src/app/app.component\".AppComponent"},{"id":139,"kind":2048,"name":"onValueChanged","url":"classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html#onvaluechanged","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino-example/src/app/app.component\".AppComponent"},{"id":140,"kind":2048,"name":"onKeyUp","url":"classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html#onkeyup","classes":"tsd-kind-method tsd-parent-kind-class","parent":"\"projects/neutrino-example/src/app/app.component\".AppComponent"},{"id":141,"kind":1,"name":"\"projects/neutrino-example/src/app/app.module\"","url":"modules/_projects_neutrino_example_src_app_app_module_.html","classes":"tsd-kind-module"},{"id":142,"kind":128,"name":"AppModule","url":"classes/_projects_neutrino_example_src_app_app_module_.appmodule.html","classes":"tsd-kind-class tsd-parent-kind-module","parent":"\"projects/neutrino-example/src/app/app.module\""},{"id":143,"kind":1,"name":"\"projects/neutrino-example/src/environments/environment\"","url":"modules/_projects_neutrino_example_src_environments_environment_.html","classes":"tsd-kind-module"},{"id":144,"kind":2097152,"name":"environment","url":"modules/_projects_neutrino_example_src_environments_environment_.html#environment","classes":"tsd-kind-object-literal tsd-parent-kind-module","parent":"\"projects/neutrino-example/src/environments/environment\""},{"id":145,"kind":32,"name":"production","url":"modules/_projects_neutrino_example_src_environments_environment_.html#environment.production","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"\"projects/neutrino-example/src/environments/environment\".environment"},{"id":146,"kind":1,"name":"\"projects/neutrino-example/src/main\"","url":"modules/_projects_neutrino_example_src_main_.html","classes":"tsd-kind-module"},{"id":147,"kind":1,"name":"\"projects/neutrino-example/src/polyfills\"","url":"modules/_projects_neutrino_example_src_polyfills_.html","classes":"tsd-kind-module"},{"id":148,"kind":1,"name":"\"projects/neutrino-example/src/test\"","url":"modules/_projects_neutrino_example_src_test_.html","classes":"tsd-kind-module"},{"id":149,"kind":32,"name":"require","url":"modules/_projects_neutrino_example_src_test_.html#require","classes":"tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported","parent":"\"projects/neutrino-example/src/test\""},{"id":150,"kind":65536,"name":"__type","url":"modules/_projects_neutrino_example_src_test_.html#require.__type-1","classes":"tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported","parent":"\"projects/neutrino-example/src/test\".require"},{"id":151,"kind":64,"name":"context","url":"modules/_projects_neutrino_example_src_test_.html#require.__type-1.context-1","classes":"tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported","parent":"\"projects/neutrino-example/src/test\".require.__type"},{"id":152,"kind":32,"name":"context","url":"modules/_projects_neutrino_example_src_test_.html#context","classes":"tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported","parent":"\"projects/neutrino-example/src/test\""},{"id":153,"kind":65536,"name":"__type","url":"modules/_projects_neutrino_example_src_test_.html#context.__type","classes":"tsd-kind-type-literal tsd-parent-kind-variable tsd-has-type-parameter tsd-is-not-exported","parent":"\"projects/neutrino-example/src/test\".context"},{"id":154,"kind":64,"name":"keys","url":"modules/_projects_neutrino_example_src_test_.html#context.__type.keys","classes":"tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported","parent":"\"projects/neutrino-example/src/test\".context.__type"},{"id":155,"kind":1,"name":"\"projects/neutrino-example/src/app/app.component.spec\"","url":"modules/_projects_neutrino_example_src_app_app_component_spec_.html","classes":"tsd-kind-module"},{"id":156,"kind":1,"name":"\"projects/neutrino-example/src/environments/environment.prod\"","url":"modules/_projects_neutrino_example_src_environments_environment_prod_.html","classes":"tsd-kind-module"},{"id":157,"kind":2097152,"name":"environment","url":"modules/_projects_neutrino_example_src_environments_environment_prod_.html#environment","classes":"tsd-kind-object-literal tsd-parent-kind-module","parent":"\"projects/neutrino-example/src/environments/environment.prod\""},{"id":158,"kind":32,"name":"production","url":"modules/_projects_neutrino_example_src_environments_environment_prod_.html#environment.production","classes":"tsd-kind-variable tsd-parent-kind-object-literal","parent":"\"projects/neutrino-example/src/environments/environment.prod\".environment"}],"index":{"version":"2.3.8","fields":["name","parent"],"fieldVectors":[["name/0",[0,24.77,1,30.565]],["parent/0",[]],["name/1",[2,47.856]],["parent/1",[0,2.401,1,2.962]],["name/2",[3,47.856]],["parent/2",[0,2.401,4,2.723]],["name/3",[5,47.856]],["parent/3",[0,2.401,4,2.723]],["name/4",[6,47.856]],["parent/4",[0,2.401,4,2.723]],["name/5",[7,39.172]],["parent/5",[]],["name/6",[8,47.856]],["parent/6",[7,3.832]],["name/7",[9,39.172]],["parent/7",[10,4.682]],["name/8",[11,47.856]],["parent/8",[7,3.832]],["name/9",[9,39.172]],["parent/9",[12,4.682]],["name/10",[13,39.172]],["parent/10",[]],["name/11",[14,42.621]],["parent/11",[13,3.832]],["name/12",[15,47.856]],["parent/12",[16,2.731]],["name/13",[17,47.856]],["parent/13",[16,2.731]],["name/14",[18,47.856]],["parent/14",[16,2.731]],["name/15",[19,47.856]],["parent/15",[16,2.731]],["name/16",[20,47.856]],["parent/16",[16,2.731]],["name/17",[21,47.856]],["parent/17",[16,2.731]],["name/18",[22,47.856]],["parent/18",[16,2.731]],["name/19",[23,47.856]],["parent/19",[16,2.731]],["name/20",[24,47.856]],["parent/20",[16,2.731]],["name/21",[25,47.856]],["parent/21",[16,2.731]],["name/22",[26,39.172]],["parent/22",[13,3.832]],["name/23",[27,47.856]],["parent/23",[28,2.012]],["name/24",[29,47.856]],["parent/24",[28,2.012]],["name/25",[30,47.856]],["parent/25",[28,2.012]],["name/26",[31,47.856]],["parent/26",[28,2.012]],["name/27",[32,47.856]],["parent/27",[28,2.012]],["name/28",[33,39.172]],["parent/28",[28,2.012]],["name/29",[34,39.172]],["parent/29",[28,2.012]],["name/30",[35,47.856]],["parent/30",[28,2.012]],["name/31",[36,47.856]],["parent/31",[28,2.012]],["name/32",[37,47.856]],["parent/32",[28,2.012]],["name/33",[38,47.856]],["parent/33",[28,2.012]],["name/34",[39,47.856]],["parent/34",[28,2.012]],["name/35",[40,47.856]],["parent/35",[28,2.012]],["name/36",[41,42.621]],["parent/36",[28,2.012]],["name/37",[42,47.856]],["parent/37",[28,2.012]],["name/38",[43,47.856]],["parent/38",[28,2.012]],["name/39",[44,47.856]],["parent/39",[28,2.012]],["name/40",[45,47.856]],["parent/40",[28,2.012]],["name/41",[46,47.856]],["parent/41",[28,2.012]],["name/42",[47,47.856]],["parent/42",[28,2.012]],["name/43",[48,47.856]],["parent/43",[28,2.012]],["name/44",[49,42.621]],["parent/44",[]],["name/45",[50,47.856]],["parent/45",[49,4.17]],["name/46",[51,42.621]],["parent/46",[52,4.682]],["name/47",[53,42.621]],["parent/47",[]],["name/48",[54,42.621]],["parent/48",[53,4.17]],["name/49",[55,47.856]],["parent/49",[56,4.682]],["name/50",[57,42.621]],["parent/50",[]],["name/51",[58,47.856]],["parent/51",[57,4.17]],["name/52",[59,47.856]],["parent/52",[60,3.068]],["name/53",[61,47.856]],["parent/53",[60,3.068]],["name/54",[62,47.856]],["parent/54",[60,3.068]],["name/55",[63,47.856]],["parent/55",[60,3.068]],["name/56",[64,47.856]],["parent/56",[60,3.068]],["name/57",[65,47.856]],["parent/57",[60,3.068]],["name/58",[66,47.856]],["parent/58",[60,3.068]],["name/59",[67,42.621]],["parent/59",[]],["name/60",[68,47.856]],["parent/60",[67,4.17]],["name/61",[69,42.621]],["parent/61",[]],["name/62",[70,47.856]],["parent/62",[69,4.17]],["name/63",[33,39.172]],["parent/63",[71,1.841]],["name/64",[72,47.856]],["parent/64",[71,1.841]],["name/65",[73,47.856]],["parent/65",[71,1.841]],["name/66",[74,47.856]],["parent/66",[71,1.841]],["name/67",[75,47.856]],["parent/67",[71,1.841]],["name/68",[76,47.856]],["parent/68",[71,1.841]],["name/69",[34,39.172]],["parent/69",[71,1.841]],["name/70",[51,42.621]],["parent/70",[71,1.841]],["name/71",[77,47.856]],["parent/71",[71,1.841]],["name/72",[78,47.856]],["parent/72",[71,1.841]],["name/73",[79,47.856]],["parent/73",[71,1.841]],["name/74",[80,47.856]],["parent/74",[71,1.841]],["name/75",[81,47.856]],["parent/75",[71,1.841]],["name/76",[82,47.856]],["parent/76",[71,1.841]],["name/77",[83,47.856]],["parent/77",[71,1.841]],["name/78",[84,47.856]],["parent/78",[71,1.841]],["name/79",[85,47.856]],["parent/79",[71,1.841]],["name/80",[86,47.856]],["parent/80",[71,1.841]],["name/81",[87,47.856]],["parent/81",[71,1.841]],["name/82",[88,47.856]],["parent/82",[71,1.841]],["name/83",[89,47.856]],["parent/83",[71,1.841]],["name/84",[90,47.856]],["parent/84",[71,1.841]],["name/85",[91,47.856]],["parent/85",[71,1.841]],["name/86",[92,47.856]],["parent/86",[71,1.841]],["name/87",[93,47.856]],["parent/87",[71,1.841]],["name/88",[94,42.621]],["parent/88",[]],["name/89",[95,47.856]],["parent/89",[94,4.17]],["name/90",[96,47.856]],["parent/90",[97,4.17]],["name/91",[98,47.856]],["parent/91",[97,4.17]],["name/92",[99,42.621]],["parent/92",[]],["name/93",[100,42.621]],["parent/93",[99,4.17]],["name/94",[101,47.856]],["parent/94",[102,1.841]],["name/95",[9,39.172]],["parent/95",[102,1.841]],["name/96",[103,47.856]],["parent/96",[102,1.841]],["name/97",[104,42.621]],["parent/97",[102,1.841]],["name/98",[54,42.621]],["parent/98",[102,1.841]],["name/99",[105,47.856]],["parent/99",[102,1.841]],["name/100",[106,47.856]],["parent/100",[102,1.841]],["name/101",[107,47.856]],["parent/101",[102,1.841]],["name/102",[108,47.856]],["parent/102",[102,1.841]],["name/103",[109,47.856]],["parent/103",[102,1.841]],["name/104",[34,39.172]],["parent/104",[102,1.841]],["name/105",[26,39.172]],["parent/105",[102,1.841]],["name/106",[33,39.172]],["parent/106",[102,1.841]],["name/107",[110,47.856]],["parent/107",[102,1.841]],["name/108",[111,47.856]],["parent/108",[102,1.841]],["name/109",[112,47.856]],["parent/109",[102,1.841]],["name/110",[113,47.856]],["parent/110",[102,1.841]],["name/111",[114,47.856]],["parent/111",[102,1.841]],["name/112",[41,42.621]],["parent/112",[102,1.841]],["name/113",[115,47.856]],["parent/113",[102,1.841]],["name/114",[116,47.856]],["parent/114",[102,1.841]],["name/115",[117,47.856]],["parent/115",[102,1.841]],["name/116",[118,47.856]],["parent/116",[102,1.841]],["name/117",[119,47.856]],["parent/117",[102,1.841]],["name/118",[120,47.856]],["parent/118",[102,1.841]],["name/119",[121,42.621]],["parent/119",[]],["name/120",[122,42.621]],["parent/120",[121,4.17]],["name/121",[123,24.77,124,24.77]],["parent/121",[]],["name/122",[14,42.621]],["parent/122",[123,2.401,124,2.401]],["name/123",[26,39.172]],["parent/123",[123,2.401,124,2.401]],["name/124",[100,42.621]],["parent/124",[123,2.401,124,2.401]],["name/125",[122,42.621]],["parent/125",[123,2.401,124,2.401]],["name/126",[125,39.172]],["parent/126",[]],["name/127",[126,42.621]],["parent/127",[125,3.832]],["name/128",[127,36.597]],["parent/128",[128,4.682]],["name/129",[129,36.597]],["parent/129",[130,4.682]],["name/130",[129,36.597]],["parent/130",[125,3.832]],["name/131",[127,36.597]],["parent/131",[131,4.682]],["name/132",[132,42.621]],["parent/132",[133,4.682]],["name/133",[134,47.856]],["parent/133",[]],["name/134",[135,47.856]],["parent/134",[]],["name/135",[136,13.791,137,30.565]],["parent/135",[]],["name/136",[138,47.856]],["parent/136",[136,1.337,137,2.962]],["name/137",[139,47.856]],["parent/137",[136,1.337,140,2.544]],["name/138",[104,42.621]],["parent/138",[136,1.337,140,2.544]],["name/139",[141,47.856]],["parent/139",[136,1.337,140,2.544]],["name/140",[142,47.856]],["parent/140",[136,1.337,140,2.544]],["name/141",[136,13.791,143,30.565]],["parent/141",[]],["name/142",[144,47.856]],["parent/142",[136,1.337,143,2.962]],["name/143",[136,13.791,145,30.565]],["parent/143",[]],["name/144",[146,42.621]],["parent/144",[136,1.337,145,2.962]],["name/145",[147,42.621]],["parent/145",[136,1.337,148,3.326]],["name/146",[136,13.791,149,34.319]],["parent/146",[]],["name/147",[136,13.791,150,34.319]],["parent/147",[]],["name/148",[136,13.791,151,28.092]],["parent/148",[]],["name/149",[126,42.621]],["parent/149",[136,1.337,151,2.723]],["name/150",[127,36.597]],["parent/150",[136,1.337,152,3.326]],["name/151",[129,36.597]],["parent/151",[136,1.337,153,3.326]],["name/152",[129,36.597]],["parent/152",[136,1.337,151,2.723]],["name/153",[127,36.597]],["parent/153",[136,1.337,154,3.326]],["name/154",[132,42.621]],["parent/154",[136,1.337,155,3.326]],["name/155",[136,13.791,156,34.319]],["parent/155",[]],["name/156",[136,13.791,157,30.565]],["parent/156",[]],["name/157",[146,42.621]],["parent/157",[136,1.337,157,2.962]],["name/158",[147,42.621]],["parent/158",[136,1.337,158,3.326]]],"invertedIndex":[["__type",{"_index":127,"name":{"128":{},"131":{},"150":{},"153":{}},"parent":{}}],["accessmodifier",{"_index":59,"name":{"52":{}},"parent":{}}],["addeventhandler",{"_index":40,"name":{"35":{}},"parent":{}}],["addnewline",{"_index":38,"name":{"33":{}},"parent":{}}],["addnewlineonenter",{"_index":120,"name":{"118":{}},"parent":{}}],["addspace",{"_index":89,"name":{"83":{}},"parent":{}}],["anchorindex",{"_index":5,"name":{"3":{}},"parent":{}}],["api",{"_index":124,"name":{"121":{}},"parent":{"122":{},"123":{},"124":{},"125":{}}}],["appcomponent",{"_index":138,"name":{"136":{}},"parent":{}}],["appendsubstring",{"_index":92,"name":{"86":{}},"parent":{}}],["appendtext",{"_index":88,"name":{"82":{}},"parent":{}}],["appmodule",{"_index":144,"name":{"142":{}},"parent":{}}],["checkforkeywords",{"_index":78,"name":{"72":{}},"parent":{}}],["click",{"_index":21,"name":{"17":{}},"parent":{}}],["code",{"_index":73,"name":{"65":{}},"parent":{}}],["codelength",{"_index":72,"name":{"64":{}},"parent":{}}],["codetype",{"_index":54,"name":{"48":{},"98":{}},"parent":{}}],["constructor",{"_index":34,"name":{"29":{},"69":{},"104":{}},"parent":{}}],["context",{"_index":129,"name":{"129":{},"130":{},"151":{},"152":{}},"parent":{}}],["copy",{"_index":23,"name":{"19":{}},"parent":{}}],["createline",{"_index":48,"name":{"43":{}},"parent":{}}],["createtextelement",{"_index":93,"name":{"87":{}},"parent":{}}],["currentline",{"_index":3,"name":{"2":{}},"parent":{}}],["cut",{"_index":25,"name":{"21":{}},"parent":{}}],["defaulteditoroptions",{"_index":11,"name":{"8":{}},"parent":{}}],["editable",{"_index":105,"name":{"99":{}},"parent":{}}],["editor",{"_index":101,"name":{"94":{}},"parent":{}}],["editoroptions",{"_index":8,"name":{"6":{}},"parent":{}}],["editorsoptions",{"_index":32,"name":{"27":{}},"parent":{}}],["editorsstate",{"_index":30,"name":{"25":{}},"parent":{}}],["editorstate",{"_index":2,"name":{"1":{}},"parent":{}}],["environment",{"_index":146,"name":{"144":{},"157":{}},"parent":{}}],["eventscallbacks",{"_index":27,"name":{"23":{}},"parent":{}}],["eventscallbackstoexeclast",{"_index":29,"name":{"24":{}},"parent":{}}],["eventtype",{"_index":14,"name":{"11":{},"122":{}},"parent":{}}],["example/src/app/app.component",{"_index":137,"name":{"135":{}},"parent":{"136":{}}}],["example/src/app/app.component\".appcomponent",{"_index":140,"name":{},"parent":{"137":{},"138":{},"139":{},"140":{}}}],["example/src/app/app.component.spec",{"_index":156,"name":{"155":{}},"parent":{}}],["example/src/app/app.module",{"_index":143,"name":{"141":{}},"parent":{"142":{}}}],["example/src/environments/environment",{"_index":145,"name":{"143":{}},"parent":{"144":{}}}],["example/src/environments/environment\".environment",{"_index":148,"name":{},"parent":{"145":{}}}],["example/src/environments/environment.prod",{"_index":157,"name":{"156":{}},"parent":{"157":{}}}],["example/src/environments/environment.prod\".environment",{"_index":158,"name":{},"parent":{"158":{}}}],["example/src/main",{"_index":149,"name":{"146":{}},"parent":{}}],["example/src/polyfills",{"_index":150,"name":{"147":{}},"parent":{}}],["example/src/test",{"_index":151,"name":{"148":{}},"parent":{"149":{},"152":{}}}],["example/src/test\".context",{"_index":154,"name":{},"parent":{"153":{}}}],["example/src/test\".context.__type",{"_index":155,"name":{},"parent":{"154":{}}}],["example/src/test\".require",{"_index":152,"name":{},"parent":{"150":{}}}],["example/src/test\".require.__type",{"_index":153,"name":{},"parent":{"151":{}}}],["focusindex",{"_index":6,"name":{"4":{}},"parent":{}}],["getbycodetype",{"_index":98,"name":{"91":{}},"parent":{}}],["getclosestviewline",{"_index":45,"name":{"40":{}},"parent":{}}],["geteditortext",{"_index":44,"name":{"39":{}},"parent":{}}],["getendindexofannotation",{"_index":91,"name":{"85":{}},"parent":{}}],["getendindexofquote",{"_index":80,"name":{"74":{}},"parent":{}}],["getendofmultilinecomment",{"_index":90,"name":{"84":{}},"parent":{}}],["getparentline",{"_index":46,"name":{"41":{}},"parent":{}}],["gettextsegments",{"_index":43,"name":{"38":{}},"parent":{}}],["getvaluechangedlistener",{"_index":37,"name":{"32":{}},"parent":{}}],["handleannotation",{"_index":81,"name":{"75":{}},"parent":{}}],["handleautocomplete",{"_index":117,"name":{"115":{}},"parent":{}}],["handledeletion",{"_index":118,"name":{"116":{}},"parent":{}}],["handleevent",{"_index":41,"name":{"36":{},"112":{}},"parent":{}}],["handleinserttab",{"_index":119,"name":{"117":{}},"parent":{}}],["handlemultilinecomment",{"_index":83,"name":{"77":{}},"parent":{}}],["handleonelinecomment",{"_index":82,"name":{"76":{}},"parent":{}}],["handlequote",{"_index":79,"name":{"73":{}},"parent":{}}],["highlighter",{"_index":50,"name":{"45":{}},"parent":{}}],["highlighters",{"_index":96,"name":{"90":{}},"parent":{}}],["highlighthelper",{"_index":77,"name":{"71":{}},"parent":{}}],["highlightline",{"_index":51,"name":{"46":{},"70":{}},"parent":{}}],["highlightsservice",{"_index":110,"name":{"107":{}},"parent":{}}],["hightlightcode",{"_index":115,"name":{"113":{}},"parent":{}}],["hightlighter",{"_index":109,"name":{"103":{}},"parent":{}}],["hightlightsservice",{"_index":95,"name":{"89":{}},"parent":{}}],["input",{"_index":22,"name":{"18":{}},"parent":{}}],["isannotation",{"_index":87,"name":{"81":{}},"parent":{}}],["ismulticommentopened",{"_index":75,"name":{"67":{}},"parent":{}}],["ismultilinecomment",{"_index":86,"name":{"80":{}},"parent":{}}],["isonelinecomment",{"_index":85,"name":{"79":{}},"parent":{}}],["isquote",{"_index":84,"name":{"78":{}},"parent":{}}],["isquoteopened",{"_index":76,"name":{"68":{}},"parent":{}}],["java",{"_index":55,"name":{"49":{}},"parent":{}}],["javahighlighter",{"_index":70,"name":{"62":{}},"parent":{}}],["keeptextaligned",{"_index":39,"name":{"34":{}},"parent":{}}],["keydown",{"_index":17,"name":{"13":{}},"parent":{}}],["keypressed",{"_index":18,"name":{"14":{}},"parent":{}}],["keys",{"_index":132,"name":{"132":{},"154":{}},"parent":{}}],["keyup",{"_index":15,"name":{"12":{}},"parent":{}}],["keywords",{"_index":68,"name":{"60":{}},"parent":{}}],["keywordtype",{"_index":58,"name":{"51":{}},"parent":{}}],["line",{"_index":74,"name":{"66":{}},"parent":{}}],["lines",{"_index":107,"name":{"101":{}},"parent":{}}],["literal",{"_index":64,"name":{"56":{}},"parent":{}}],["mousedown",{"_index":19,"name":{"15":{}},"parent":{}}],["mouseup",{"_index":20,"name":{"16":{}},"parent":{}}],["neutrinocomponent",{"_index":100,"name":{"93":{},"124":{}},"parent":{}}],["neutrinomodule",{"_index":122,"name":{"120":{},"125":{}},"parent":{}}],["neutrinoservice",{"_index":26,"name":{"22":{},"105":{},"123":{}},"parent":{}}],["ngafterviewinit",{"_index":114,"name":{"111":{}},"parent":{}}],["ngonchanges",{"_index":111,"name":{"108":{}},"parent":{}}],["ngondestroy",{"_index":113,"name":{"110":{}},"parent":{}}],["ngoninit",{"_index":112,"name":{"109":{}},"parent":{}}],["nonaccessmodifier",{"_index":61,"name":{"53":{}},"parent":{}}],["onkeyup",{"_index":142,"name":{"140":{}},"parent":{}}],["onvaluechanged",{"_index":141,"name":{"139":{}},"parent":{}}],["paste",{"_index":24,"name":{"20":{}},"parent":{}}],["primitive",{"_index":62,"name":{"54":{}},"parent":{}}],["primitivewrapper",{"_index":63,"name":{"55":{}},"parent":{}}],["production",{"_index":147,"name":{"145":{},"158":{}},"parent":{}}],["projects/neutrino",{"_index":136,"name":{"135":{},"141":{},"143":{},"146":{},"147":{},"148":{},"155":{},"156":{}},"parent":{"136":{},"137":{},"138":{},"139":{},"140":{},"142":{},"144":{},"145":{},"149":{},"150":{},"151":{},"152":{},"153":{},"154":{},"157":{},"158":{}}}],["projects/neutrino/src/lib/editor",{"_index":0,"name":{"0":{}},"parent":{"1":{},"2":{},"3":{},"4":{}}}],["projects/neutrino/src/lib/editor.options",{"_index":7,"name":{"5":{}},"parent":{"6":{},"8":{}}}],["projects/neutrino/src/lib/editor.options\".defaulteditoroptions",{"_index":12,"name":{},"parent":{"9":{}}}],["projects/neutrino/src/lib/editor.options\".editoroptions",{"_index":10,"name":{},"parent":{"7":{}}}],["projects/neutrino/src/lib/highlighters/code.type",{"_index":53,"name":{"47":{}},"parent":{"48":{}}}],["projects/neutrino/src/lib/highlighters/code.type\".codetype",{"_index":56,"name":{},"parent":{"49":{}}}],["projects/neutrino/src/lib/highlighters/highlighter",{"_index":49,"name":{"44":{}},"parent":{"45":{}}}],["projects/neutrino/src/lib/highlighters/highlighter\".highlighter",{"_index":52,"name":{},"parent":{"46":{}}}],["projects/neutrino/src/lib/highlighters/highlights.service",{"_index":94,"name":{"88":{}},"parent":{"89":{}}}],["projects/neutrino/src/lib/highlighters/highlights.service\".hightlightsservice",{"_index":97,"name":{},"parent":{"90":{},"91":{}}}],["projects/neutrino/src/lib/highlighters/java/java.highlighter",{"_index":69,"name":{"61":{}},"parent":{"62":{}}}],["projects/neutrino/src/lib/highlighters/java/java.highlighter\".javahighlighter",{"_index":71,"name":{},"parent":{"63":{},"64":{},"65":{},"66":{},"67":{},"68":{},"69":{},"70":{},"71":{},"72":{},"73":{},"74":{},"75":{},"76":{},"77":{},"78":{},"79":{},"80":{},"81":{},"82":{},"83":{},"84":{},"85":{},"86":{},"87":{}}}],["projects/neutrino/src/lib/highlighters/java/keywords",{"_index":67,"name":{"59":{}},"parent":{"60":{}}}],["projects/neutrino/src/lib/highlighters/keyword.type",{"_index":57,"name":{"50":{}},"parent":{"51":{}}}],["projects/neutrino/src/lib/highlighters/keyword.type\".keywordtype",{"_index":60,"name":{},"parent":{"52":{},"53":{},"54":{},"55":{},"56":{},"57":{},"58":{}}}],["projects/neutrino/src/lib/neutrino.component",{"_index":99,"name":{"92":{}},"parent":{"93":{}}}],["projects/neutrino/src/lib/neutrino.component\".neutrinocomponent",{"_index":102,"name":{},"parent":{"94":{},"95":{},"96":{},"97":{},"98":{},"99":{},"100":{},"101":{},"102":{},"103":{},"104":{},"105":{},"106":{},"107":{},"108":{},"109":{},"110":{},"111":{},"112":{},"113":{},"114":{},"115":{},"116":{},"117":{},"118":{}}}],["projects/neutrino/src/lib/neutrino.component.spec",{"_index":134,"name":{"133":{}},"parent":{}}],["projects/neutrino/src/lib/neutrino.module",{"_index":121,"name":{"119":{}},"parent":{"120":{}}}],["projects/neutrino/src/lib/neutrino.service",{"_index":13,"name":{"10":{}},"parent":{"11":{},"22":{}}}],["projects/neutrino/src/lib/neutrino.service\".eventtype",{"_index":16,"name":{},"parent":{"12":{},"13":{},"14":{},"15":{},"16":{},"17":{},"18":{},"19":{},"20":{},"21":{}}}],["projects/neutrino/src/lib/neutrino.service\".neutrinoservice",{"_index":28,"name":{},"parent":{"23":{},"24":{},"25":{},"26":{},"27":{},"28":{},"29":{},"30":{},"31":{},"32":{},"33":{},"34":{},"35":{},"36":{},"37":{},"38":{},"39":{},"40":{},"41":{},"42":{},"43":{}}}],["projects/neutrino/src/lib/neutrino.service.spec",{"_index":135,"name":{"134":{}},"parent":{}}],["projects/neutrino/src/public",{"_index":123,"name":{"121":{}},"parent":{"122":{},"123":{},"124":{},"125":{}}}],["projects/neutrino/src/test",{"_index":125,"name":{"126":{}},"parent":{"127":{},"130":{}}}],["projects/neutrino/src/test\".context",{"_index":131,"name":{},"parent":{"131":{}}}],["projects/neutrino/src/test\".context.__type",{"_index":133,"name":{},"parent":{"132":{}}}],["projects/neutrino/src/test\".require",{"_index":128,"name":{},"parent":{"128":{}}}],["projects/neutrino/src/test\".require.__type",{"_index":130,"name":{},"parent":{"129":{}}}],["refreshlines",{"_index":116,"name":{"114":{}},"parent":{}}],["render",{"_index":47,"name":{"42":{}},"parent":{}}],["renderer",{"_index":33,"name":{"28":{},"63":{},"106":{}},"parent":{}}],["rendererfactory",{"_index":35,"name":{"30":{}},"parent":{}}],["require",{"_index":126,"name":{"127":{},"149":{}},"parent":{}}],["reserved",{"_index":66,"name":{"58":{}},"parent":{}}],["restoreselection",{"_index":42,"name":{"37":{}},"parent":{}}],["seteditoroptions",{"_index":36,"name":{"31":{}},"parent":{}}],["showlinenumber",{"_index":103,"name":{"96":{}},"parent":{}}],["state",{"_index":1,"name":{"0":{}},"parent":{"1":{}}}],["state\".editorstate",{"_index":4,"name":{},"parent":{"2":{},"3":{},"4":{}}}],["structural",{"_index":65,"name":{"57":{}},"parent":{}}],["tabspaces",{"_index":9,"name":{"7":{},"9":{},"95":{}},"parent":{}}],["title",{"_index":139,"name":{"137":{}},"parent":{}}],["value",{"_index":104,"name":{"97":{},"138":{}},"parent":{}}],["valuechanged",{"_index":106,"name":{"100":{}},"parent":{}}],["valuechangedsub",{"_index":108,"name":{"102":{}},"parent":{}}],["valuechangedsubjects",{"_index":31,"name":{"26":{}},"parent":{}}]],"pipeline":[]}}
+{
+  "kinds": {
+    "1": "Module",
+    "4": "Enumeration",
+    "16": "Enumeration member",
+    "32": "Variable",
+    "64": "Function",
+    "128": "Class",
+    "256": "Interface",
+    "512": "Constructor",
+    "1024": "Property",
+    "2048": "Method",
+    "65536": "Type literal",
+    "2097152": "Object literal",
+    "16777216": "Reference"
+  },
+  "rows": [
+    {
+      "id": 0,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/editor-state\"",
+      "url": "modules/_projects_neutrino_src_lib_editor_state_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 1,
+      "kind": 128,
+      "name": "EditorState",
+      "url": "classes/_projects_neutrino_src_lib_editor_state_.editorstate.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/editor-state\""
+    },
+    {
+      "id": 2,
+      "kind": 1024,
+      "name": "currentLine",
+      "url": "classes/_projects_neutrino_src_lib_editor_state_.editorstate.html#currentline",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/editor-state\".EditorState"
+    },
+    {
+      "id": 3,
+      "kind": 1024,
+      "name": "anchorIndex",
+      "url": "classes/_projects_neutrino_src_lib_editor_state_.editorstate.html#anchorindex",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/editor-state\".EditorState"
+    },
+    {
+      "id": 4,
+      "kind": 1024,
+      "name": "focusIndex",
+      "url": "classes/_projects_neutrino_src_lib_editor_state_.editorstate.html#focusindex",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/editor-state\".EditorState"
+    },
+    {
+      "id": 5,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/editor.options\"",
+      "url": "modules/_projects_neutrino_src_lib_editor_options_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 6,
+      "kind": 256,
+      "name": "EditorOptions",
+      "url": "interfaces/_projects_neutrino_src_lib_editor_options_.editoroptions.html",
+      "classes": "tsd-kind-interface tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/editor.options\""
+    },
+    {
+      "id": 7,
+      "kind": 1024,
+      "name": "tabSpaces",
+      "url": "interfaces/_projects_neutrino_src_lib_editor_options_.editoroptions.html#tabspaces",
+      "classes": "tsd-kind-property tsd-parent-kind-interface",
+      "parent": "\"projects/neutrino/src/lib/editor.options\".EditorOptions"
+    },
+    {
+      "id": 8,
+      "kind": 128,
+      "name": "DefaultEditorOptions",
+      "url": "classes/_projects_neutrino_src_lib_editor_options_.defaulteditoroptions.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/editor.options\""
+    },
+    {
+      "id": 9,
+      "kind": 1024,
+      "name": "tabSpaces",
+      "url": "classes/_projects_neutrino_src_lib_editor_options_.defaulteditoroptions.html#tabspaces",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/editor.options\".DefaultEditorOptions"
+    },
+    {
+      "id": 10,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/neutrino.service\"",
+      "url": "modules/_projects_neutrino_src_lib_neutrino_service_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 11,
+      "kind": 4,
+      "name": "EventType",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html",
+      "classes": "tsd-kind-enum tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\""
+    },
+    {
+      "id": 12,
+      "kind": 16,
+      "name": "KeyUp",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#keyup",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 13,
+      "kind": 16,
+      "name": "KeyDown",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#keydown",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 14,
+      "kind": 16,
+      "name": "KeyPressed",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#keypressed",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 15,
+      "kind": 16,
+      "name": "MouseDown",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#mousedown",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 16,
+      "kind": 16,
+      "name": "MouseUp",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#mouseup",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 17,
+      "kind": 16,
+      "name": "Click",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#click",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 18,
+      "kind": 16,
+      "name": "Input",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#input",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 19,
+      "kind": 16,
+      "name": "Copy",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#copy",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 20,
+      "kind": 16,
+      "name": "Paste",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#paste",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 21,
+      "kind": 16,
+      "name": "Cut",
+      "url": "enums/_projects_neutrino_src_lib_neutrino_service_.eventtype.html#cut",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".EventType"
+    },
+    {
+      "id": 22,
+      "kind": 128,
+      "name": "NeutrinoService",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\""
+    },
+    {
+      "id": 23,
+      "kind": 1024,
+      "name": "eventsCallbacks",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#eventscallbacks",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 24,
+      "kind": 1024,
+      "name": "eventsCallbacksToExecLast",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#eventscallbackstoexeclast",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 25,
+      "kind": 1024,
+      "name": "editorsState",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#editorsstate",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 26,
+      "kind": 1024,
+      "name": "valueChangedSubjects",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#valuechangedsubjects",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 27,
+      "kind": 1024,
+      "name": "editorsOptions",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#editorsoptions",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 28,
+      "kind": 1024,
+      "name": "renderer",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#renderer",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 29,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 30,
+      "kind": 1024,
+      "name": "rendererFactory",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#rendererfactory",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 31,
+      "kind": 2048,
+      "name": "getEditorState",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#geteditorstate",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 32,
+      "kind": 2048,
+      "name": "setEditorOptions",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#seteditoroptions",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 33,
+      "kind": 2048,
+      "name": "getValueChangedListener",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#getvaluechangedlistener",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 34,
+      "kind": 2048,
+      "name": "addNewLine",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#addnewline",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 35,
+      "kind": 2048,
+      "name": "keepTextAligned",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#keeptextaligned",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 36,
+      "kind": 2048,
+      "name": "addEventHandler",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#addeventhandler",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 37,
+      "kind": 2048,
+      "name": "handleEvent",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#handleevent",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 38,
+      "kind": 2048,
+      "name": "restoreSelection",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#restoreselection",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 39,
+      "kind": 2048,
+      "name": "getTextSegments",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#gettextsegments",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 40,
+      "kind": 2048,
+      "name": "getEditorText",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#geteditortext",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 41,
+      "kind": 2048,
+      "name": "getClosestViewLine",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#getclosestviewline",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 42,
+      "kind": 2048,
+      "name": "getParentLine",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#getparentline",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 43,
+      "kind": 2048,
+      "name": "render",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#render",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 44,
+      "kind": 2048,
+      "name": "createLine",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_service_.neutrinoservice.html#createline",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.service\".NeutrinoService"
+    },
+    {
+      "id": 45,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/highlighters/highlighter\"",
+      "url": "modules/_projects_neutrino_src_lib_highlighters_highlighter_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 46,
+      "kind": 256,
+      "name": "Highlighter",
+      "url": "interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html",
+      "classes": "tsd-kind-interface tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/highlighters/highlighter\""
+    },
+    {
+      "id": 47,
+      "kind": 2048,
+      "name": "highlightLine",
+      "url": "interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html#highlightline",
+      "classes": "tsd-kind-method tsd-parent-kind-interface",
+      "parent": "\"projects/neutrino/src/lib/highlighters/highlighter\".Highlighter"
+    },
+    {
+      "id": 48,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/highlighters/code.type\"",
+      "url": "modules/_projects_neutrino_src_lib_highlighters_code_type_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 49,
+      "kind": 4,
+      "name": "CodeType",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_code_type_.codetype.html",
+      "classes": "tsd-kind-enum tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/highlighters/code.type\""
+    },
+    {
+      "id": 50,
+      "kind": 16,
+      "name": "Java",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_code_type_.codetype.html#java",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/highlighters/code.type\".CodeType"
+    },
+    {
+      "id": 51,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/highlighters/keyword.type\"",
+      "url": "modules/_projects_neutrino_src_lib_highlighters_keyword_type_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 52,
+      "kind": 4,
+      "name": "KeywordType",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html",
+      "classes": "tsd-kind-enum tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/highlighters/keyword.type\""
+    },
+    {
+      "id": 53,
+      "kind": 16,
+      "name": "AccessModifier",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#accessmodifier",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"
+    },
+    {
+      "id": 54,
+      "kind": 16,
+      "name": "NonAccessModifier",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#nonaccessmodifier",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"
+    },
+    {
+      "id": 55,
+      "kind": 16,
+      "name": "Primitive",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#primitive",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"
+    },
+    {
+      "id": 56,
+      "kind": 16,
+      "name": "PrimitiveWrapper",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#primitivewrapper",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"
+    },
+    {
+      "id": 57,
+      "kind": 16,
+      "name": "Literal",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#literal",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"
+    },
+    {
+      "id": 58,
+      "kind": 16,
+      "name": "Structural",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#structural",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"
+    },
+    {
+      "id": 59,
+      "kind": 16,
+      "name": "Reserved",
+      "url": "enums/_projects_neutrino_src_lib_highlighters_keyword_type_.keywordtype.html#reserved",
+      "classes": "tsd-kind-enum-member tsd-parent-kind-enum",
+      "parent": "\"projects/neutrino/src/lib/highlighters/keyword.type\".KeywordType"
+    },
+    {
+      "id": 60,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/highlighters/java/keywords\"",
+      "url": "modules/_projects_neutrino_src_lib_highlighters_java_keywords_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 61,
+      "kind": 32,
+      "name": "keywords",
+      "url": "modules/_projects_neutrino_src_lib_highlighters_java_keywords_.html#keywords",
+      "classes": "tsd-kind-variable tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/keywords\""
+    },
+    {
+      "id": 62,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\"",
+      "url": "modules/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 63,
+      "kind": 128,
+      "name": "JavaHighlighter",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\""
+    },
+    {
+      "id": 64,
+      "kind": 1024,
+      "name": "renderer",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#renderer",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 65,
+      "kind": 1024,
+      "name": "codeLength",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#codelength",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 66,
+      "kind": 1024,
+      "name": "code",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#code",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 67,
+      "kind": 1024,
+      "name": "line",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#line",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 68,
+      "kind": 1024,
+      "name": "isMultiCommentOpened",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismulticommentopened",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 69,
+      "kind": 1024,
+      "name": "isQuoteOpened",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquoteopened",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 70,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 71,
+      "kind": 2048,
+      "name": "highlightLine",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlightline",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 72,
+      "kind": 2048,
+      "name": "highlightHelper",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlighthelper",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 73,
+      "kind": 2048,
+      "name": "checkForKeywords",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#checkforkeywords",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 74,
+      "kind": 2048,
+      "name": "handleQuote",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlequote",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 75,
+      "kind": 2048,
+      "name": "getEndIndexOfQuote",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofquote",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 76,
+      "kind": 2048,
+      "name": "handleAnnotation",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleannotation",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 77,
+      "kind": 2048,
+      "name": "handleOneLineComment",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleonelinecomment",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 78,
+      "kind": 2048,
+      "name": "handleMultiLineComment",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlemultilinecomment",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 79,
+      "kind": 2048,
+      "name": "isQuote",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquote",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 80,
+      "kind": 2048,
+      "name": "isOneLineComment",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isonelinecomment",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 81,
+      "kind": 2048,
+      "name": "isMultiLineComment",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismultilinecomment",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 82,
+      "kind": 2048,
+      "name": "isAnnotation",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isannotation",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 83,
+      "kind": 2048,
+      "name": "appendText",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendtext",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 84,
+      "kind": 2048,
+      "name": "addSpace",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#addspace",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 85,
+      "kind": 2048,
+      "name": "getEndOfMultiLineComment",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendofmultilinecomment",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 86,
+      "kind": 2048,
+      "name": "getEndIndexOfAnnotation",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofannotation",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 87,
+      "kind": 2048,
+      "name": "appendSubstring",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendsubstring",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 88,
+      "kind": 2048,
+      "name": "createTextElement",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#createtextelement",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/java/java.highlighter\".JavaHighlighter"
+    },
+    {
+      "id": 89,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/highlighters/highlights.service\"",
+      "url": "modules/_projects_neutrino_src_lib_highlighters_highlights_service_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 90,
+      "kind": 128,
+      "name": "HightlightsService",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/highlighters/highlights.service\""
+    },
+    {
+      "id": 91,
+      "kind": 1024,
+      "name": "highlighters",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html#highlighters",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/highlighters/highlights.service\".HightlightsService"
+    },
+    {
+      "id": 92,
+      "kind": 2048,
+      "name": "getByCodeType",
+      "url": "classes/_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html#getbycodetype",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/highlighters/highlights.service\".HightlightsService"
+    },
+    {
+      "id": 93,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/neutrino.component\"",
+      "url": "modules/_projects_neutrino_src_lib_neutrino_component_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 94,
+      "kind": 128,
+      "name": "NeutrinoComponent",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\""
+    },
+    {
+      "id": 95,
+      "kind": 1024,
+      "name": "editor",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#editor",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 96,
+      "kind": 1024,
+      "name": "numbers",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#numbers",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 97,
+      "kind": 1024,
+      "name": "tabSpaces",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#tabspaces",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 98,
+      "kind": 1024,
+      "name": "showLineNumber",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#showlinenumber",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 99,
+      "kind": 1024,
+      "name": "value",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#value",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 100,
+      "kind": 1024,
+      "name": "codeType",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#codetype",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 101,
+      "kind": 1024,
+      "name": "editable",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#editable",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 102,
+      "kind": 1024,
+      "name": "valueChanged",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#valuechanged",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 103,
+      "kind": 1024,
+      "name": "lines",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#lines",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 104,
+      "kind": 1024,
+      "name": "currentLine",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#currentline",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 105,
+      "kind": 1024,
+      "name": "valueChangedSub",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#valuechangedsub",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 106,
+      "kind": 1024,
+      "name": "hightlighter",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#hightlighter",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 107,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 108,
+      "kind": 1024,
+      "name": "neutrinoService",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#neutrinoservice",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 109,
+      "kind": 1024,
+      "name": "renderer",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#renderer",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 110,
+      "kind": 1024,
+      "name": "highlightsService",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#highlightsservice",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 111,
+      "kind": 2048,
+      "name": "ngOnChanges",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#ngonchanges",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 112,
+      "kind": 2048,
+      "name": "ngOnInit",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#ngoninit",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 113,
+      "kind": 2048,
+      "name": "ngOnDestroy",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#ngondestroy",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 114,
+      "kind": 2048,
+      "name": "ngAfterViewInit",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#ngafterviewinit",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 115,
+      "kind": 2048,
+      "name": "handleEvent",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#handleevent",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 116,
+      "kind": 2048,
+      "name": "scrollFocusedLineIntoView",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#scrollfocusedlineintoview",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 117,
+      "kind": 2048,
+      "name": "hightlightCode",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#hightlightcode",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 118,
+      "kind": 2048,
+      "name": "refreshLines",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#refreshlines",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 119,
+      "kind": 2048,
+      "name": "handleAutoComplete",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#handleautocomplete",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 120,
+      "kind": 2048,
+      "name": "handleDeletion",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#handledeletion",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 121,
+      "kind": 2048,
+      "name": "handleInsertTab",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#handleinserttab",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 122,
+      "kind": 2048,
+      "name": "addNewLineOnEnter",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_component_.neutrinocomponent.html#addnewlineonenter",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-private",
+      "parent": "\"projects/neutrino/src/lib/neutrino.component\".NeutrinoComponent"
+    },
+    {
+      "id": 123,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/neutrino.module\"",
+      "url": "modules/_projects_neutrino_src_lib_neutrino_module_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 124,
+      "kind": 128,
+      "name": "NeutrinoModule",
+      "url": "classes/_projects_neutrino_src_lib_neutrino_module_.neutrinomodule.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/lib/neutrino.module\""
+    },
+    {
+      "id": 125,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/public-api\"",
+      "url": "modules/_projects_neutrino_src_public_api_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 126,
+      "kind": 16777216,
+      "name": "EventType",
+      "url": "modules/_projects_neutrino_src_public_api_.html#eventtype",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/public-api\""
+    },
+    {
+      "id": 127,
+      "kind": 16777216,
+      "name": "NeutrinoService",
+      "url": "modules/_projects_neutrino_src_public_api_.html#neutrinoservice",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/public-api\""
+    },
+    {
+      "id": 128,
+      "kind": 16777216,
+      "name": "NeutrinoComponent",
+      "url": "modules/_projects_neutrino_src_public_api_.html#neutrinocomponent",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/public-api\""
+    },
+    {
+      "id": 129,
+      "kind": 16777216,
+      "name": "NeutrinoModule",
+      "url": "modules/_projects_neutrino_src_public_api_.html#neutrinomodule",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"projects/neutrino/src/public-api\""
+    },
+    {
+      "id": 130,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/test\"",
+      "url": "modules/_projects_neutrino_src_test_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 131,
+      "kind": 32,
+      "name": "require",
+      "url": "modules/_projects_neutrino_src_test_.html#require",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"projects/neutrino/src/test\""
+    },
+    {
+      "id": 132,
+      "kind": 65536,
+      "name": "__type",
+      "url": "modules/_projects_neutrino_src_test_.html#require.__type-1",
+      "classes": "tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported",
+      "parent": "\"projects/neutrino/src/test\".require"
+    },
+    {
+      "id": 133,
+      "kind": 64,
+      "name": "context",
+      "url": "modules/_projects_neutrino_src_test_.html#require.__type-1.context-1",
+      "classes": "tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported",
+      "parent": "\"projects/neutrino/src/test\".require.__type"
+    },
+    {
+      "id": 134,
+      "kind": 32,
+      "name": "context",
+      "url": "modules/_projects_neutrino_src_test_.html#context",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"projects/neutrino/src/test\""
+    },
+    {
+      "id": 135,
+      "kind": 65536,
+      "name": "__type",
+      "url": "modules/_projects_neutrino_src_test_.html#context.__type",
+      "classes": "tsd-kind-type-literal tsd-parent-kind-variable tsd-has-type-parameter tsd-is-not-exported",
+      "parent": "\"projects/neutrino/src/test\".context"
+    },
+    {
+      "id": 136,
+      "kind": 64,
+      "name": "keys",
+      "url": "modules/_projects_neutrino_src_test_.html#context.__type.keys",
+      "classes": "tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported",
+      "parent": "\"projects/neutrino/src/test\".context.__type"
+    },
+    {
+      "id": 137,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/neutrino.component.spec\"",
+      "url": "modules/_projects_neutrino_src_lib_neutrino_component_spec_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 138,
+      "kind": 1,
+      "name": "\"projects/neutrino/src/lib/neutrino.service.spec\"",
+      "url": "modules/_projects_neutrino_src_lib_neutrino_service_spec_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 139,
+      "kind": 1,
+      "name": "\"projects/neutrino-example/src/app/app.component\"",
+      "url": "modules/_projects_neutrino_example_src_app_app_component_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 140,
+      "kind": 128,
+      "name": "AppComponent",
+      "url": "classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino-example/src/app/app.component\""
+    },
+    {
+      "id": 141,
+      "kind": 1024,
+      "name": "title",
+      "url": "classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html#title",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino-example/src/app/app.component\".AppComponent"
+    },
+    {
+      "id": 142,
+      "kind": 1024,
+      "name": "value",
+      "url": "classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html#value",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"projects/neutrino-example/src/app/app.component\".AppComponent"
+    },
+    {
+      "id": 143,
+      "kind": 2048,
+      "name": "onValueChanged",
+      "url": "classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html#onvaluechanged",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino-example/src/app/app.component\".AppComponent"
+    },
+    {
+      "id": 144,
+      "kind": 2048,
+      "name": "onKeyUp",
+      "url": "classes/_projects_neutrino_example_src_app_app_component_.appcomponent.html#onkeyup",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"projects/neutrino-example/src/app/app.component\".AppComponent"
+    },
+    {
+      "id": 145,
+      "kind": 1,
+      "name": "\"projects/neutrino-example/src/app/app.module\"",
+      "url": "modules/_projects_neutrino_example_src_app_app_module_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 146,
+      "kind": 128,
+      "name": "AppModule",
+      "url": "classes/_projects_neutrino_example_src_app_app_module_.appmodule.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module",
+      "parent": "\"projects/neutrino-example/src/app/app.module\""
+    },
+    {
+      "id": 147,
+      "kind": 1,
+      "name": "\"projects/neutrino-example/src/environments/environment\"",
+      "url": "modules/_projects_neutrino_example_src_environments_environment_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 148,
+      "kind": 2097152,
+      "name": "environment",
+      "url": "modules/_projects_neutrino_example_src_environments_environment_.html#environment",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-module",
+      "parent": "\"projects/neutrino-example/src/environments/environment\""
+    },
+    {
+      "id": 149,
+      "kind": 32,
+      "name": "production",
+      "url": "modules/_projects_neutrino_example_src_environments_environment_.html#environment.production",
+      "classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+      "parent": "\"projects/neutrino-example/src/environments/environment\".environment"
+    },
+    {
+      "id": 150,
+      "kind": 1,
+      "name": "\"projects/neutrino-example/src/main\"",
+      "url": "modules/_projects_neutrino_example_src_main_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 151,
+      "kind": 1,
+      "name": "\"projects/neutrino-example/src/polyfills\"",
+      "url": "modules/_projects_neutrino_example_src_polyfills_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 152,
+      "kind": 1,
+      "name": "\"projects/neutrino-example/src/test\"",
+      "url": "modules/_projects_neutrino_example_src_test_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 153,
+      "kind": 32,
+      "name": "require",
+      "url": "modules/_projects_neutrino_example_src_test_.html#require",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"projects/neutrino-example/src/test\""
+    },
+    {
+      "id": 154,
+      "kind": 65536,
+      "name": "__type",
+      "url": "modules/_projects_neutrino_example_src_test_.html#require.__type-1",
+      "classes": "tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported",
+      "parent": "\"projects/neutrino-example/src/test\".require"
+    },
+    {
+      "id": 155,
+      "kind": 64,
+      "name": "context",
+      "url": "modules/_projects_neutrino_example_src_test_.html#require.__type-1.context-1",
+      "classes": "tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported",
+      "parent": "\"projects/neutrino-example/src/test\".require.__type"
+    },
+    {
+      "id": 156,
+      "kind": 32,
+      "name": "context",
+      "url": "modules/_projects_neutrino_example_src_test_.html#context",
+      "classes": "tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported",
+      "parent": "\"projects/neutrino-example/src/test\""
+    },
+    {
+      "id": 157,
+      "kind": 65536,
+      "name": "__type",
+      "url": "modules/_projects_neutrino_example_src_test_.html#context.__type",
+      "classes": "tsd-kind-type-literal tsd-parent-kind-variable tsd-has-type-parameter tsd-is-not-exported",
+      "parent": "\"projects/neutrino-example/src/test\".context"
+    },
+    {
+      "id": 158,
+      "kind": 64,
+      "name": "keys",
+      "url": "modules/_projects_neutrino_example_src_test_.html#context.__type.keys",
+      "classes": "tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported",
+      "parent": "\"projects/neutrino-example/src/test\".context.__type"
+    },
+    {
+      "id": 159,
+      "kind": 1,
+      "name": "\"projects/neutrino-example/src/app/app.component.spec\"",
+      "url": "modules/_projects_neutrino_example_src_app_app_component_spec_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 160,
+      "kind": 1,
+      "name": "\"projects/neutrino-example/src/environments/environment.prod\"",
+      "url": "modules/_projects_neutrino_example_src_environments_environment_prod_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 161,
+      "kind": 2097152,
+      "name": "environment",
+      "url": "modules/_projects_neutrino_example_src_environments_environment_prod_.html#environment",
+      "classes": "tsd-kind-object-literal tsd-parent-kind-module",
+      "parent": "\"projects/neutrino-example/src/environments/environment.prod\""
+    },
+    {
+      "id": 162,
+      "kind": 32,
+      "name": "production",
+      "url": "modules/_projects_neutrino_example_src_environments_environment_prod_.html#environment.production",
+      "classes": "tsd-kind-variable tsd-parent-kind-object-literal",
+      "parent": "\"projects/neutrino-example/src/environments/environment.prod\".environment"
+    }
+  ],
+  "index": {
+    "version": "2.3.8",
+    "fields": ["name", "parent"],
+    "fieldVectors": [
+      ["name/0", [0, 24.931, 1, 30.721]],
+      ["parent/0", []],
+      ["name/1", [2, 48.081]],
+      ["parent/1", [0, 2.418, 1, 2.98]],
+      ["name/2", [3, 42.849]],
+      ["parent/2", [0, 2.418, 4, 2.74]],
+      ["name/3", [5, 48.081]],
+      ["parent/3", [0, 2.418, 4, 2.74]],
+      ["name/4", [6, 48.081]],
+      ["parent/4", [0, 2.418, 4, 2.74]],
+      ["name/5", [7, 39.403]],
+      ["parent/5", []],
+      ["name/6", [8, 48.081]],
+      ["parent/6", [7, 3.857]],
+      ["name/7", [9, 39.403]],
+      ["parent/7", [10, 4.706]],
+      ["name/8", [11, 48.081]],
+      ["parent/8", [7, 3.857]],
+      ["name/9", [9, 39.403]],
+      ["parent/9", [12, 4.706]],
+      ["name/10", [13, 39.403]],
+      ["parent/10", []],
+      ["name/11", [14, 42.849]],
+      ["parent/11", [13, 3.857]],
+      ["name/12", [15, 48.081]],
+      ["parent/12", [16, 2.755]],
+      ["name/13", [17, 48.081]],
+      ["parent/13", [16, 2.755]],
+      ["name/14", [18, 48.081]],
+      ["parent/14", [16, 2.755]],
+      ["name/15", [19, 48.081]],
+      ["parent/15", [16, 2.755]],
+      ["name/16", [20, 48.081]],
+      ["parent/16", [16, 2.755]],
+      ["name/17", [21, 48.081]],
+      ["parent/17", [16, 2.755]],
+      ["name/18", [22, 48.081]],
+      ["parent/18", [16, 2.755]],
+      ["name/19", [23, 48.081]],
+      ["parent/19", [16, 2.755]],
+      ["name/20", [24, 48.081]],
+      ["parent/20", [16, 2.755]],
+      ["name/21", [25, 48.081]],
+      ["parent/21", [16, 2.755]],
+      ["name/22", [26, 39.403]],
+      ["parent/22", [13, 3.857]],
+      ["name/23", [27, 48.081]],
+      ["parent/23", [28, 1.991]],
+      ["name/24", [29, 48.081]],
+      ["parent/24", [28, 1.991]],
+      ["name/25", [30, 48.081]],
+      ["parent/25", [28, 1.991]],
+      ["name/26", [31, 48.081]],
+      ["parent/26", [28, 1.991]],
+      ["name/27", [32, 48.081]],
+      ["parent/27", [28, 1.991]],
+      ["name/28", [33, 39.403]],
+      ["parent/28", [28, 1.991]],
+      ["name/29", [34, 39.403]],
+      ["parent/29", [28, 1.991]],
+      ["name/30", [35, 48.081]],
+      ["parent/30", [28, 1.991]],
+      ["name/31", [36, 48.081]],
+      ["parent/31", [28, 1.991]],
+      ["name/32", [37, 48.081]],
+      ["parent/32", [28, 1.991]],
+      ["name/33", [38, 48.081]],
+      ["parent/33", [28, 1.991]],
+      ["name/34", [39, 48.081]],
+      ["parent/34", [28, 1.991]],
+      ["name/35", [40, 48.081]],
+      ["parent/35", [28, 1.991]],
+      ["name/36", [41, 48.081]],
+      ["parent/36", [28, 1.991]],
+      ["name/37", [42, 42.849]],
+      ["parent/37", [28, 1.991]],
+      ["name/38", [43, 48.081]],
+      ["parent/38", [28, 1.991]],
+      ["name/39", [44, 48.081]],
+      ["parent/39", [28, 1.991]],
+      ["name/40", [45, 48.081]],
+      ["parent/40", [28, 1.991]],
+      ["name/41", [46, 48.081]],
+      ["parent/41", [28, 1.991]],
+      ["name/42", [47, 48.081]],
+      ["parent/42", [28, 1.991]],
+      ["name/43", [48, 48.081]],
+      ["parent/43", [28, 1.991]],
+      ["name/44", [49, 48.081]],
+      ["parent/44", [28, 1.991]],
+      ["name/45", [50, 42.849]],
+      ["parent/45", []],
+      ["name/46", [51, 48.081]],
+      ["parent/46", [50, 4.194]],
+      ["name/47", [52, 42.849]],
+      ["parent/47", [53, 4.706]],
+      ["name/48", [54, 42.849]],
+      ["parent/48", []],
+      ["name/49", [55, 42.849]],
+      ["parent/49", [54, 4.194]],
+      ["name/50", [56, 48.081]],
+      ["parent/50", [57, 4.706]],
+      ["name/51", [58, 42.849]],
+      ["parent/51", []],
+      ["name/52", [59, 48.081]],
+      ["parent/52", [58, 4.194]],
+      ["name/53", [60, 48.081]],
+      ["parent/53", [61, 3.093]],
+      ["name/54", [62, 48.081]],
+      ["parent/54", [61, 3.093]],
+      ["name/55", [63, 48.081]],
+      ["parent/55", [61, 3.093]],
+      ["name/56", [64, 48.081]],
+      ["parent/56", [61, 3.093]],
+      ["name/57", [65, 48.081]],
+      ["parent/57", [61, 3.093]],
+      ["name/58", [66, 48.081]],
+      ["parent/58", [61, 3.093]],
+      ["name/59", [67, 48.081]],
+      ["parent/59", [61, 3.093]],
+      ["name/60", [68, 42.849]],
+      ["parent/60", []],
+      ["name/61", [69, 48.081]],
+      ["parent/61", [68, 4.194]],
+      ["name/62", [70, 42.849]],
+      ["parent/62", []],
+      ["name/63", [71, 48.081]],
+      ["parent/63", [70, 4.194]],
+      ["name/64", [33, 39.403]],
+      ["parent/64", [72, 1.866]],
+      ["name/65", [73, 48.081]],
+      ["parent/65", [72, 1.866]],
+      ["name/66", [74, 48.081]],
+      ["parent/66", [72, 1.866]],
+      ["name/67", [75, 48.081]],
+      ["parent/67", [72, 1.866]],
+      ["name/68", [76, 48.081]],
+      ["parent/68", [72, 1.866]],
+      ["name/69", [77, 48.081]],
+      ["parent/69", [72, 1.866]],
+      ["name/70", [34, 39.403]],
+      ["parent/70", [72, 1.866]],
+      ["name/71", [52, 42.849]],
+      ["parent/71", [72, 1.866]],
+      ["name/72", [78, 48.081]],
+      ["parent/72", [72, 1.866]],
+      ["name/73", [79, 48.081]],
+      ["parent/73", [72, 1.866]],
+      ["name/74", [80, 48.081]],
+      ["parent/74", [72, 1.866]],
+      ["name/75", [81, 48.081]],
+      ["parent/75", [72, 1.866]],
+      ["name/76", [82, 48.081]],
+      ["parent/76", [72, 1.866]],
+      ["name/77", [83, 48.081]],
+      ["parent/77", [72, 1.866]],
+      ["name/78", [84, 48.081]],
+      ["parent/78", [72, 1.866]],
+      ["name/79", [85, 48.081]],
+      ["parent/79", [72, 1.866]],
+      ["name/80", [86, 48.081]],
+      ["parent/80", [72, 1.866]],
+      ["name/81", [87, 48.081]],
+      ["parent/81", [72, 1.866]],
+      ["name/82", [88, 48.081]],
+      ["parent/82", [72, 1.866]],
+      ["name/83", [89, 48.081]],
+      ["parent/83", [72, 1.866]],
+      ["name/84", [90, 48.081]],
+      ["parent/84", [72, 1.866]],
+      ["name/85", [91, 48.081]],
+      ["parent/85", [72, 1.866]],
+      ["name/86", [92, 48.081]],
+      ["parent/86", [72, 1.866]],
+      ["name/87", [93, 48.081]],
+      ["parent/87", [72, 1.866]],
+      ["name/88", [94, 48.081]],
+      ["parent/88", [72, 1.866]],
+      ["name/89", [95, 42.849]],
+      ["parent/89", []],
+      ["name/90", [96, 48.081]],
+      ["parent/90", [95, 4.194]],
+      ["name/91", [97, 48.081]],
+      ["parent/91", [98, 4.194]],
+      ["name/92", [99, 48.081]],
+      ["parent/92", [98, 4.194]],
+      ["name/93", [100, 42.849]],
+      ["parent/93", []],
+      ["name/94", [101, 42.849]],
+      ["parent/94", [100, 4.194]],
+      ["name/95", [102, 48.081]],
+      ["parent/95", [103, 1.754]],
+      ["name/96", [104, 48.081]],
+      ["parent/96", [103, 1.754]],
+      ["name/97", [9, 39.403]],
+      ["parent/97", [103, 1.754]],
+      ["name/98", [105, 48.081]],
+      ["parent/98", [103, 1.754]],
+      ["name/99", [106, 42.849]],
+      ["parent/99", [103, 1.754]],
+      ["name/100", [55, 42.849]],
+      ["parent/100", [103, 1.754]],
+      ["name/101", [107, 48.081]],
+      ["parent/101", [103, 1.754]],
+      ["name/102", [108, 48.081]],
+      ["parent/102", [103, 1.754]],
+      ["name/103", [109, 48.081]],
+      ["parent/103", [103, 1.754]],
+      ["name/104", [3, 42.849]],
+      ["parent/104", [103, 1.754]],
+      ["name/105", [110, 48.081]],
+      ["parent/105", [103, 1.754]],
+      ["name/106", [111, 48.081]],
+      ["parent/106", [103, 1.754]],
+      ["name/107", [34, 39.403]],
+      ["parent/107", [103, 1.754]],
+      ["name/108", [26, 39.403]],
+      ["parent/108", [103, 1.754]],
+      ["name/109", [33, 39.403]],
+      ["parent/109", [103, 1.754]],
+      ["name/110", [112, 48.081]],
+      ["parent/110", [103, 1.754]],
+      ["name/111", [113, 48.081]],
+      ["parent/111", [103, 1.754]],
+      ["name/112", [114, 48.081]],
+      ["parent/112", [103, 1.754]],
+      ["name/113", [115, 48.081]],
+      ["parent/113", [103, 1.754]],
+      ["name/114", [116, 48.081]],
+      ["parent/114", [103, 1.754]],
+      ["name/115", [42, 42.849]],
+      ["parent/115", [103, 1.754]],
+      ["name/116", [117, 48.081]],
+      ["parent/116", [103, 1.754]],
+      ["name/117", [118, 48.081]],
+      ["parent/117", [103, 1.754]],
+      ["name/118", [119, 48.081]],
+      ["parent/118", [103, 1.754]],
+      ["name/119", [120, 48.081]],
+      ["parent/119", [103, 1.754]],
+      ["name/120", [121, 48.081]],
+      ["parent/120", [103, 1.754]],
+      ["name/121", [122, 48.081]],
+      ["parent/121", [103, 1.754]],
+      ["name/122", [123, 48.081]],
+      ["parent/122", [103, 1.754]],
+      ["name/123", [124, 42.849]],
+      ["parent/123", []],
+      ["name/124", [125, 42.849]],
+      ["parent/124", [124, 4.194]],
+      ["name/125", [126, 24.931, 127, 24.931]],
+      ["parent/125", []],
+      ["name/126", [14, 42.849]],
+      ["parent/126", [126, 2.418, 127, 2.418]],
+      ["name/127", [26, 39.403]],
+      ["parent/127", [126, 2.418, 127, 2.418]],
+      ["name/128", [101, 42.849]],
+      ["parent/128", [126, 2.418, 127, 2.418]],
+      ["name/129", [125, 42.849]],
+      ["parent/129", [126, 2.418, 127, 2.418]],
+      ["name/130", [128, 39.403]],
+      ["parent/130", []],
+      ["name/131", [129, 42.849]],
+      ["parent/131", [128, 3.857]],
+      ["name/132", [130, 36.829]],
+      ["parent/132", [131, 4.706]],
+      ["name/133", [132, 36.829]],
+      ["parent/133", [133, 4.706]],
+      ["name/134", [132, 36.829]],
+      ["parent/134", [128, 3.857]],
+      ["name/135", [130, 36.829]],
+      ["parent/135", [134, 4.706]],
+      ["name/136", [135, 42.849]],
+      ["parent/136", [136, 4.706]],
+      ["name/137", [137, 48.081]],
+      ["parent/137", []],
+      ["name/138", [138, 48.081]],
+      ["parent/138", []],
+      ["name/139", [139, 13.961, 140, 30.721]],
+      ["parent/139", []],
+      ["name/140", [141, 48.081]],
+      ["parent/140", [139, 1.354, 140, 2.98]],
+      ["name/141", [142, 48.081]],
+      ["parent/141", [139, 1.354, 143, 2.561]],
+      ["name/142", [106, 42.849]],
+      ["parent/142", [139, 1.354, 143, 2.561]],
+      ["name/143", [144, 48.081]],
+      ["parent/143", [139, 1.354, 143, 2.561]],
+      ["name/144", [145, 48.081]],
+      ["parent/144", [139, 1.354, 143, 2.561]],
+      ["name/145", [139, 13.961, 146, 30.721]],
+      ["parent/145", []],
+      ["name/146", [147, 48.081]],
+      ["parent/146", [139, 1.354, 146, 2.98]],
+      ["name/147", [139, 13.961, 148, 30.721]],
+      ["parent/147", []],
+      ["name/148", [149, 42.849]],
+      ["parent/148", [139, 1.354, 148, 2.98]],
+      ["name/149", [150, 42.849]],
+      ["parent/149", [139, 1.354, 151, 3.343]],
+      ["name/150", [139, 13.961, 152, 34.472]],
+      ["parent/150", []],
+      ["name/151", [139, 13.961, 153, 34.472]],
+      ["parent/151", []],
+      ["name/152", [139, 13.961, 154, 28.25]],
+      ["parent/152", []],
+      ["name/153", [129, 42.849]],
+      ["parent/153", [139, 1.354, 154, 2.74]],
+      ["name/154", [130, 36.829]],
+      ["parent/154", [139, 1.354, 155, 3.343]],
+      ["name/155", [132, 36.829]],
+      ["parent/155", [139, 1.354, 156, 3.343]],
+      ["name/156", [132, 36.829]],
+      ["parent/156", [139, 1.354, 154, 2.74]],
+      ["name/157", [130, 36.829]],
+      ["parent/157", [139, 1.354, 157, 3.343]],
+      ["name/158", [135, 42.849]],
+      ["parent/158", [139, 1.354, 158, 3.343]],
+      ["name/159", [139, 13.961, 159, 34.472]],
+      ["parent/159", []],
+      ["name/160", [139, 13.961, 160, 30.721]],
+      ["parent/160", []],
+      ["name/161", [149, 42.849]],
+      ["parent/161", [139, 1.354, 160, 2.98]],
+      ["name/162", [150, 42.849]],
+      ["parent/162", [139, 1.354, 161, 3.343]]
+    ],
+    "invertedIndex": [
+      ["__type", { "_index": 130, "name": { "132": {}, "135": {}, "154": {}, "157": {} }, "parent": {} }],
+      ["accessmodifier", { "_index": 60, "name": { "53": {} }, "parent": {} }],
+      ["addeventhandler", { "_index": 41, "name": { "36": {} }, "parent": {} }],
+      ["addnewline", { "_index": 39, "name": { "34": {} }, "parent": {} }],
+      ["addnewlineonenter", { "_index": 123, "name": { "122": {} }, "parent": {} }],
+      ["addspace", { "_index": 90, "name": { "84": {} }, "parent": {} }],
+      ["anchorindex", { "_index": 5, "name": { "3": {} }, "parent": {} }],
+      ["api", { "_index": 127, "name": { "125": {} }, "parent": { "126": {}, "127": {}, "128": {}, "129": {} } }],
+      ["appcomponent", { "_index": 141, "name": { "140": {} }, "parent": {} }],
+      ["appendsubstring", { "_index": 93, "name": { "87": {} }, "parent": {} }],
+      ["appendtext", { "_index": 89, "name": { "83": {} }, "parent": {} }],
+      ["appmodule", { "_index": 147, "name": { "146": {} }, "parent": {} }],
+      ["checkforkeywords", { "_index": 79, "name": { "73": {} }, "parent": {} }],
+      ["click", { "_index": 21, "name": { "17": {} }, "parent": {} }],
+      ["code", { "_index": 74, "name": { "66": {} }, "parent": {} }],
+      ["codelength", { "_index": 73, "name": { "65": {} }, "parent": {} }],
+      ["codetype", { "_index": 55, "name": { "49": {}, "100": {} }, "parent": {} }],
+      ["constructor", { "_index": 34, "name": { "29": {}, "70": {}, "107": {} }, "parent": {} }],
+      ["context", { "_index": 132, "name": { "133": {}, "134": {}, "155": {}, "156": {} }, "parent": {} }],
+      ["copy", { "_index": 23, "name": { "19": {} }, "parent": {} }],
+      ["createline", { "_index": 49, "name": { "44": {} }, "parent": {} }],
+      ["createtextelement", { "_index": 94, "name": { "88": {} }, "parent": {} }],
+      ["currentline", { "_index": 3, "name": { "2": {}, "104": {} }, "parent": {} }],
+      ["cut", { "_index": 25, "name": { "21": {} }, "parent": {} }],
+      ["defaulteditoroptions", { "_index": 11, "name": { "8": {} }, "parent": {} }],
+      ["editable", { "_index": 107, "name": { "101": {} }, "parent": {} }],
+      ["editor", { "_index": 102, "name": { "95": {} }, "parent": {} }],
+      ["editoroptions", { "_index": 8, "name": { "6": {} }, "parent": {} }],
+      ["editorsoptions", { "_index": 32, "name": { "27": {} }, "parent": {} }],
+      ["editorsstate", { "_index": 30, "name": { "25": {} }, "parent": {} }],
+      ["editorstate", { "_index": 2, "name": { "1": {} }, "parent": {} }],
+      ["environment", { "_index": 149, "name": { "148": {}, "161": {} }, "parent": {} }],
+      ["eventscallbacks", { "_index": 27, "name": { "23": {} }, "parent": {} }],
+      ["eventscallbackstoexeclast", { "_index": 29, "name": { "24": {} }, "parent": {} }],
+      ["eventtype", { "_index": 14, "name": { "11": {}, "126": {} }, "parent": {} }],
+      ["example/src/app/app.component", { "_index": 140, "name": { "139": {} }, "parent": { "140": {} } }],
+      [
+        "example/src/app/app.component\".appcomponent",
+        { "_index": 143, "name": {}, "parent": { "141": {}, "142": {}, "143": {}, "144": {} } }
+      ],
+      ["example/src/app/app.component.spec", { "_index": 159, "name": { "159": {} }, "parent": {} }],
+      ["example/src/app/app.module", { "_index": 146, "name": { "145": {} }, "parent": { "146": {} } }],
+      ["example/src/environments/environment", { "_index": 148, "name": { "147": {} }, "parent": { "148": {} } }],
+      ["example/src/environments/environment\".environment", { "_index": 151, "name": {}, "parent": { "149": {} } }],
+      ["example/src/environments/environment.prod", { "_index": 160, "name": { "160": {} }, "parent": { "161": {} } }],
+      [
+        "example/src/environments/environment.prod\".environment",
+        { "_index": 161, "name": {}, "parent": { "162": {} } }
+      ],
+      ["example/src/main", { "_index": 152, "name": { "150": {} }, "parent": {} }],
+      ["example/src/polyfills", { "_index": 153, "name": { "151": {} }, "parent": {} }],
+      ["example/src/test", { "_index": 154, "name": { "152": {} }, "parent": { "153": {}, "156": {} } }],
+      ["example/src/test\".context", { "_index": 157, "name": {}, "parent": { "157": {} } }],
+      ["example/src/test\".context.__type", { "_index": 158, "name": {}, "parent": { "158": {} } }],
+      ["example/src/test\".require", { "_index": 155, "name": {}, "parent": { "154": {} } }],
+      ["example/src/test\".require.__type", { "_index": 156, "name": {}, "parent": { "155": {} } }],
+      ["focusindex", { "_index": 6, "name": { "4": {} }, "parent": {} }],
+      ["getbycodetype", { "_index": 99, "name": { "92": {} }, "parent": {} }],
+      ["getclosestviewline", { "_index": 46, "name": { "41": {} }, "parent": {} }],
+      ["geteditorstate", { "_index": 36, "name": { "31": {} }, "parent": {} }],
+      ["geteditortext", { "_index": 45, "name": { "40": {} }, "parent": {} }],
+      ["getendindexofannotation", { "_index": 92, "name": { "86": {} }, "parent": {} }],
+      ["getendindexofquote", { "_index": 81, "name": { "75": {} }, "parent": {} }],
+      ["getendofmultilinecomment", { "_index": 91, "name": { "85": {} }, "parent": {} }],
+      ["getparentline", { "_index": 47, "name": { "42": {} }, "parent": {} }],
+      ["gettextsegments", { "_index": 44, "name": { "39": {} }, "parent": {} }],
+      ["getvaluechangedlistener", { "_index": 38, "name": { "33": {} }, "parent": {} }],
+      ["handleannotation", { "_index": 82, "name": { "76": {} }, "parent": {} }],
+      ["handleautocomplete", { "_index": 120, "name": { "119": {} }, "parent": {} }],
+      ["handledeletion", { "_index": 121, "name": { "120": {} }, "parent": {} }],
+      ["handleevent", { "_index": 42, "name": { "37": {}, "115": {} }, "parent": {} }],
+      ["handleinserttab", { "_index": 122, "name": { "121": {} }, "parent": {} }],
+      ["handlemultilinecomment", { "_index": 84, "name": { "78": {} }, "parent": {} }],
+      ["handleonelinecomment", { "_index": 83, "name": { "77": {} }, "parent": {} }],
+      ["handlequote", { "_index": 80, "name": { "74": {} }, "parent": {} }],
+      ["highlighter", { "_index": 51, "name": { "46": {} }, "parent": {} }],
+      ["highlighters", { "_index": 97, "name": { "91": {} }, "parent": {} }],
+      ["highlighthelper", { "_index": 78, "name": { "72": {} }, "parent": {} }],
+      ["highlightline", { "_index": 52, "name": { "47": {}, "71": {} }, "parent": {} }],
+      ["highlightsservice", { "_index": 112, "name": { "110": {} }, "parent": {} }],
+      ["hightlightcode", { "_index": 118, "name": { "117": {} }, "parent": {} }],
+      ["hightlighter", { "_index": 111, "name": { "106": {} }, "parent": {} }],
+      ["hightlightsservice", { "_index": 96, "name": { "90": {} }, "parent": {} }],
+      ["input", { "_index": 22, "name": { "18": {} }, "parent": {} }],
+      ["isannotation", { "_index": 88, "name": { "82": {} }, "parent": {} }],
+      ["ismulticommentopened", { "_index": 76, "name": { "68": {} }, "parent": {} }],
+      ["ismultilinecomment", { "_index": 87, "name": { "81": {} }, "parent": {} }],
+      ["isonelinecomment", { "_index": 86, "name": { "80": {} }, "parent": {} }],
+      ["isquote", { "_index": 85, "name": { "79": {} }, "parent": {} }],
+      ["isquoteopened", { "_index": 77, "name": { "69": {} }, "parent": {} }],
+      ["java", { "_index": 56, "name": { "50": {} }, "parent": {} }],
+      ["javahighlighter", { "_index": 71, "name": { "63": {} }, "parent": {} }],
+      ["keeptextaligned", { "_index": 40, "name": { "35": {} }, "parent": {} }],
+      ["keydown", { "_index": 17, "name": { "13": {} }, "parent": {} }],
+      ["keypressed", { "_index": 18, "name": { "14": {} }, "parent": {} }],
+      ["keys", { "_index": 135, "name": { "136": {}, "158": {} }, "parent": {} }],
+      ["keyup", { "_index": 15, "name": { "12": {} }, "parent": {} }],
+      ["keywords", { "_index": 69, "name": { "61": {} }, "parent": {} }],
+      ["keywordtype", { "_index": 59, "name": { "52": {} }, "parent": {} }],
+      ["line", { "_index": 75, "name": { "67": {} }, "parent": {} }],
+      ["lines", { "_index": 109, "name": { "103": {} }, "parent": {} }],
+      ["literal", { "_index": 65, "name": { "57": {} }, "parent": {} }],
+      ["mousedown", { "_index": 19, "name": { "15": {} }, "parent": {} }],
+      ["mouseup", { "_index": 20, "name": { "16": {} }, "parent": {} }],
+      ["neutrinocomponent", { "_index": 101, "name": { "94": {}, "128": {} }, "parent": {} }],
+      ["neutrinomodule", { "_index": 125, "name": { "124": {}, "129": {} }, "parent": {} }],
+      ["neutrinoservice", { "_index": 26, "name": { "22": {}, "108": {}, "127": {} }, "parent": {} }],
+      ["ngafterviewinit", { "_index": 116, "name": { "114": {} }, "parent": {} }],
+      ["ngonchanges", { "_index": 113, "name": { "111": {} }, "parent": {} }],
+      ["ngondestroy", { "_index": 115, "name": { "113": {} }, "parent": {} }],
+      ["ngoninit", { "_index": 114, "name": { "112": {} }, "parent": {} }],
+      ["nonaccessmodifier", { "_index": 62, "name": { "54": {} }, "parent": {} }],
+      ["numbers", { "_index": 104, "name": { "96": {} }, "parent": {} }],
+      ["onkeyup", { "_index": 145, "name": { "144": {} }, "parent": {} }],
+      ["onvaluechanged", { "_index": 144, "name": { "143": {} }, "parent": {} }],
+      ["paste", { "_index": 24, "name": { "20": {} }, "parent": {} }],
+      ["primitive", { "_index": 63, "name": { "55": {} }, "parent": {} }],
+      ["primitivewrapper", { "_index": 64, "name": { "56": {} }, "parent": {} }],
+      ["production", { "_index": 150, "name": { "149": {}, "162": {} }, "parent": {} }],
+      [
+        "projects/neutrino",
+        {
+          "_index": 139,
+          "name": { "139": {}, "145": {}, "147": {}, "150": {}, "151": {}, "152": {}, "159": {}, "160": {} },
+          "parent": {
+            "140": {},
+            "141": {},
+            "142": {},
+            "143": {},
+            "144": {},
+            "146": {},
+            "148": {},
+            "149": {},
+            "153": {},
+            "154": {},
+            "155": {},
+            "156": {},
+            "157": {},
+            "158": {},
+            "161": {},
+            "162": {}
+          }
+        }
+      ],
+      [
+        "projects/neutrino/src/lib/editor",
+        { "_index": 0, "name": { "0": {} }, "parent": { "1": {}, "2": {}, "3": {}, "4": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/editor.options",
+        { "_index": 7, "name": { "5": {} }, "parent": { "6": {}, "8": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/editor.options\".defaulteditoroptions",
+        { "_index": 12, "name": {}, "parent": { "9": {} } }
+      ],
+      ["projects/neutrino/src/lib/editor.options\".editoroptions", { "_index": 10, "name": {}, "parent": { "7": {} } }],
+      [
+        "projects/neutrino/src/lib/highlighters/code.type",
+        { "_index": 54, "name": { "48": {} }, "parent": { "49": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/code.type\".codetype",
+        { "_index": 57, "name": {}, "parent": { "50": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/highlighter",
+        { "_index": 50, "name": { "45": {} }, "parent": { "46": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/highlighter\".highlighter",
+        { "_index": 53, "name": {}, "parent": { "47": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/highlights.service",
+        { "_index": 95, "name": { "89": {} }, "parent": { "90": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/highlights.service\".hightlightsservice",
+        { "_index": 98, "name": {}, "parent": { "91": {}, "92": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/java/java.highlighter",
+        { "_index": 70, "name": { "62": {} }, "parent": { "63": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/java/java.highlighter\".javahighlighter",
+        {
+          "_index": 72,
+          "name": {},
+          "parent": {
+            "64": {},
+            "65": {},
+            "66": {},
+            "67": {},
+            "68": {},
+            "69": {},
+            "70": {},
+            "71": {},
+            "72": {},
+            "73": {},
+            "74": {},
+            "75": {},
+            "76": {},
+            "77": {},
+            "78": {},
+            "79": {},
+            "80": {},
+            "81": {},
+            "82": {},
+            "83": {},
+            "84": {},
+            "85": {},
+            "86": {},
+            "87": {},
+            "88": {}
+          }
+        }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/java/keywords",
+        { "_index": 68, "name": { "60": {} }, "parent": { "61": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/keyword.type",
+        { "_index": 58, "name": { "51": {} }, "parent": { "52": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/highlighters/keyword.type\".keywordtype",
+        { "_index": 61, "name": {}, "parent": { "53": {}, "54": {}, "55": {}, "56": {}, "57": {}, "58": {}, "59": {} } }
+      ],
+      ["projects/neutrino/src/lib/neutrino.component", { "_index": 100, "name": { "93": {} }, "parent": { "94": {} } }],
+      [
+        "projects/neutrino/src/lib/neutrino.component\".neutrinocomponent",
+        {
+          "_index": 103,
+          "name": {},
+          "parent": {
+            "95": {},
+            "96": {},
+            "97": {},
+            "98": {},
+            "99": {},
+            "100": {},
+            "101": {},
+            "102": {},
+            "103": {},
+            "104": {},
+            "105": {},
+            "106": {},
+            "107": {},
+            "108": {},
+            "109": {},
+            "110": {},
+            "111": {},
+            "112": {},
+            "113": {},
+            "114": {},
+            "115": {},
+            "116": {},
+            "117": {},
+            "118": {},
+            "119": {},
+            "120": {},
+            "121": {},
+            "122": {}
+          }
+        }
+      ],
+      ["projects/neutrino/src/lib/neutrino.component.spec", { "_index": 137, "name": { "137": {} }, "parent": {} }],
+      ["projects/neutrino/src/lib/neutrino.module", { "_index": 124, "name": { "123": {} }, "parent": { "124": {} } }],
+      [
+        "projects/neutrino/src/lib/neutrino.service",
+        { "_index": 13, "name": { "10": {} }, "parent": { "11": {}, "22": {} } }
+      ],
+      [
+        "projects/neutrino/src/lib/neutrino.service\".eventtype",
+        {
+          "_index": 16,
+          "name": {},
+          "parent": {
+            "12": {},
+            "13": {},
+            "14": {},
+            "15": {},
+            "16": {},
+            "17": {},
+            "18": {},
+            "19": {},
+            "20": {},
+            "21": {}
+          }
+        }
+      ],
+      [
+        "projects/neutrino/src/lib/neutrino.service\".neutrinoservice",
+        {
+          "_index": 28,
+          "name": {},
+          "parent": {
+            "23": {},
+            "24": {},
+            "25": {},
+            "26": {},
+            "27": {},
+            "28": {},
+            "29": {},
+            "30": {},
+            "31": {},
+            "32": {},
+            "33": {},
+            "34": {},
+            "35": {},
+            "36": {},
+            "37": {},
+            "38": {},
+            "39": {},
+            "40": {},
+            "41": {},
+            "42": {},
+            "43": {},
+            "44": {}
+          }
+        }
+      ],
+      ["projects/neutrino/src/lib/neutrino.service.spec", { "_index": 138, "name": { "138": {} }, "parent": {} }],
+      [
+        "projects/neutrino/src/public",
+        { "_index": 126, "name": { "125": {} }, "parent": { "126": {}, "127": {}, "128": {}, "129": {} } }
+      ],
+      ["projects/neutrino/src/test", { "_index": 128, "name": { "130": {} }, "parent": { "131": {}, "134": {} } }],
+      ["projects/neutrino/src/test\".context", { "_index": 134, "name": {}, "parent": { "135": {} } }],
+      ["projects/neutrino/src/test\".context.__type", { "_index": 136, "name": {}, "parent": { "136": {} } }],
+      ["projects/neutrino/src/test\".require", { "_index": 131, "name": {}, "parent": { "132": {} } }],
+      ["projects/neutrino/src/test\".require.__type", { "_index": 133, "name": {}, "parent": { "133": {} } }],
+      ["refreshlines", { "_index": 119, "name": { "118": {} }, "parent": {} }],
+      ["render", { "_index": 48, "name": { "43": {} }, "parent": {} }],
+      ["renderer", { "_index": 33, "name": { "28": {}, "64": {}, "109": {} }, "parent": {} }],
+      ["rendererfactory", { "_index": 35, "name": { "30": {} }, "parent": {} }],
+      ["require", { "_index": 129, "name": { "131": {}, "153": {} }, "parent": {} }],
+      ["reserved", { "_index": 67, "name": { "59": {} }, "parent": {} }],
+      ["restoreselection", { "_index": 43, "name": { "38": {} }, "parent": {} }],
+      ["scrollfocusedlineintoview", { "_index": 117, "name": { "116": {} }, "parent": {} }],
+      ["seteditoroptions", { "_index": 37, "name": { "32": {} }, "parent": {} }],
+      ["showlinenumber", { "_index": 105, "name": { "98": {} }, "parent": {} }],
+      ["state", { "_index": 1, "name": { "0": {} }, "parent": { "1": {} } }],
+      ["state\".editorstate", { "_index": 4, "name": {}, "parent": { "2": {}, "3": {}, "4": {} } }],
+      ["structural", { "_index": 66, "name": { "58": {} }, "parent": {} }],
+      ["tabspaces", { "_index": 9, "name": { "7": {}, "9": {}, "97": {} }, "parent": {} }],
+      ["title", { "_index": 142, "name": { "141": {} }, "parent": {} }],
+      ["value", { "_index": 106, "name": { "99": {}, "142": {} }, "parent": {} }],
+      ["valuechanged", { "_index": 108, "name": { "102": {} }, "parent": {} }],
+      ["valuechangedsub", { "_index": 110, "name": { "105": {} }, "parent": {} }],
+      ["valuechangedsubjects", { "_index": 31, "name": { "26": {} }, "parent": {} }]
+    ],
+    "pipeline": []
+  }
+}

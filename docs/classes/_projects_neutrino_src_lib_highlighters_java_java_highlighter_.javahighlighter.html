@@ -1,871 +1,1519 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>JavaHighlighter | neutrino</title>
-	<meta name="description" content="Documentation for neutrino">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../assets/css/main.css">
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="../index.html" class="title">neutrino</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="../globals.html">Globals</a>
-				</li>
-				<li>
-					<a href="../modules/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.html">&quot;projects/neutrino/src/lib/highlighters/java/java.highlighter&quot;</a>
-				</li>
-				<li>
-					<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html">JavaHighlighter</a>
-				</li>
-			</ul>
-			<h1>Class JavaHighlighter</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">JavaHighlighter</span>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html" class="tsd-signature-type">Highlighter</a></li>
-				</ul>
-			</section>
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#code" class="tsd-kind-icon">code</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#codelength" class="tsd-kind-icon">code<wbr>Length</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismulticommentopened" class="tsd-kind-icon">is<wbr>Multi<wbr>Comment<wbr>Opened</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquoteopened" class="tsd-kind-icon">is<wbr>Quote<wbr>Opened</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#line" class="tsd-kind-icon">line</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#renderer" class="tsd-kind-icon">renderer</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#addspace" class="tsd-kind-icon">add<wbr>Space</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendsubstring" class="tsd-kind-icon">append<wbr>Substring</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendtext" class="tsd-kind-icon">append<wbr>Text</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#checkforkeywords" class="tsd-kind-icon">check<wbr>For<wbr>Keywords</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#createtextelement" class="tsd-kind-icon">create<wbr>Text<wbr>Element</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofannotation" class="tsd-kind-icon">get<wbr>End<wbr>Index<wbr>OfAnnotation</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofquote" class="tsd-kind-icon">get<wbr>End<wbr>Index<wbr>OfQuote</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendofmultilinecomment" class="tsd-kind-icon">get<wbr>End<wbr>OfMulti<wbr>Line<wbr>Comment</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleannotation" class="tsd-kind-icon">handle<wbr>Annotation</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlemultilinecomment" class="tsd-kind-icon">handle<wbr>Multi<wbr>Line<wbr>Comment</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleonelinecomment" class="tsd-kind-icon">handle<wbr>One<wbr>Line<wbr>Comment</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlequote" class="tsd-kind-icon">handle<wbr>Quote</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlighthelper" class="tsd-kind-icon">highlight<wbr>Helper</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlightline" class="tsd-kind-icon">highlight<wbr>Line</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isannotation" class="tsd-kind-icon">is<wbr>Annotation</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismultilinecomment" class="tsd-kind-icon">is<wbr>Multi<wbr>Line<wbr>Comment</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isonelinecomment" class="tsd-kind-icon">is<wbr>One<wbr>Line<wbr>Comment</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquote" class="tsd-kind-icon">is<wbr>Quote</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Java<wbr>Highlighter<span class="tsd-signature-symbol">(</span>renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Renderer2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html" class="tsd-signature-type">JavaHighlighter</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L12">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:12</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>renderer: <span class="tsd-signature-type">Renderer2</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html" class="tsd-signature-type">JavaHighlighter</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="code" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> code</h3>
-					<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L9">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:9</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="codelength" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> code<wbr>Length</h3>
-					<div class="tsd-signature tsd-kind-icon">code<wbr>Length<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L8">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:8</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="ismulticommentopened" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Multi<wbr>Comment<wbr>Opened</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Multi<wbr>Comment<wbr>Opened<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L11">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:11</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="isquoteopened" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Quote<wbr>Opened</h3>
-					<div class="tsd-signature tsd-kind-icon">is<wbr>Quote<wbr>Opened<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L12">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:12</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="line" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> line</h3>
-					<div class="tsd-signature tsd-kind-icon">line<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLDivElement</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L10">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:10</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="renderer" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> renderer</h3>
-					<div class="tsd-signature tsd-kind-icon">renderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Renderer2</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L7">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:7</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="addspace" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> add<wbr>Space</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Space<span class="tsd-signature-symbol">(</span>nonBreaking<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L204">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:204</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> nonBreaking: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="appendsubstring" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> append<wbr>Substring</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">append<wbr>Substring<span class="tsd-signature-symbol">(</span>start<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, styleClass<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L247">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:247</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>start: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>end: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> styleClass: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="appendtext" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> append<wbr>Text</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">append<wbr>Text<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, styleClass<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L190">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:190</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> styleClass: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="checkforkeywords" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> check<wbr>For<wbr>Keywords</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">check<wbr>For<wbr>Keywords<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L44">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:44</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="createtextelement" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> create<wbr>Text<wbr>Element</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Text<wbr>Element<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, surroundWithSpan<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L260">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:260</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>text: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> surroundWithSpan: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="getendindexofannotation" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>End<wbr>Index<wbr>OfAnnotation</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>End<wbr>Index<wbr>OfAnnotation<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L236">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:236</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="getendindexofquote" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>End<wbr>Index<wbr>OfQuote</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>End<wbr>Index<wbr>OfQuote<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L115">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:115</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="getendofmultilinecomment" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>End<wbr>OfMulti<wbr>Line<wbr>Comment</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>End<wbr>OfMulti<wbr>Line<wbr>Comment<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L216">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:216</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="handleannotation" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Annotation</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Annotation<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L138">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:138</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="handlemultilinecomment" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Multi<wbr>Line<wbr>Comment</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Multi<wbr>Line<wbr>Comment<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L156">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:156</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="handleonelinecomment" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>One<wbr>Line<wbr>Comment</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>One<wbr>Line<wbr>Comment<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L148">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:148</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="handlequote" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr>Quote</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Quote<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L98">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:98</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="highlighthelper" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> highlight<wbr>Helper</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">highlight<wbr>Helper<span class="tsd-signature-symbol">(</span>currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L30">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:30</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-								<li>
-									<h5>builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="highlightline" class="tsd-anchor"></a>
-					<h3>highlight<wbr>Line</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">highlight<wbr>Line<span class="tsd-signature-symbol">(</span>line<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLDivElement</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html">Highlighter</a>.<a href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html#highlightline">highlightLine</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L18">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:18</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>line: <span class="tsd-signature-type">HTMLDivElement</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="isannotation" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Annotation</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Annotation<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L186">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:186</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="ismultilinecomment" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Multi<wbr>Line<wbr>Comment</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Multi<wbr>Line<wbr>Comment<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L179">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:179</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="isonelinecomment" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>One<wbr>Line<wbr>Comment</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>One<wbr>Line<wbr>Comment<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L175">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:175</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="isquote" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr>Quote</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Quote<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L168">projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:168</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>index: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class="globals  ">
-						<a href="../globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_example_src_app_app_component_.html">&quot;projects/neutrino-<wbr>example/src/app/app.component&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_example_src_app_app_component_spec_.html">&quot;projects/neutrino-<wbr>example/src/app/app.component.spec&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_example_src_app_app_module_.html">&quot;projects/neutrino-<wbr>example/src/app/app.module&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_example_src_environments_environment_.html">&quot;projects/neutrino-<wbr>example/src/environments/environment&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_example_src_environments_environment_prod_.html">&quot;projects/neutrino-<wbr>example/src/environments/environment.prod&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_example_src_main_.html">&quot;projects/neutrino-<wbr>example/src/main&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_example_src_polyfills_.html">&quot;projects/neutrino-<wbr>example/src/polyfills&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_example_src_test_.html">&quot;projects/neutrino-<wbr>example/src/test&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_editor_state_.html">&quot;projects/neutrino/src/lib/editor-<wbr>state&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_editor_options_.html">&quot;projects/neutrino/src/lib/editor.options&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_highlighters_code_type_.html">&quot;projects/neutrino/src/lib/highlighters/code.type&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_highlighters_highlighter_.html">&quot;projects/neutrino/src/lib/highlighters/highlighter&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_highlighters_highlights_service_.html">&quot;projects/neutrino/src/lib/highlighters/highlights.service&quot;</a>
-					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.html">&quot;projects/neutrino/src/lib/highlighters/java/java.highlighter&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_highlighters_java_keywords_.html">&quot;projects/neutrino/src/lib/highlighters/java/keywords&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_highlighters_keyword_type_.html">&quot;projects/neutrino/src/lib/highlighters/keyword.type&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_neutrino_component_.html">&quot;projects/neutrino/src/lib/neutrino.component&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_neutrino_component_spec_.html">&quot;projects/neutrino/src/lib/neutrino.component.spec&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_neutrino_module_.html">&quot;projects/neutrino/src/lib/neutrino.module&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_neutrino_service_.html">&quot;projects/neutrino/src/lib/neutrino.service&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_lib_neutrino_service_spec_.html">&quot;projects/neutrino/src/lib/neutrino.service.spec&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_public_api_.html">&quot;projects/neutrino/src/public-<wbr>api&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/_projects_neutrino_src_test_.html">&quot;projects/neutrino/src/test&quot;</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html" class="tsd-kind-icon">Java<wbr>Highlighter</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#code" class="tsd-kind-icon">code</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#codelength" class="tsd-kind-icon">code<wbr>Length</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismulticommentopened" class="tsd-kind-icon">is<wbr>Multi<wbr>Comment<wbr>Opened</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquoteopened" class="tsd-kind-icon">is<wbr>Quote<wbr>Opened</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#line" class="tsd-kind-icon">line</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#renderer" class="tsd-kind-icon">renderer</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#addspace" class="tsd-kind-icon">add<wbr>Space</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendsubstring" class="tsd-kind-icon">append<wbr>Substring</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendtext" class="tsd-kind-icon">append<wbr>Text</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#checkforkeywords" class="tsd-kind-icon">check<wbr>For<wbr>Keywords</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#createtextelement" class="tsd-kind-icon">create<wbr>Text<wbr>Element</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofannotation" class="tsd-kind-icon">get<wbr>End<wbr>Index<wbr>OfAnnotation</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofquote" class="tsd-kind-icon">get<wbr>End<wbr>Index<wbr>OfQuote</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendofmultilinecomment" class="tsd-kind-icon">get<wbr>End<wbr>OfMulti<wbr>Line<wbr>Comment</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleannotation" class="tsd-kind-icon">handle<wbr>Annotation</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlemultilinecomment" class="tsd-kind-icon">handle<wbr>Multi<wbr>Line<wbr>Comment</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleonelinecomment" class="tsd-kind-icon">handle<wbr>One<wbr>Line<wbr>Comment</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlequote" class="tsd-kind-icon">handle<wbr>Quote</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlighthelper" class="tsd-kind-icon">highlight<wbr>Helper</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlightline" class="tsd-kind-icon">highlight<wbr>Line</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isannotation" class="tsd-kind-icon">is<wbr>Annotation</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismultilinecomment" class="tsd-kind-icon">is<wbr>Multi<wbr>Line<wbr>Comment</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isonelinecomment" class="tsd-kind-icon">is<wbr>One<wbr>Line<wbr>Comment</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquote" class="tsd-kind-icon">is<wbr>Quote</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="../assets/js/main.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JavaHighlighter | neutrino</title>
+    <meta name="description" content="Documentation for neutrino" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="tsd-page-toolbar">
+        <div class="container">
+          <div class="table-wrap">
+            <div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+              <div class="field">
+                <label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+                <input id="tsd-search-field" type="text" />
+              </div>
+              <ul class="results">
+                <li class="state loading">Preparing search index...</li>
+                <li class="state failure">The search index is not available</li>
+              </ul>
+              <a href="../index.html" class="title">neutrino</a>
+            </div>
+            <div class="table-cell" id="tsd-widgets">
+              <div id="tsd-filter">
+                <a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+                <div class="tsd-filter-group">
+                  <div class="tsd-select" id="tsd-filter-visibility">
+                    <span class="tsd-select-label">All</span>
+                    <ul class="tsd-select-list">
+                      <li data-value="public">Public</li>
+                      <li data-value="protected">Public/Protected</li>
+                      <li data-value="private" class="selected">All</li>
+                    </ul>
+                  </div>
+                  <input type="checkbox" id="tsd-filter-inherited" checked />
+                  <label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+                  <input type="checkbox" id="tsd-filter-externals" checked />
+                  <label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+                  <input type="checkbox" id="tsd-filter-only-exported" />
+                  <label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+                </div>
+              </div>
+              <a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tsd-page-title">
+        <div class="container">
+          <ul class="tsd-breadcrumb">
+            <li>
+              <a href="../globals.html">Globals</a>
+            </li>
+            <li>
+              <a href="../modules/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.html"
+                >&quot;projects/neutrino/src/lib/highlighters/java/java.highlighter&quot;</a
+              >
+            </li>
+            <li>
+              <a href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html"
+                >JavaHighlighter</a
+              >
+            </li>
+          </ul>
+          <h1>Class JavaHighlighter</h1>
+        </div>
+      </div>
+    </header>
+    <div class="container container-main">
+      <div class="row">
+        <div class="col-8 col-content">
+          <section class="tsd-panel tsd-hierarchy">
+            <h3>Hierarchy</h3>
+            <ul class="tsd-hierarchy">
+              <li>
+                <span class="target">JavaHighlighter</span>
+              </li>
+            </ul>
+          </section>
+          <section class="tsd-panel">
+            <h3>Implements</h3>
+            <ul class="tsd-hierarchy">
+              <li>
+                <a
+                  href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html"
+                  class="tsd-signature-type"
+                  >Highlighter</a
+                >
+              </li>
+            </ul>
+          </section>
+          <section class="tsd-panel-group tsd-index-group">
+            <h2>Index</h2>
+            <section class="tsd-panel tsd-index-panel">
+              <div class="tsd-index-content">
+                <section class="tsd-index-section">
+                  <h3>Constructors</h3>
+                  <ul class="tsd-index-list">
+                    <li class="tsd-kind-constructor tsd-parent-kind-class">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#constructor"
+                        class="tsd-kind-icon"
+                        >constructor</a
+                      >
+                    </li>
+                  </ul>
+                </section>
+                <section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+                  <h3>Properties</h3>
+                  <ul class="tsd-index-list">
+                    <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#code"
+                        class="tsd-kind-icon"
+                        >code</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#codelength"
+                        class="tsd-kind-icon"
+                        >code<wbr />Length</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismulticommentopened"
+                        class="tsd-kind-icon"
+                        >is<wbr />Multi<wbr />Comment<wbr />Opened</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquoteopened"
+                        class="tsd-kind-icon"
+                        >is<wbr />Quote<wbr />Opened</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#line"
+                        class="tsd-kind-icon"
+                        >line</a
+                      >
+                    </li>
+                    <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#renderer"
+                        class="tsd-kind-icon"
+                        >renderer</a
+                      >
+                    </li>
+                  </ul>
+                </section>
+                <section class="tsd-index-section">
+                  <h3>Methods</h3>
+                  <ul class="tsd-index-list">
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#addspace"
+                        class="tsd-kind-icon"
+                        >add<wbr />Space</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendsubstring"
+                        class="tsd-kind-icon"
+                        >append<wbr />Substring</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendtext"
+                        class="tsd-kind-icon"
+                        >append<wbr />Text</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#checkforkeywords"
+                        class="tsd-kind-icon"
+                        >check<wbr />For<wbr />Keywords</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#createtextelement"
+                        class="tsd-kind-icon"
+                        >create<wbr />Text<wbr />Element</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofannotation"
+                        class="tsd-kind-icon"
+                        >get<wbr />End<wbr />Index<wbr />OfAnnotation</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofquote"
+                        class="tsd-kind-icon"
+                        >get<wbr />End<wbr />Index<wbr />OfQuote</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendofmultilinecomment"
+                        class="tsd-kind-icon"
+                        >get<wbr />End<wbr />OfMulti<wbr />Line<wbr />Comment</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleannotation"
+                        class="tsd-kind-icon"
+                        >handle<wbr />Annotation</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlemultilinecomment"
+                        class="tsd-kind-icon"
+                        >handle<wbr />Multi<wbr />Line<wbr />Comment</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleonelinecomment"
+                        class="tsd-kind-icon"
+                        >handle<wbr />One<wbr />Line<wbr />Comment</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlequote"
+                        class="tsd-kind-icon"
+                        >handle<wbr />Quote</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlighthelper"
+                        class="tsd-kind-icon"
+                        >highlight<wbr />Helper</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlightline"
+                        class="tsd-kind-icon"
+                        >highlight<wbr />Line</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isannotation"
+                        class="tsd-kind-icon"
+                        >is<wbr />Annotation</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismultilinecomment"
+                        class="tsd-kind-icon"
+                        >is<wbr />Multi<wbr />Line<wbr />Comment</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isonelinecomment"
+                        class="tsd-kind-icon"
+                        >is<wbr />One<wbr />Line<wbr />Comment</a
+                      >
+                    </li>
+                    <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                      <a
+                        href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquote"
+                        class="tsd-kind-icon"
+                        >is<wbr />Quote</a
+                      >
+                    </li>
+                  </ul>
+                </section>
+              </div>
+            </section>
+          </section>
+          <section class="tsd-panel-group tsd-member-group">
+            <h2>Constructors</h2>
+            <section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+              <a name="constructor" class="tsd-anchor"></a>
+              <h3>constructor</h3>
+              <ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+                <li class="tsd-signature tsd-kind-icon">
+                  new <wbr />Java<wbr />Highlighter<span class="tsd-signature-symbol">(</span>renderer<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">Renderer2</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span
+                  ><a
+                    href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html"
+                    class="tsd-signature-type"
+                    >JavaHighlighter</a
+                  >
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L12"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:12</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>renderer: <span class="tsd-signature-type">Renderer2</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">
+                    Returns
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html"
+                      class="tsd-signature-type"
+                      >JavaHighlighter</a
+                    >
+                  </h4>
+                </li>
+              </ul>
+            </section>
+          </section>
+          <section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+            <h2>Properties</h2>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+              <a name="code" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> code</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L9"
+                      >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:9</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+              <a name="codelength" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> code<wbr />Length</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                code<wbr />Length<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">number</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L8"
+                      >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:8</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+              <a name="ismulticommentopened" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr />Multi<wbr />Comment<wbr />Opened</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                is<wbr />Multi<wbr />Comment<wbr />Opened<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">boolean</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L11"
+                      >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:11</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+              <a name="isquoteopened" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr />Quote<wbr />Opened</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                is<wbr />Quote<wbr />Opened<span class="tsd-signature-symbol">:</span>
+                <span class="tsd-signature-type">boolean</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L12"
+                      >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:12</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+              <a name="line" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> line</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                line<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLDivElement</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L10"
+                      >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:10</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+              <a name="renderer" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> renderer</h3>
+              <div class="tsd-signature tsd-kind-icon">
+                renderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Renderer2</span>
+              </div>
+              <aside class="tsd-sources">
+                <ul>
+                  <li>
+                    Defined in
+                    <a
+                      href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L7"
+                      >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:7</a
+                    >
+                  </li>
+                </ul>
+              </aside>
+            </section>
+          </section>
+          <section class="tsd-panel-group tsd-member-group">
+            <h2>Methods</h2>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="addspace" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> add<wbr />Space</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  add<wbr />Space<span class="tsd-signature-symbol">(</span>nonBreaking<span
+                    class="tsd-signature-symbol"
+                    >?: </span
+                  ><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L208"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:208</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>
+                        <span class="tsd-flag ts-flagOptional">Optional</span> nonBreaking:
+                        <span class="tsd-signature-type">boolean</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="appendsubstring" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> append<wbr />Substring</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  append<wbr />Substring<span class="tsd-signature-symbol">(</span>start<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span>, end<span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">number</span>, styleClass<span class="tsd-signature-symbol"
+                    >?: </span
+                  ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L251"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:251</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>start: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                    <li>
+                      <h5>end: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        <span class="tsd-flag ts-flagOptional">Optional</span> styleClass:
+                        <span class="tsd-signature-type">string</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="appendtext" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> append<wbr />Text</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  append<wbr />Text<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">string</span>, styleClass<span class="tsd-signature-symbol"
+                    >?: </span
+                  ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L194"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:194</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>text: <span class="tsd-signature-type">string</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        <span class="tsd-flag ts-flagOptional">Optional</span> styleClass:
+                        <span class="tsd-signature-type">string</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="checkforkeywords" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> check<wbr />For<wbr />Keywords</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  check<wbr />For<wbr />Keywords<span class="tsd-signature-symbol">(</span>currentIndex<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span
+                  ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L44"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:44</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="createtextelement" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> create<wbr />Text<wbr />Element</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  create<wbr />Text<wbr />Element<span class="tsd-signature-symbol">(</span>text<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">string</span>, surroundWithSpan<span class="tsd-signature-symbol"
+                    >?: </span
+                  ><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L264"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:264</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>text: <span class="tsd-signature-type">string</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        <span class="tsd-flag ts-flagOptional">Optional</span> surroundWithSpan:
+                        <span class="tsd-signature-type">boolean</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="getendindexofannotation" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr />End<wbr />Index<wbr />OfAnnotation</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  get<wbr />End<wbr />Index<wbr />OfAnnotation<span class="tsd-signature-symbol">(</span
+                  >currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span
+                  ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">number</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L240"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:240</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="getendindexofquote" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr />End<wbr />Index<wbr />OfQuote</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  get<wbr />End<wbr />Index<wbr />OfQuote<span class="tsd-signature-symbol">(</span>currentIndex<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L119"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:119</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="getendofmultilinecomment" class="tsd-anchor"></a>
+              <h3>
+                <span class="tsd-flag ts-flagPrivate">Private</span>
+                get<wbr />End<wbr />OfMulti<wbr />Line<wbr />Comment
+              </h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  get<wbr />End<wbr />OfMulti<wbr />Line<wbr />Comment<span class="tsd-signature-symbol">(</span
+                  >currentIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span
+                  ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">number</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L220"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:220</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="handleannotation" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr />Annotation</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  handle<wbr />Annotation<span class="tsd-signature-symbol">(</span>currentIndex<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span
+                  ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L142"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:142</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="handlemultilinecomment" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr />Multi<wbr />Line<wbr />Comment</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  handle<wbr />Multi<wbr />Line<wbr />Comment<span class="tsd-signature-symbol">(</span
+                  >currentIndex<span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span
+                  ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L160"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:160</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="handleonelinecomment" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr />One<wbr />Line<wbr />Comment</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  handle<wbr />One<wbr />Line<wbr />Comment<span class="tsd-signature-symbol">(</span>currentIndex<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span
+                  ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L152"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:152</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="handlequote" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> handle<wbr />Quote</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  handle<wbr />Quote<span class="tsd-signature-symbol">(</span>currentIndex<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span
+                  ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L102"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:102</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="highlighthelper" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> highlight<wbr />Helper</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  highlight<wbr />Helper<span class="tsd-signature-symbol">(</span>currentIndex<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span>, builder<span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span
+                  ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                  ><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L30"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:30</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>currentIndex: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                    <li>
+                      <h5>
+                        builder: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span>
+                      </h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+              <a name="highlightline" class="tsd-anchor"></a>
+              <h3>highlight<wbr />Line</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+                <li class="tsd-signature tsd-kind-icon">
+                  highlight<wbr />Line<span class="tsd-signature-symbol">(</span>line<span class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">HTMLDivElement</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <p>
+                      Implementation of
+                      <a href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html"
+                        >Highlighter</a
+                      >.<a
+                        href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html#highlightline"
+                        >highlightLine</a
+                      >
+                    </p>
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L18"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:18</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>line: <span class="tsd-signature-type">HTMLDivElement</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="isannotation" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr />Annotation</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  is<wbr />Annotation<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L190"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:190</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>index: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="ismultilinecomment" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr />Multi<wbr />Line<wbr />Comment</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  is<wbr />Multi<wbr />Line<wbr />Comment<span class="tsd-signature-symbol">(</span>index<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L183"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:183</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>index: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="isonelinecomment" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr />One<wbr />Line<wbr />Comment</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  is<wbr />One<wbr />Line<wbr />Comment<span class="tsd-signature-symbol">(</span>index<span
+                    class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L179"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:179</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>index: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+                </li>
+              </ul>
+            </section>
+            <section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <a name="isquote" class="tsd-anchor"></a>
+              <h3><span class="tsd-flag ts-flagPrivate">Private</span> is<wbr />Quote</h3>
+              <ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                <li class="tsd-signature tsd-kind-icon">
+                  is<wbr />Quote<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol"
+                    >: </span
+                  ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span
+                  ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>
+                </li>
+              </ul>
+              <ul class="tsd-descriptions">
+                <li class="tsd-description">
+                  <aside class="tsd-sources">
+                    <ul>
+                      <li>
+                        Defined in
+                        <a
+                          href="https://github.com/dortal94/neutrino/blob/58576ba/projects/neutrino/src/lib/highlighters/java/java.highlighter.ts#L172"
+                          >projects/neutrino/src/lib/highlighters/java/java.highlighter.ts:172</a
+                        >
+                      </li>
+                    </ul>
+                  </aside>
+                  <h4 class="tsd-parameters-title">Parameters</h4>
+                  <ul class="tsd-parameters">
+                    <li>
+                      <h5>index: <span class="tsd-signature-type">number</span></h5>
+                    </li>
+                  </ul>
+                  <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+                </li>
+              </ul>
+            </section>
+          </section>
+        </div>
+        <div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+          <nav class="tsd-navigation primary">
+            <ul>
+              <li class="globals">
+                <a href="../globals.html"><em>Globals</em></a>
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_example_src_app_app_component_.html"
+                  >&quot;projects/neutrino-<wbr />example/src/app/app.component&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_example_src_app_app_component_spec_.html"
+                  >&quot;projects/neutrino-<wbr />example/src/app/app.component.spec&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_example_src_app_app_module_.html"
+                  >&quot;projects/neutrino-<wbr />example/src/app/app.module&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_example_src_environments_environment_.html"
+                  >&quot;projects/neutrino-<wbr />example/src/environments/environment&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_example_src_environments_environment_prod_.html"
+                  >&quot;projects/neutrino-<wbr />example/src/environments/environment.prod&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_example_src_main_.html"
+                  >&quot;projects/neutrino-<wbr />example/src/main&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_example_src_polyfills_.html"
+                  >&quot;projects/neutrino-<wbr />example/src/polyfills&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_example_src_test_.html"
+                  >&quot;projects/neutrino-<wbr />example/src/test&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_editor_state_.html"
+                  >&quot;projects/neutrino/src/lib/editor-<wbr />state&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_editor_options_.html"
+                  >&quot;projects/neutrino/src/lib/editor.options&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_highlighters_code_type_.html"
+                  >&quot;projects/neutrino/src/lib/highlighters/code.type&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_highlighters_highlighter_.html"
+                  >&quot;projects/neutrino/src/lib/highlighters/highlighter&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_highlighters_highlights_service_.html"
+                  >&quot;projects/neutrino/src/lib/highlighters/highlights.service&quot;</a
+                >
+              </li>
+              <li class="current tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_highlighters_java_java_highlighter_.html"
+                  >&quot;projects/neutrino/src/lib/highlighters/java/java.highlighter&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_highlighters_java_keywords_.html"
+                  >&quot;projects/neutrino/src/lib/highlighters/java/keywords&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_highlighters_keyword_type_.html"
+                  >&quot;projects/neutrino/src/lib/highlighters/keyword.type&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_neutrino_component_.html"
+                  >&quot;projects/neutrino/src/lib/neutrino.component&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_neutrino_component_spec_.html"
+                  >&quot;projects/neutrino/src/lib/neutrino.component.spec&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_neutrino_module_.html"
+                  >&quot;projects/neutrino/src/lib/neutrino.module&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_neutrino_service_.html"
+                  >&quot;projects/neutrino/src/lib/neutrino.service&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_lib_neutrino_service_spec_.html"
+                  >&quot;projects/neutrino/src/lib/neutrino.service.spec&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_public_api_.html"
+                  >&quot;projects/neutrino/src/public-<wbr />api&quot;</a
+                >
+              </li>
+              <li class="tsd-kind-module">
+                <a href="../modules/_projects_neutrino_src_test_.html">&quot;projects/neutrino/src/test&quot;</a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="tsd-navigation secondary menu-sticky">
+            <ul class="before-current"></ul>
+            <ul class="current">
+              <li class="current tsd-kind-class tsd-parent-kind-module">
+                <a
+                  href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html"
+                  class="tsd-kind-icon"
+                  >Java<wbr />Highlighter</a
+                >
+                <ul>
+                  <li class="tsd-kind-constructor tsd-parent-kind-class">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#constructor"
+                      class="tsd-kind-icon"
+                      >constructor</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#code"
+                      class="tsd-kind-icon"
+                      >code</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#codelength"
+                      class="tsd-kind-icon"
+                      >code<wbr />Length</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismulticommentopened"
+                      class="tsd-kind-icon"
+                      >is<wbr />Multi<wbr />Comment<wbr />Opened</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquoteopened"
+                      class="tsd-kind-icon"
+                      >is<wbr />Quote<wbr />Opened</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#line"
+                      class="tsd-kind-icon"
+                      >line</a
+                    >
+                  </li>
+                  <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#renderer"
+                      class="tsd-kind-icon"
+                      >renderer</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#addspace"
+                      class="tsd-kind-icon"
+                      >add<wbr />Space</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendsubstring"
+                      class="tsd-kind-icon"
+                      >append<wbr />Substring</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#appendtext"
+                      class="tsd-kind-icon"
+                      >append<wbr />Text</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#checkforkeywords"
+                      class="tsd-kind-icon"
+                      >check<wbr />For<wbr />Keywords</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#createtextelement"
+                      class="tsd-kind-icon"
+                      >create<wbr />Text<wbr />Element</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofannotation"
+                      class="tsd-kind-icon"
+                      >get<wbr />End<wbr />Index<wbr />OfAnnotation</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendindexofquote"
+                      class="tsd-kind-icon"
+                      >get<wbr />End<wbr />Index<wbr />OfQuote</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#getendofmultilinecomment"
+                      class="tsd-kind-icon"
+                      >get<wbr />End<wbr />OfMulti<wbr />Line<wbr />Comment</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleannotation"
+                      class="tsd-kind-icon"
+                      >handle<wbr />Annotation</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlemultilinecomment"
+                      class="tsd-kind-icon"
+                      >handle<wbr />Multi<wbr />Line<wbr />Comment</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handleonelinecomment"
+                      class="tsd-kind-icon"
+                      >handle<wbr />One<wbr />Line<wbr />Comment</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#handlequote"
+                      class="tsd-kind-icon"
+                      >handle<wbr />Quote</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlighthelper"
+                      class="tsd-kind-icon"
+                      >highlight<wbr />Helper</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#highlightline"
+                      class="tsd-kind-icon"
+                      >highlight<wbr />Line</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isannotation"
+                      class="tsd-kind-icon"
+                      >is<wbr />Annotation</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#ismultilinecomment"
+                      class="tsd-kind-icon"
+                      >is<wbr />Multi<wbr />Line<wbr />Comment</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isonelinecomment"
+                      class="tsd-kind-icon"
+                      >is<wbr />One<wbr />Line<wbr />Comment</a
+                    >
+                  </li>
+                  <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+                    <a
+                      href="_projects_neutrino_src_lib_highlighters_java_java_highlighter_.javahighlighter.html#isquote"
+                      class="tsd-kind-icon"
+                      >is<wbr />Quote</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="after-current"></ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <footer class="with-border-bottom">
+      <div class="container">
+        <h2>Legend</h2>
+        <div class="tsd-legend-group">
+          <ul class="tsd-legend">
+            <li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+            <li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+            <li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+          </ul>
+          <ul class="tsd-legend">
+            <li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+            <li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+          </ul>
+          <ul class="tsd-legend">
+            <li class="tsd-kind-property tsd-parent-kind-class tsd-is-private">
+              <span class="tsd-kind-icon">Private property</span>
+            </li>
+            <li class="tsd-kind-method tsd-parent-kind-class tsd-is-private">
+              <span class="tsd-kind-icon">Private method</span>
+            </li>
+          </ul>
+          <ul class="tsd-legend">
+            <li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+          </ul>
+          <ul class="tsd-legend">
+            <li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    <div class="container tsd-generator">
+      <p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+    </div>
+    <div class="overlay"></div>
+    <script src="../assets/js/main.js"></script>
+  </body>
 </html>
