@@ -206,7 +206,6 @@ export class NeutrinoService {
       ) {
         this.render(editor);
         this.restoreSelection(editor);
-
       }
 
       if (event.type === 'keyup') {

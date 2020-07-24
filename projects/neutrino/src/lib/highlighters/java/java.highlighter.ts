@@ -16,7 +16,8 @@ export class JavaHighlighter implements Highlighter {
   }
 
   public highlightLine(line: HTMLDivElement): void {
-    if (line.firstChild.nodeName.toLowerCase() !== 'br') {
+    // If line is not empty
+    if (line.firstChild && line.firstChild.nodeName.toLowerCase() !== 'br') {
       this.code = line.textContent;
       this.line = line;
       this.codeLength = this.code.length;
@@ -48,7 +49,11 @@ export class JavaHighlighter implements Highlighter {
       currentChar === '\u00a0' ||
       currentIndex + 1 === this.codeLength
     ) {
-      if (currentChar !== ' ' && currentIndex + 1 === this.codeLength) {
+      if (
+        currentChar !== ' ' &&
+        currentChar !== '\u00a0' &&
+        currentIndex + 1 === this.codeLength
+      ) {
         builder.push(currentChar);
       }
 

@@ -93,17 +93,17 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       this.valueChangedSub = this.neutrinoService
       .getValueChangedListener(this.editor)
       .subscribe(value => {
-        console.log(value);
         this.valueChanged.emit(value);
       });
 
-      this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
-      this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.hightlightCode.bind(this), true);
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.hightlightCode.bind(this), true);
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.addNewLineOnEnter.bind(this));
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.scrollFocusedLineIntoView.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.hightlightCode.bind(this), true);
     } else {
       this.renderer.setAttribute(this.editor.nativeElement, 'contenteditable', 'false');
     }
@@ -115,6 +115,11 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    */
   public handleEvent(event: Event): void {
     this.neutrinoService.handleEvent(this.editor, event);
+  }
+
+  private scrollFocusedLineIntoView(event: KeyboardEvent) {
+    const line: HTMLDivElement = this.neutrinoService.getClosestViewLine(this.editor);
+    line.scrollIntoView({behavior: 'smooth', block: 'end'});
   }
 
   private hightlightCode(event?: KeyboardEvent): void {
@@ -243,7 +248,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    * Adds a new line on "Enter" clicked and prevents default new line insertion of contenteditable attribute.
    * The new line content gets aligned, thus, tabs are inserted to the start of the new line to fit the previous line tabs count.
    */
-  private addNewLineOnEnter(event: KeyboardEvent) {
+  private addNewLineOnEnter(event: KeyboardEvent): void {
     if (event.key === 'Enter') {
       const sel: Selection = document.getSelection();
       const range: Range = sel.getRangeAt(0);
@@ -254,7 +259,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       range.collapse(false);
       const textContent = content.textContent;
       const closureIndex = this.findFirstIndexOfClosureAfterOpening(currentLine.textContent, textContent);
-      let newLine;
+      let newLine: HTMLDivElement;
 
       if (closureIndex !== -1) {
         const insideContent = textContent.substring(0, closureIndex);

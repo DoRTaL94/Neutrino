@@ -2,7 +2,7 @@
     <div *ngFor="let line of lines" class="line-number">{{ line }}</div>
 </div>
 <span 
-    id="editor" 
+    class="editor" 
     contenteditable="true"
     (keydown)="handleEvent($event)"
     (keyup)="handleEvent($event)"

@@ -1,83 +1,88 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 nt-editor {
-    font-size: 62.5%;
-    display: flex;
-    justify-content: row;
-    padding-left: 0.5rem;
+  font-size: 62.5%;
+  display: flex;
+  justify-content: row;
+  padding-left: 0.5rem;
+  overflow: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
-#editor {
-    outline: none;
-    flex: 1;
-    font-size: 1.2rem;
+.editor {
+  flex: 1;
+  outline: none;
+  font-size: 1.2rem;
+  width: fit-content;
+  height: fit-content;
 }
 
-#editor * {
-    font-size: 1.2rem;
-    white-space: pre;
+.editor * {
+  font-size: 1.2rem;
+  white-space: pre;
 }
 
-#editor > div {
-    line-height: 2rem;
+.editor > div {
+  line-height: 2rem;
 }
 
 .line-number {
-    font-size: 1rem;
-    height: 2rem;
-    padding-right: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
+  font-size: 1rem;
+  height: 2rem;
+  padding-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
 }
 
 .numbers-container {
-    margin-right: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .access-modifier {
-    color: rgb(103, 194, 255);
-  }
-  
-  .non-access-modifier {
-    color: rgb(103, 194, 255);
-  }
-  
-  .reserved {
-    color: rgb(255, 79, 108);
-    text-shadow: 0 0px 2px rgba(0, 0, 0, 0.253);
-  }
-  
-  .literal {
-    color: rgb(245, 114, 186);
-  }
-  
-  .primitive {
-    color: rgb(255, 186, 121);
-  }
-  
-  .primitive-wrapper {
-    color: rgb(255, 186, 121);
-  }
-  
-  .structural {
-    color: rgb(128, 135, 146);
-  }
-  
-  .string-literal {
-    color: rgb(255, 186, 121);
-  }
-  
-  .annotation {
-    color: rgb(255, 242, 121);
-  }
-  
-  .comment {
-    color: rgb(121, 255, 132);
-  }
+  color: rgb(103, 194, 255);
+}
+
+.non-access-modifier {
+  color: rgb(103, 194, 255);
+}
+
+.reserved {
+  color: rgb(255, 79, 108);
+  text-shadow: 0 0px 2px rgba(0, 0, 0, 0.253);
+}
+
+.literal {
+  color: rgb(245, 114, 186);
+}
+
+.primitive {
+  color: rgb(255, 186, 121);
+}
+
+.primitive-wrapper {
+  color: rgb(255, 186, 121);
+}
+
+.structural {
+  color: rgb(128, 135, 146);
+}
+
+.string-literal {
+  color: rgb(255, 186, 121);
+}
+
+.annotation {
+  color: rgb(255, 242, 121);
+}
+
+.comment {
+  color: rgb(121, 255, 132);
+}

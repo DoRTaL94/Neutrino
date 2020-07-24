@@ -15,6 +15,5 @@ export class AppComponent {
 
   public onKeyUp(event: KeyboardEvent) {
     this.value = (event.target as HTMLTextAreaElement).value;
-    console.log(this.value);
   }
 }
