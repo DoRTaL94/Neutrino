@@ -1,4 +1,5 @@
 import {
+  AfterViewChecked,
   AfterViewInit,
   Component,
   ElementRef,
@@ -14,6 +15,7 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { EditorState } from './editor-state';
 import { Highlighter } from './highlighters/highlighter';
 import { HightlightsService } from './highlighters/highlights.service';
 import { EventType, NeutrinoService } from './neutrino.service';
@@ -31,6 +33,8 @@ import { EventType, NeutrinoService } from './neutrino.service';
 export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnChanges {
   @ViewChild('editor')
   editor: ElementRef;
+  @ViewChild('numbers')
+  numbers: ElementRef;
 
   @Input()
   public tabSpaces = 2;
@@ -46,6 +50,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   public valueChanged = new EventEmitter<string>();
 
   public lines = [1];
+  public currentLine = 0;
   private valueChangedSub: Subscription;
   private hightlighter: Highlighter;
 
@@ -102,6 +107,8 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.addNewLineOnEnter.bind(this));
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.scrollFocusedLineIntoView.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.focusLine.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.MouseDown, this.focusLine.bind(this), true);
       this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
       this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.hightlightCode.bind(this), true);
     } else {
@@ -117,9 +124,54 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     this.neutrinoService.handleEvent(this.editor, event);
   }
 
+  /**
+   * @internal
+   *
+   * Adds focus class name to a line classes list.
+   * Removes the focus class name for the other lines in the editor if presented.
+   *
+   * @param editor The parent editor reference of the "line" input.
+   * @param line A line element to focus.
+   */
+  private focusLine(event?: KeyboardEvent | MouseEvent) {
+    const lines = this.editor.nativeElement.querySelectorAll('.view-line');
+    const currentLine = this.neutrinoService.getClosestViewLine(this.editor);
+    const state: EditorState = this.neutrinoService.getEditorState(this.editor);
+    let currentLineSet = false;
+    let focusedLine;
+    state.currentLine = 0;
+
+    if (event instanceof KeyboardEvent) {
+      if (event.key === 'ArrowUp' && currentLine.previousSibling) {
+        focusedLine = currentLine.previousSibling;
+      } else if (event.key === 'ArrowDown' && currentLine.nextSibling) {
+        focusedLine = currentLine.nextSibling;
+      } else {
+        focusedLine = currentLine;
+      }
+    } else if (event instanceof MouseEvent) {
+      focusedLine = event.target;
+    }
+
+    lines.forEach((currLine) => {
+      if (currLine === focusedLine) {
+        currentLineSet = true;
+        this.renderer.addClass(currLine, 'focus');
+      } else {
+        this.renderer.removeClass(currLine, 'focus');
+      }
+
+      if (!currentLineSet) {
+        state.currentLine++;
+      }
+    });
+
+    this.currentLine = state.currentLine;
+  }
+
   private scrollFocusedLineIntoView(event: KeyboardEvent) {
     const line: HTMLDivElement = this.neutrinoService.getClosestViewLine(this.editor);
-    line.scrollIntoView({behavior: 'smooth', block: 'end'});
+    line.scrollIntoView(false);
   }
 
   private hightlightCode(event?: KeyboardEvent): void {

@@ -1,5 +1,5 @@
 <div *ngIf="showLineNumber" class="numbers-container" #numbers>
-    <div *ngFor="let line of lines" class="line-number">{{ line }}</div>
+    <div *ngFor="let line of lines" [ngClass]="{'focus': currentLine === line - 1, 'line-number': true}">{{ line }}</div>
 </div>
 <span 
     class="editor" 
@@ -9,9 +9,11 @@
     (input)="handleEvent($event)"
     (change)="handleEvent($event)"
     (click)="handleEvent($event)"
+    (mousedown)="handleEvent($event)"
+    (mouseup)="handleEvent($event)"
     #editor
 >
-    <div class="view-line">
+    <div class="view-line focus">
         <br>
     </div>
 </span>

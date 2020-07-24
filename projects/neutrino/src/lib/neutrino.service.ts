@@ -58,6 +58,10 @@ export class NeutrinoService {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
+  public getEditorState(editor: ElementRef) {
+    return this.editorsState.get(editor);
+  }
+
   public setEditorOptions(editor: ElementRef, options: EditorOptions) {
     this.editorsOptions.set(editor, options);
   }
@@ -253,13 +257,6 @@ export class NeutrinoService {
       currentIndex += text.length;
     });
 
-    if (focusNode) {
-      this.focusLine(
-        editor,
-        this.getParentLine(editor, focusNode as HTMLElement) as HTMLDivElement
-      );
-    }
-
     sel.setBaseAndExtent(anchorNode, anchorIndex, focusNode, focusIndex);
   }
 
@@ -331,13 +328,14 @@ export class NeutrinoService {
     let anchorLine: HTMLElement = child;
 
     while (
+      anchorLine &&
       (!anchorLine.classList || !anchorLine.classList.contains('view-line')) &&
       !anchorLine.isSameNode(editor.nativeElement)
     ) {
       anchorLine = anchorLine.parentElement;
     }
 
-    if (child.isSameNode(editor.nativeElement)) {
+    if (child && child.isSameNode(editor.nativeElement)) {
       anchorLine = null;
     }
 
@@ -549,38 +547,6 @@ export class NeutrinoService {
   private appendText(line: HTMLDivElement, text: string): void {
     const textNode = this.renderer.createText(text);
     this.renderer.appendChild(line, textNode);
-  }
-
-  /**
-   * @internal
-   *
-   * Adds focus class name to a line classes list.
-   * Removes the focus class name for the other lines in the editor if presented.
-   *
-   * @param editor The parent editor reference of the "line" input.
-   * @param line A line element to focus.
-   */
-  private focusLine(editor: ElementRef, line: HTMLDivElement) {
-    const lines = editor.nativeElement.querySelectorAll('.view-line');
-    const state: EditorState = this.editorsState.get(editor);
-
-    if (line) {
-      let currentLineSet = false;
-      state.currentLine = 0;
-
-      lines.forEach((currLine) => {
-        if (currLine === line) {
-          currentLineSet = true;
-          this.renderer.addClass(currLine, 'focus');
-        } else {
-          this.renderer.removeClass(currLine, 'focus');
-        }
-
-        if (!currentLineSet) {
-          state.currentLine++;
-        }
-      });
-    }
   }
 
   /**

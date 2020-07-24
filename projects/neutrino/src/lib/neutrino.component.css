@@ -9,7 +9,6 @@ nt-editor {
   font-size: 62.5%;
   display: flex;
   justify-content: row;
-  padding-left: 0.5rem;
   overflow: auto;
   max-width: 100%;
   max-height: 100%;
@@ -28,22 +27,20 @@ nt-editor {
   white-space: pre;
 }
 
-.editor > div {
+.view-line {
+  padding-left: 0.25;
   line-height: 2rem;
 }
 
 .line-number {
   font-size: 1rem;
   height: 2rem;
+  padding-left: 0.5rem;
   padding-right: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
-}
-
-.numbers-container {
-  margin-right: 0.25rem;
 }
 
 .access-modifier {
@@ -85,4 +82,8 @@ nt-editor {
 
 .comment {
   color: rgb(121, 255, 132);
+}
+
+.focus {
+  background-color: rgb(245, 245, 245);
 }
