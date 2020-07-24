@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DefaultEditorOptions | neutrino</title>
+	<title>HightlightsService | neutrino</title>
 	<meta name="description" content="Documentation for neutrino">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_projects_neutrino_src_lib_editor_options_.html">&quot;projects/neutrino/src/lib/editor.options&quot;</a>
+					<a href="../modules/_projects_neutrino_src_lib_highlighters_highlights_service_.html">&quot;projects/neutrino/src/lib/highlighters/highlights.service&quot;</a>
 				</li>
 				<li>
-					<a href="_projects_neutrino_src_lib_editor_options_.defaulteditoroptions.html">DefaultEditorOptions</a>
+					<a href="_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html">HightlightsService</a>
 				</li>
 			</ul>
-			<h1>Class DefaultEditorOptions</h1>
+			<h1>Class HightlightsService</h1>
 		</div>
 	</div>
 </header>
@@ -73,41 +73,72 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DefaultEditorOptions</span>
+						<span class="target">HightlightsService</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/_projects_neutrino_src_lib_editor_options_.editoroptions.html" class="tsd-signature-type">EditorOptions</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_projects_neutrino_src_lib_editor_options_.defaulteditoroptions.html#tabspaces" class="tsd-kind-icon">tab<wbr>Spaces</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html#highlighters" class="tsd-kind-icon">highlighters</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html#getbycodetype" class="tsd-kind-icon">get<wbr>ByCode<wbr>Type</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="tabspaces" class="tsd-anchor"></a>
-					<h3>tab<wbr>Spaces</h3>
-					<div class="tsd-signature tsd-kind-icon">tab<wbr>Spaces<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 2</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="highlighters" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> highlighters</h3>
+					<div class="tsd-signature tsd-kind-icon">highlighters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">ElementRef</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html" class="tsd-signature-type">Highlighter</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Map&lt;ElementRef, Highlighter&gt;()</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_projects_neutrino_src_lib_editor_options_.editoroptions.html">EditorOptions</a>.<a href="../interfaces/_projects_neutrino_src_lib_editor_options_.editoroptions.html#tabspaces">tabSpaces</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/editor.options.ts#L6">projects/neutrino/src/lib/editor.options.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/highlights.service.ts#L10">projects/neutrino/src/lib/highlighters/highlights.service.ts:10</a></li>
 						</ul>
 					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getbycodetype" class="tsd-anchor"></a>
+					<h3>get<wbr>ByCode<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>ByCode<wbr>Type<span class="tsd-signature-symbol">(</span>editor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ElementRef</span>, codeType<span class="tsd-signature-symbol">: </span><a href="../enums/_projects_neutrino_src_lib_highlighters_code_type_.codetype.html" class="tsd-signature-type">CodeType</a>, renderer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Renderer2</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html" class="tsd-signature-type">Highlighter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/dortal94/neutrino/blob/a43788f/projects/neutrino/src/lib/highlighters/highlights.service.ts#L12">projects/neutrino/src/lib/highlighters/highlights.service.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>editor: <span class="tsd-signature-type">ElementRef</span></h5>
+								</li>
+								<li>
+									<h5>codeType: <a href="../enums/_projects_neutrino_src_lib_highlighters_code_type_.codetype.html" class="tsd-signature-type">CodeType</a></h5>
+								</li>
+								<li>
+									<h5>renderer: <span class="tsd-signature-type">Renderer2</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_projects_neutrino_src_lib_highlighters_highlighter_.highlighter.html" class="tsd-signature-type">Highlighter</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -144,7 +175,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_projects_neutrino_src_lib_editor_state_.html">&quot;projects/neutrino/src/lib/editor-<wbr>state&quot;</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/_projects_neutrino_src_lib_editor_options_.html">&quot;projects/neutrino/src/lib/editor.options&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -153,7 +184,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/_projects_neutrino_src_lib_highlighters_highlighter_.html">&quot;projects/neutrino/src/lib/highlighters/highlighter&quot;</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/_projects_neutrino_src_lib_highlighters_highlights_service_.html">&quot;projects/neutrino/src/lib/highlighters/highlights.service&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -193,18 +224,18 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="_projects_neutrino_src_lib_editor_options_.defaulteditoroptions.html" class="tsd-kind-icon">Default<wbr>Editor<wbr>Options</a>
+						<a href="_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html" class="tsd-kind-icon">Hightlights<wbr>Service</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_projects_neutrino_src_lib_editor_options_.defaulteditoroptions.html#tabspaces" class="tsd-kind-icon">tab<wbr>Spaces</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html#highlighters" class="tsd-kind-icon">highlighters</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_projects_neutrino_src_lib_highlighters_highlights_service_.hightlightsservice.html#getbycodetype" class="tsd-kind-icon">get<wbr>ByCode<wbr>Type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/_projects_neutrino_src_lib_editor_options_.editoroptions.html" class="tsd-kind-icon">Editor<wbr>Options</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -220,13 +251,16 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 			</ul>
 		</div>
 	</div>
