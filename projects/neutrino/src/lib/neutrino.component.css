@@ -27,20 +27,38 @@ nt-editor {
   white-space: pre;
 }
 
+.focus {
+  border-color: rgb(230, 230, 230) !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+}
+
 .view-line {
-  padding-left: 0.25;
-  line-height: 2rem;
+  padding-left: 0.5rem;
+  line-height: 1.75rem;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.line-number:first-child,
+.view-line:first-child {
+  border-top: 0 !important;
+}
+
+.line-number:last-child,
+.view-line:last-child {
+  border-bottom: 0 !important;
 }
 
 .line-number {
   font-size: 1rem;
-  height: 2rem;
+  line-height: 1.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .access-modifier {
@@ -82,8 +100,4 @@ nt-editor {
 
 .comment {
   color: rgb(121, 255, 132);
-}
-
-.focus {
-  background-color: rgb(245, 245, 245);
 }

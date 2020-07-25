@@ -198,7 +198,10 @@ export class NeutrinoService {
    * @param event The event that fired.
    */
   public handleEvent(editor: ElementRef, event: Event): void {
-    if (editor.nativeElement.getAttribute('contenteditable') === 'true') {
+    if (
+      this.shouldHandleEvent(event) &&
+      editor.nativeElement.getAttribute('contenteditable') === 'true'
+    ) {
       let eventCallbacks = this.eventsCallbacks.get(editor);
       this.executeEvents(event, eventCallbacks);
       this.refreshEditorState(editor);
@@ -219,6 +222,38 @@ export class NeutrinoService {
       eventCallbacks = this.eventsCallbacksToExecLast.get(editor);
       this.executeEvents(event, eventCallbacks);
     }
+  }
+
+  /**
+   * @internal
+   */
+  private shouldHandleEvent(event: Event) {
+    return  (
+      event instanceof KeyboardEvent &&
+      event.key !== 'Backspace' &&
+      event.key !== 'Control' &&
+      !event.shiftKey
+    ) ||
+    !(event instanceof KeyboardEvent);
+  }
+
+  /**
+   * @internal
+   */
+  private checkKeyToRender(event: KeyboardEvent): boolean {
+    return  event                      &&
+            !event.shiftKey            &&
+            !event.ctrlKey             &&
+            !event.altKey              &&
+            event.key !== 'ArrowUp'    &&
+            event.key !== 'ArrowRight' &&
+            event.key !== 'ArrowDown'  &&
+            event.key !== 'ArrowLeft'  &&
+            event.key !== 'Shift'      &&
+            event.key !== 'Control'    &&
+            event.key !== 'Alt'        &&
+            event.key !== 'End'        &&
+            event.key !== 'Home';
   }
 
   /**
@@ -478,25 +513,6 @@ export class NeutrinoService {
         });
       }
     }
-  }
-
-  /**
-   * @internal
-   */
-  private checkKeyToRender(event: KeyboardEvent): boolean {
-    return  event                      &&
-            !event.shiftKey            &&
-            !event.ctrlKey             &&
-            !event.altKey              &&
-            event.key !== 'ArrowUp'    &&
-            event.key !== 'ArrowRight' &&
-            event.key !== 'ArrowDown'  &&
-            event.key !== 'ArrowLeft'  &&
-            event.key !== 'Shift'      &&
-            event.key !== 'Control'    &&
-            event.key !== 'Alt'        &&
-            event.key !== 'End'        &&
-            event.key !== 'Home';
   }
 
   /**

@@ -87,7 +87,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   }
 
   /**
-   * Adds configurations and controls for the editor view.
+   * This is the place to add configurations and controls for the editor view.
    */
   ngAfterViewInit(): void {
     this.neutrinoService.setEditorOptions(this.editor, {
@@ -101,6 +101,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
         this.valueChanged.emit(value);
       });
 
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleCut.bind(this));
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.hightlightCode.bind(this), true);
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
@@ -122,6 +123,55 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    */
   public handleEvent(event: Event): void {
     this.neutrinoService.handleEvent(this.editor, event);
+  }
+
+  /**
+   * @internal
+   *
+   * Allows single line deletion when pressing ctrl + 'x' and there is no text selected,
+   * and deletion of the last line (the default browser cut not deleting the last line but only its content).
+   */
+  private handleCut(event?: KeyboardEvent) {
+    if (event.ctrlKey && event.key === 'x') {
+      const sel: Selection = document.getSelection();
+      const anchorLine = this.neutrinoService.getParentLine(this.editor, sel.anchorNode as HTMLElement);
+      const focusLine = this.neutrinoService.getParentLine(this.editor, sel.focusNode  as HTMLElement);
+      const lines: NodeList = this.editor.nativeElement.querySelectorAll('.view-line');
+      const lastChildAndNotTheOnlyLine = lines.length > 1 && this.editor.nativeElement.lastChild.isSameNode(anchorLine);
+      const range = new Range();
+
+      // Allows last line deletion.
+      if (lastChildAndNotTheOnlyLine) {
+        const lineToSetFocus = anchorLine.previousSibling;
+
+        if (lineToSetFocus) {
+          range.setStart(lineToSetFocus, 0);
+          range.collapse(true);
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+
+        anchorLine.remove();
+      }
+      // Allows single line deletion.
+      else if (
+        lines.length > 1 &&
+        anchorLine.isSameNode(focusLine) &&
+        sel.anchorOffset === sel.focusOffset
+      ) {
+        range.setStartBefore(anchorLine);
+        range.setEndAfter(anchorLine);
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+
+      if (!lastChildAndNotTheOnlyLine) {
+        document.execCommand('cut');
+        event.preventDefault();
+      }
+
+      this.refreshLines();
+    }
   }
 
   /**
