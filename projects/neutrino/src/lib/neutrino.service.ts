@@ -33,9 +33,9 @@ export class NeutrinoService {
    * Key: ElementRef of the editor,
    * Value: A map whose key is the event type name, and value is the callback for this event.
    */
-  private eventsCallbacks: Map<ElementRef, Map<string, ((event: Event) => void)[]>> = new Map<
+  private eventsCallbacks: Map<ElementRef, Map<string, ((event?: Event) => void)[]>> = new Map<
     ElementRef,
-    Map<string, ((event: Event) => void)[]>
+    Map<string, ((event?: Event) => void)[]>
   >();
 
   /**
@@ -44,9 +44,9 @@ export class NeutrinoService {
    * Key: ElementRef of the editor,
    * Value: A map whose key is the event type name, and value is the callback for this event.
    */
-  private eventsCallbacksToExecLast: Map<ElementRef, Map<string, ((event: Event) => void)[]>> = new Map<
+  private eventsCallbacksToExecLast: Map<ElementRef, Map<string, ((event?: Event) => void)[]>> = new Map<
     ElementRef,
-    Map<string, ((event: Event) => void)[]>
+    Map<string, ((event?: Event) => void)[]>
   >();
 
   private editorsState: Map<ElementRef, EditorState> = new Map<ElementRef, EditorState>();
@@ -155,7 +155,7 @@ export class NeutrinoService {
   public addEventHandler(
     editor: ElementRef,
     eventType: EventType,
-    callback: (event: Event) => void,
+    callback: (event?: Event) => void,
     executeAfterRender?: boolean
   ): void {
     if (!this.editorsState.has(editor)) {
@@ -177,7 +177,7 @@ export class NeutrinoService {
         eventHandlers.set(eventType, [callback]);
       }
     } else {
-      const eventHandlers = new Map<string, ((event: Event) => void)[]>();
+      const eventHandlers = new Map<string, ((event?: Event) => void)[]>();
       eventHandlers.set(eventType, [callback]);
 
       if (executeAfterRender) {
@@ -221,6 +221,28 @@ export class NeutrinoService {
 
       eventCallbacks = this.eventsCallbacksToExecLast.get(editor);
       this.executeEvents(event, eventCallbacks);
+      this.handleNoLinesInEditor(editor);
+    }
+  }
+
+  /**
+   * @internal
+   */
+  private handleNoLinesInEditor(editor: ElementRef) {
+    const editorEmpty = editor.nativeElement.querySelectorAll('.view-line').length === 0;
+
+    if (editorEmpty) {
+      const sel: Selection = document.getSelection();
+      const range: Range = new Range();
+      const newLine = this.createLine();
+
+      this.renderer.appendChild(editor.nativeElement, newLine);
+      this.renderer.addClass(newLine, 'focus');
+
+      range.setStart(newLine, 0);
+      range.collapse(true);
+      sel.removeAllRanges();
+      sel.addRange(range);
     }
   }
 
@@ -228,13 +250,17 @@ export class NeutrinoService {
    * @internal
    */
   private shouldHandleEvent(event: Event) {
-    return  (
-      event instanceof KeyboardEvent &&
-      event.key !== 'Backspace' &&
-      event.key !== 'Control' &&
-      !event.shiftKey
-    ) ||
-    !(event instanceof KeyboardEvent);
+    let res = true;
+
+    if (event instanceof KeyboardEvent) {
+      if (event.shiftKey && event.key.indexOf('Arrow') !== -1) {
+        res = false;
+      } else {
+        res = event.key !== 'Control' && event.key !== 'Alt';
+      }
+    }
+
+    return  res;
   }
 
   /**
@@ -249,9 +275,6 @@ export class NeutrinoService {
             event.key !== 'ArrowRight' &&
             event.key !== 'ArrowDown'  &&
             event.key !== 'ArrowLeft'  &&
-            event.key !== 'Shift'      &&
-            event.key !== 'Control'    &&
-            event.key !== 'Alt'        &&
             event.key !== 'End'        &&
             event.key !== 'Home';
   }
@@ -503,7 +526,7 @@ export class NeutrinoService {
    *
    * Executes all of the callbacks bound to a given event.
    */
-  private executeEvents(event: Event, eventCallbacks: Map<string, ((event: Event) => void)[]>) {
+  private executeEvents(event: Event, eventCallbacks: Map<string, ((event?: Event) => void)[]>) {
     if (eventCallbacks) {
       const callBacks = eventCallbacks.get(event.type);
 
