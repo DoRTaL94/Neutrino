@@ -124,19 +124,14 @@ export class NeutrinoService {
       const prevLineContent: string = lineToAlign.previousSibling.textContent;
       let nonBreakingSpaceCounter = this.getCountOfNBSAtTheStartOfText(prevLineContent);
 
-      if (lineToAlign.nextSibling) {
-        const nextLineContent: string = lineToAlign.nextSibling.textContent;
-
-        if (
-          nextLineContent.lastIndexOf('}') !== -1 &&
-          prevLineContent.lastIndexOf('{') !== -1 &&
-          lineToAlign.textContent[lineToAlign.textContent.length - 1] !== '}'
-        ) {
-          if (nonBreakingSpaceCounter === 0) {
-            nonBreakingSpaceCounter = this.editorsOptions.get(editor).tabSpaces;
-          } else {
-            nonBreakingSpaceCounter += this.editorsOptions.get(editor).tabSpaces;
-          }
+      if (
+        prevLineContent.lastIndexOf('{') !== -1 &&
+        lineToAlign.textContent[lineToAlign.textContent.length - 1] !== '}'
+      ) {
+        if (nonBreakingSpaceCounter === 0) {
+          nonBreakingSpaceCounter = this.editorsOptions.get(editor).tabSpaces;
+        } else {
+          nonBreakingSpaceCounter += this.editorsOptions.get(editor).tabSpaces;
         }
       }
 
@@ -215,10 +210,7 @@ export class NeutrinoService {
         this.restoreSelection(editor);
       }
 
-      if (event.type === 'keyup') {
-        this.valueChangedSubjects.get(editor).next(this.getEditorText(editor));
-      }
-
+      this.valueChangedSubjects.get(editor).next(this.getEditorText(editor));
       eventCallbacks = this.eventsCallbacksToExecLast.get(editor);
       this.executeEvents(event, eventCallbacks);
       this.handleNoLinesInEditor(editor);
@@ -360,8 +352,8 @@ export class NeutrinoService {
     const lines: string[] = [];
 
     this.getTextSegments(editor.nativeElement, true)
-    .forEach((line, index) => {
-      lines.push(line.text);
+    .forEach((line) => {
+      lines.push(line.text.replace(/\s/g, ' '));
     });
 
     return lines.join('\n');

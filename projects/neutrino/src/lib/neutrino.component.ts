@@ -121,7 +121,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       this.valueChangedSub = this.neutrinoService
       .getValueChangedListener(this.editor)
       .subscribe(value => {
-        this.valueChanged.emit(value.replace(/\s+/g, ' '));
+        this.valueChanged.emit(value);
       });
 
       this.neutrinoService.addEventHandler(this.editor, EventType.Paste,     this.handlePaste.bind(this)                    );
@@ -171,7 +171,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       }
     });
 
-    if (numberLength > 0) {
+    if (numberLength > 0 && numberLength < this.fontSize.length) {
       const a = this.fontSize.substring(0, numberLength);
       const lineHeightNumber = Number(a) * 1.3;
       this.lineHeight = `${lineHeightNumber}${this.fontSize.substring(numberLength)}`;
