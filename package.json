@@ -10,7 +10,8 @@
     "tslint:format": "ng lint --fix=true",
     "prettier:lint": "prettier \"**/*.{json,yml,html,css}\" --check",
     "prettier:format": "prettier \"**/*.{json,yml,html,css}\" --write",
-    "lib:build": "ng build neutrino --watch=true"
+    "lib:build": "ng build neutrino --watch=true",
+    "lib:pack": "cd dist/neutrino && npm pack"
   },
   "private": true,
   "dependencies": {

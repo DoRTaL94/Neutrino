@@ -1,5 +1,4 @@
 import {
-  AfterViewChecked,
   AfterViewInit,
   Component,
   ElementRef,
@@ -37,7 +36,11 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   numbers: ElementRef;
 
   @Input()
-  public tabSpaces = 2;
+  public initialValue = '';
+  @Input()
+  public fontSize = '1.2rem';
+  @Input()
+  public tabSpaces = '2';
   @Input()
   public showLineNumber: boolean;
   @Input()
@@ -49,10 +52,13 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   @Output()
   public valueChanged = new EventEmitter<string>();
 
+  public lineHeight = `${1.2 * 1.3}rem`;
   public lines = [1];
-  public currentLine = 0;
+  public currentLine = -1;
   private valueChangedSub: Subscription;
   private hightlighter: Highlighter;
+  private clipboard: string;
+  private tabSpacesParsed: number;
 
   constructor(
     private neutrinoService: NeutrinoService,
@@ -61,15 +67,13 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (
-      changes.value &&
-      this.editor &&
-      this.neutrinoService.getEditorText(this.editor) !== this.value
-    ) {
-      this.neutrinoService.render(this.editor, this.value);
-      this.refreshLines();
-      this.hightlightCode();
-    }
+      if (changes.initialValue) {
+        this.refreshEditorValue(this.initialValue, true);
+      }
+
+      if (changes.value) {
+        this.refreshEditorValue(this.value, true);
+      }
   }
 
   ngOnInit(): void {
@@ -80,40 +84,70 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
 
     this.showLineNumber = this.showLineNumber !== undefined;
     this.editable = this.editable !== undefined;
+
+    // refresh lines numbers based on the initial value inside 'value' property.
+    if (this.value && this.value !== '') {
+      let num = 2;
+      this.lines = [1];
+
+      Array.from(this.value).forEach(char => {
+        if (char === '\n') {
+          this.lines.push(num++);
+        }
+      });
+    }
+
+    this.initLineHeight();
   }
 
   ngOnDestroy(): void {
-    this.valueChangedSub.unsubscribe();
+    if (this.valueChangedSub) {
+      this.valueChangedSub.unsubscribe();
+    }
   }
 
   /**
    * This is the place to add configurations and controls for the editor view.
    */
   ngAfterViewInit(): void {
+    this.tabSpacesParsed = isNaN(Number(this.tabSpaces)) ? 2 : Number(this.tabSpaces);
     this.neutrinoService.setEditorOptions(this.editor, {
-      tabSpaces: this.tabSpaces
+      tabSpaces: this.tabSpacesParsed,
+      lineHeight: this.lineHeight,
+      fontSize: this.fontSize
     });
 
     if (this.editable) {
       this.valueChangedSub = this.neutrinoService
       .getValueChangedListener(this.editor)
       .subscribe(value => {
-        this.valueChanged.emit(value);
+        this.valueChanged.emit(value.replace(/\s+/g, ' '));
       });
 
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleCut.bind(this));
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.hightlightCode.bind(this), true);
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleDeletion.bind(this));
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleInsertTab.bind(this));
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.handleAutoComplete.bind(this));
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.addNewLineOnEnter.bind(this));
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.scrollFocusedLineIntoView.bind(this), true);
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown, this.focusLine.bind(this), true);
-      this.neutrinoService.addEventHandler(this.editor, EventType.MouseDown, this.focusLine.bind(this), true);
-      this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.refreshLines.bind(this), true);
-      this.neutrinoService.addEventHandler(this.editor, EventType.Input, this.hightlightCode.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.Paste,     this.handlePaste.bind(this)                    );
+      this.neutrinoService.addEventHandler(this.editor, EventType.Copy,      this.saveToClipboard.bind(this)                );
+      this.neutrinoService.addEventHandler(this.editor, EventType.Cut,       this.saveToClipboard.bind(this)                );
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleCopy.bind(this)                      );
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleCut.bind(this)                      );
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleDeletion.bind(this)                 );
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleInsertTab.bind(this)                );
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleAutoComplete.bind(this)             );
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.addNewLineOnEnter.bind(this)              );
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.hightlightCode.bind(this),            true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.scrollFocusedLineIntoView.bind(this), true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.focusLine.bind(this),                 true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.refreshLines.bind(this),              true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.Input,     this.refreshLines.bind(this),              true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.Input,     this.hightlightCode.bind(this),            true);
+      this.neutrinoService.addEventHandler(this.editor, EventType.MouseDown, this.focusLine.bind(this),                 true);
     } else {
       this.renderer.setAttribute(this.editor.nativeElement, 'contenteditable', 'false');
+    }
+
+    if (this.value === '') {
+      this.refreshEditorValue(this.initialValue);
+    } else {
+      this.refreshEditorValue(this.value);
     }
   }
 
@@ -123,6 +157,92 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    */
   public handleEvent(event: Event): void {
     this.neutrinoService.handleEvent(this.editor, event);
+  }
+
+  /**
+   * @internal
+   */
+  private initLineHeight(): void {
+    let numberLength = 0;
+
+    Array.from(this.fontSize).forEach(char => {
+      if (!isNaN(Number(char)) || char === '.') {
+        numberLength++;
+      }
+    });
+
+    if (numberLength > 0) {
+      const a = this.fontSize.substring(0, numberLength);
+      const lineHeightNumber = Number(a) * 1.3;
+      this.lineHeight = `${lineHeightNumber}${this.fontSize.substring(numberLength)}`;
+    }
+  }
+
+  /**
+   * @internal
+   */
+  private refreshEditorValue(text: string, refreshLines?: boolean) {
+    if (
+      this.editor &&
+      this.neutrinoService.getEditorText(this.editor) !== text
+    ) {
+      this.neutrinoService.render(this.editor, text);
+      this.hightlightCode();
+
+      if (refreshLines) {
+        this.refreshLines();
+      }
+    }
+  }
+
+  /**
+   * @internal
+   */
+  private handleCopy(event: KeyboardEvent): void {
+    if (event.key === 'c' && event.ctrlKey) {
+      this.saveToClipboard();
+      event.preventDefault();
+    }
+  }
+
+  /**
+   * @internal
+   */
+  private saveToClipboard(): void {
+    this.clipboard = document.getSelection().toString();
+  }
+
+  /**
+   * @internal
+   */
+  private handlePaste(event: Event): void {
+    if (this.clipboard) {
+      const state = this.neutrinoService.getEditorState(this.editor);
+      const lines = this.neutrinoService.getEditorText(this.editor).split('\n');
+      lines[state.currentLine] = `${
+        lines[state.currentLine]
+        .substring(0, state.anchorIndex)}${this.clipboard}${lines[state.currentLine].substring(state.focusIndex)
+      }`;
+      this.neutrinoService.render(this.editor, lines.join('\n'));
+      const clipboardLines = this.clipboard.split('\n');
+      const clipboardLinesLength = clipboardLines.length - 1;
+
+      if (clipboardLinesLength > 0) {
+        state.currentLine += clipboardLinesLength;
+        state.focusIndex = clipboardLines[clipboardLinesLength].length;
+        state.anchorIndex = state.focusIndex;
+      } else {
+        const clipboardLength =
+          this.clipboard[clipboardLinesLength] === '\n' ? clipboardLinesLength : this.clipboard.length;
+        state.focusIndex = state.anchorIndex + clipboardLength;
+        state.anchorIndex = state.focusIndex;
+      }
+
+      this.neutrinoService.restoreSelection(this.editor);
+      this.refreshLines();
+    }
+
+    event.preventDefault();
   }
 
   /**
@@ -169,8 +289,6 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
         document.execCommand('cut');
         event.preventDefault();
       }
-
-      this.refreshLines();
     }
   }
 
@@ -184,12 +302,18 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    * @param line A line element to focus.
    */
   private focusLine(event?: KeyboardEvent | MouseEvent) {
-    const lines = this.editor.nativeElement.querySelectorAll('.view-line');
-    const currentLine = this.neutrinoService.getClosestViewLine(this.editor);
+    const lines: NodeList = this.editor.nativeElement.querySelectorAll('.view-line');
     const state: EditorState = this.neutrinoService.getEditorState(this.editor);
     let currentLineSet = false;
     let focusedLine;
     state.currentLine = 0;
+    let currentLine;
+
+    if (event instanceof MouseEvent) {
+      currentLine = this.neutrinoService.getParentLine(this.editor, event.target as HTMLElement);
+    } else if (event instanceof KeyboardEvent) {
+      currentLine = this.neutrinoService.getClosestViewLine(this.editor);
+    }
 
     if (event instanceof KeyboardEvent) {
       if (event.key === 'ArrowUp' && currentLine.previousSibling) {
@@ -200,11 +324,11 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
         focusedLine = currentLine;
       }
     } else if (event instanceof MouseEvent) {
-      focusedLine = event.target;
+      focusedLine = this.neutrinoService.getParentLine(this.editor, event.target as HTMLElement);
     }
 
     lines.forEach((currLine) => {
-      if (currLine === focusedLine) {
+      if (currLine.isSameNode(focusedLine)) {
         currentLineSet = true;
         this.renderer.addClass(currLine, 'focus');
       } else {
@@ -219,7 +343,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     this.currentLine = state.currentLine;
   }
 
-  private scrollFocusedLineIntoView(event: KeyboardEvent) {
+  private scrollFocusedLineIntoView(): void {
     const line: HTMLDivElement = this.neutrinoService.getClosestViewLine(this.editor);
     line.scrollIntoView(false);
   }
@@ -239,7 +363,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    * Refreshes {@link NeutrinoComponent.lines} array.
    * Called whenever there's a change in the editor.
    */
-  private refreshLines(event?: KeyboardEvent): void {
+  private refreshLines(): void {
     let num = 1;
 
     this.lines = [];
@@ -253,19 +377,21 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   /**
    * Handles auto completion of certain keywords once inserted.
    */
-  private handleAutoComplete(event: KeyboardEvent): void {
+  private handleAutoComplete(event?: Event): void {
     let opening: Text;
     let closure: Text;
 
-    if (event.key === '{') {
-      opening = this.renderer.createText('{');
-      closure = this.renderer.createText('}');
-    } else if (event.key === '[') {
-      opening = this.renderer.createText('[');
-      closure = this.renderer.createText(']');
-    } else if (event.key === '(') {
-      opening = this.renderer.createText('(');
-      closure = this.renderer.createText(')');
+    if (event instanceof KeyboardEvent) {
+      if (event.key === '{') {
+        opening = this.renderer.createText('{');
+        closure = this.renderer.createText('}');
+      } else if (event.key === '[') {
+        opening = this.renderer.createText('[');
+        closure = this.renderer.createText(']');
+      } else if (event.key === '(') {
+        opening = this.renderer.createText('(');
+        closure = this.renderer.createText(')');
+      }
     }
 
     if (opening) {
@@ -296,10 +422,11 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
         if (!line.firstChild) {
           this.renderer.appendChild(line, this.renderer.createElement('br'));
         }
-
-        event.preventDefault();
-        return;
+      } else {
+        document.execCommand('delete');
       }
+
+      event.preventDefault();
     }
   }
 
@@ -332,7 +459,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
         range.collapse(true);
       }
 
-      for (let i = 0 ; i < this.tabSpaces; i++) {
+      for (let i = 0 ; i < this.tabSpacesParsed; i++) {
         const nonBreakingSpace = this.renderer.createText('\u00a0');
         range.insertNode(nonBreakingSpace);
         range.setStartAfter(nonBreakingSpace);
@@ -374,7 +501,6 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       }
 
       this.neutrinoService.keepTextAligned(this.editor, newLine);
-      this.refreshLines();
       event.preventDefault();
     }
   }

@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'neutrino-example';
-  value = '';
+  value = ''; // 'public class Example {\n\tpublic static void SayHello() {\n\t\t\n\t}\n}';
 
   public onValueChanged(value: string) {
     this.value = value;

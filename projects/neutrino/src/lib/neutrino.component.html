@@ -1,19 +1,30 @@
 <div *ngIf="showLineNumber" class="numbers-container" #numbers>
-  <div *ngFor="let line of lines" [ngClass]="{ focus: currentLine === line - 1, 'line-number': true }">{{ line }}</div>
-</div>
-<span
-  class="editor"
-  contenteditable="true"
-  (keydown)="handleEvent($event)"
-  (keyup)="handleEvent($event)"
-  (input)="handleEvent($event)"
-  (change)="handleEvent($event)"
-  (click)="handleEvent($event)"
-  (mousedown)="handleEvent($event)"
-  (mouseup)="handleEvent($event)"
-  #editor
->
-  <div class="view-line focus">
-    <br />
+  <div
+    *ngFor="let line of lines"
+    [ngStyle]="{ 'line-height': lineHeight, 'font-size': fontSize }"
+    [ngClass]="{ focus: currentLine === line - 1, 'line-number': true }"
+  >
+    {{ line }}
   </div>
-</span>
+</div>
+<div class="editor-flex">
+  <div
+    class="editor"
+    contenteditable="true"
+    (keydown)="handleEvent($event)"
+    (keyup)="handleEvent($event)"
+    (input)="handleEvent($event)"
+    (change)="handleEvent($event)"
+    (click)="handleEvent($event)"
+    (mousedown)="handleEvent($event)"
+    (mouseup)="handleEvent($event)"
+    (cut)="handleEvent($event)"
+    (paste)="handleEvent($event)"
+    (copy)="handleEvent($event)"
+    #editor
+  >
+    <div [ngStyle]="{ 'line-height': lineHeight, 'font-size': fontSize }" class="view-line focus">
+      <br />
+    </div>
+  </div>
+</div>

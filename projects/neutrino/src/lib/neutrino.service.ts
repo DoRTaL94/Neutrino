@@ -83,7 +83,7 @@ export class NeutrinoService {
    * @param lineToAddAfter A line to insert the new line after.
    */
   public addNewLine(editor: ElementRef, setCaretInside?: boolean, text?: string, lineToAddAfter?: HTMLDivElement) {
-    const newLine: HTMLDivElement = this.createLine();
+    const newLine: HTMLDivElement = this.createLine(editor);
 
     if (text) {
       newLine.innerHTML = '';
@@ -234,7 +234,7 @@ export class NeutrinoService {
     if (editorEmpty) {
       const sel: Selection = document.getSelection();
       const range: Range = new Range();
-      const newLine = this.createLine();
+      const newLine = this.createLine(editor);
 
       this.renderer.appendChild(editor.nativeElement, newLine);
       this.renderer.addClass(newLine, 'focus');
@@ -256,7 +256,7 @@ export class NeutrinoService {
       if (event.shiftKey && event.key.indexOf('Arrow') !== -1) {
         res = false;
       } else {
-        res = event.key !== 'Control' && event.key !== 'Alt';
+        res = event.key !== 'Control' && event.key !== 'Alt' && event.key !== 'Shift';
       }
     }
 
@@ -447,6 +447,10 @@ export class NeutrinoService {
           line = this.appendLine(editor, lineNumber);
         }
       } else if (char === '\t') {
+        if (line.textContent === '') {
+          line.innerHTML = '';
+        }
+
         if (currentText !== '') {
           this.appendText(line, currentText);
         }
@@ -462,7 +466,7 @@ export class NeutrinoService {
   /**
    * @param lineNumber If given the created line will be created with an id of "line-[lineNumber]".
    */
-  public createLine(lineNumber?: number): HTMLDivElement {
+  public createLine(editor: ElementRef, lineNumber?: number): HTMLDivElement {
     const line: HTMLDivElement = this.renderer.createElement('div');
     const br: HTMLBRElement = this.renderer.createElement('br');
 
@@ -472,6 +476,8 @@ export class NeutrinoService {
 
     this.renderer.addClass(line, 'view-line');
     this.renderer.appendChild(line, br);
+    this.renderer.setStyle(line, 'line-height', this.editorsOptions.get(editor).lineHeight);
+    this.renderer.setStyle(line, 'font-size', this.editorsOptions.get(editor).fontSize);
 
     return line;
   }
@@ -548,7 +554,7 @@ export class NeutrinoService {
    * @param lineNumber If given the created line will be created with an id of "line-[lineNumber]".
    */
   private appendLine(editor: ElementRef, lineNumber?: number): HTMLDivElement {
-    const line = this.createLine(lineNumber);
+    const line = this.createLine(editor, lineNumber);
     this.renderer.appendChild(editor.nativeElement, line);
 
     return line;

@@ -5,37 +5,52 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+  --editor-background: rgb(76, 79, 90);
+  --text-color: rgba(255, 255, 255, 0.959);
+  --editor-border: 1px solid rgba(0, 0, 0, 0.2);
+  --caret-color: white;
+  --line-focus-border-color: rgba(255, 255, 255, 0.15);
+}
+
 nt-editor {
-  font-size: 62.5%;
   display: flex;
   justify-content: row;
-  overflow: auto;
   max-width: 100%;
   max-height: 100%;
+  background-color: var(--editor-background);
+  overflow: auto;
+}
+
+nt-editor * {
+  color: var(--text-color);
+}
+
+.editor-flex {
+  flex: 1;
 }
 
 .editor {
-  flex: 1;
   outline: none;
   font-size: 1.2rem;
-  width: fit-content;
+  max-width: 100%;
+  min-width: fit-content;
+  caret-color: var(--caret-color);
   height: fit-content;
 }
 
 .editor * {
-  font-size: 1.2rem;
   white-space: pre;
 }
 
 .focus {
-  border-color: rgb(230, 230, 230) !important;
+  border-color: var(--line-focus-border-color) !important;
   border-left: 0 !important;
   border-right: 0 !important;
 }
 
 .view-line {
   padding-left: 0.5rem;
-  line-height: 1.75rem;
   border: 1px solid rgba(0, 0, 0, 0);
 }
 
@@ -50,8 +65,6 @@ nt-editor {
 }
 
 .line-number {
-  font-size: 1rem;
-  line-height: 1.75rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   display: flex;
