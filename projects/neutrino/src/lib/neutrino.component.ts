@@ -66,17 +66,27 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     private highlightsService: HightlightsService
   ) { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-      if (changes.initialValue) {
-        this.refreshEditorValue(this.initialValue, true);
-      }
+  public ngOnChanges(changes: SimpleChanges): void {
+    if (changes.codeType) {
+      this.hightlighter = this.highlightsService
+        .getByCodeType(this.editor, this.codeType.toLowerCase(), this.renderer);
+    }
 
-      if (changes.value) {
+    if (changes.initialValue) {
+      this.refreshEditorValue(this.initialValue, true);
+    }
+
+    if (changes.value) {
+      if (this.editor && (changes.value.currentValue === null || changes.value.currentValue === '')) {
+        (this.editor.nativeElement as HTMLElement).innerHTML =
+          `<div [ngStyle]="{ 'line-height': lineHeight, 'font-size': fontSize }" class="view-line focus"><br></div>`;
+      } else {
         this.refreshEditorValue(this.value, true);
       }
+    }
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     if (this.codeType) {
       this.hightlighter = this.highlightsService
       .getByCodeType(this.editor, this.codeType.toLowerCase(), this.renderer);
@@ -100,7 +110,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     this.initLineHeight();
   }
 
-  ngOnDestroy(): void {
+  public ngOnDestroy(): void {
     if (this.valueChangedSub) {
       this.valueChangedSub.unsubscribe();
     }
@@ -109,7 +119,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   /**
    * This is the place to add configurations and controls for the editor view.
    */
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
     this.tabSpacesParsed = isNaN(Number(this.tabSpaces)) ? 2 : Number(this.tabSpaces);
     this.neutrinoService.setEditorOptions(this.editor, {
       tabSpaces: this.tabSpacesParsed,
@@ -240,6 +250,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
 
       this.neutrinoService.restoreSelection(this.editor);
       this.refreshLines();
+      this.hightlightCode(event instanceof KeyboardEvent ? event as KeyboardEvent : null);
     }
 
     event.preventDefault();

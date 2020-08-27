@@ -44,9 +44,8 @@ nt-editor * {
 }
 
 .focus {
-  border-color: var(--line-focus-border-color) !important;
-  border-left: 0 !important;
-  border-right: 0 !important;
+  border-top-color: var(--line-focus-border-color) !important;
+  border-bottom-color: var(--line-focus-border-color) !important;
 }
 
 .view-line {
@@ -56,12 +55,12 @@ nt-editor * {
 
 .line-number:first-child,
 .view-line:first-child {
-  border-top: 0 !important;
+  border-top-color: rgba(0, 0, 0, 0) !important;
 }
 
 .line-number:last-child,
 .view-line:last-child {
-  border-bottom: 0 !important;
+  border-bottom-color: rgba(0, 0, 0, 0) !important;
 }
 
 .line-number {

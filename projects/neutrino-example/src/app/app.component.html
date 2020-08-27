@@ -1,11 +1,12 @@
 <main>
   <nt-editor
     fontSize="1.2rem"
-    codeType="java"
+    [codeType]="codeType"
     [value]="value"
     (valueChanged)="onValueChanged($event)"
     editable
     showLineNumber
   ></nt-editor>
   <textarea class="output" (keyup)="onKeyUp($event)">{{ value }}</textarea>
+  <button (click)="changeCodeType($event)">click</button>
 </main>

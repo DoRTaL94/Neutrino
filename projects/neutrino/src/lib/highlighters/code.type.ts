@@ -1,3 +1,4 @@
 export enum CodeType {
-  Java = 'java'
+  Java = 'java',
+  Javascript = 'javascript'
 }
