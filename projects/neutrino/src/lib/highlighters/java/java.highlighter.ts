@@ -16,6 +16,8 @@ export class JavaHighlighter implements Highlighter {
   }
 
   public highlightLine(line: HTMLDivElement): void {
+    this.isQuoteOpened = false;
+
     // If line is not empty
     if (line.firstChild && line.firstChild.nodeName.toLowerCase() !== 'br') {
       this.code = line.textContent;
@@ -84,7 +86,8 @@ export class JavaHighlighter implements Highlighter {
         }
 
         if (builderWithoutStructuralKeywords.length > 0) {
-          this.appendText(builderWithoutStructuralKeywords.join(''));
+          const word = builderWithoutStructuralKeywords.join('');
+          this.appendText(word, keywords.get(word));
         }
       }
 

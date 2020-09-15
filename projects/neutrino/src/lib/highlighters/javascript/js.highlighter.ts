@@ -16,6 +16,8 @@ export class JSHighlighter implements Highlighter {
   }
 
   public highlightLine(line: HTMLDivElement): void {
+    this.isQuoteOpened = false;
+
     // If line is not empty
     if (line.firstChild && line.firstChild.nodeName.toLowerCase() !== 'br') {
       this.code = line.textContent;
@@ -82,7 +84,8 @@ export class JSHighlighter implements Highlighter {
         }
 
         if (builderWithoutStructuralKeywords.length > 0) {
-          this.appendText(builderWithoutStructuralKeywords.join(''));
+          const word = builderWithoutStructuralKeywords.join('');
+          this.appendText(word, keywords.get(word));
         }
       }
 
@@ -120,7 +123,7 @@ export class JSHighlighter implements Highlighter {
 
     while (
       currentIndex < this.codeLength &&
-      !(this.code.charAt(currentIndex) === '"' || this.code.charAt(currentIndex) === '\'')
+      !(this.code.charAt(currentIndex) === '"' || this.code.charAt(currentIndex) === '\'' || this.code.charAt(currentIndex) === '`')
     ) {
       currentIndex++;
       endIndex = currentIndex;
@@ -128,7 +131,7 @@ export class JSHighlighter implements Highlighter {
 
     if (
       currentIndex < this.codeLength &&
-      (this.code.charAt(currentIndex) === '"' || this.code.charAt(currentIndex) === '\'')
+      (this.code.charAt(currentIndex) === '"' || this.code.charAt(currentIndex) === '\'' || this.code.charAt(currentIndex) === '`')
     ) {
       endIndex = currentIndex;
       this.isQuoteOpened = false;
@@ -170,7 +173,7 @@ export class JSHighlighter implements Highlighter {
   private isQuote(index: number) {
     return (
       this.isQuoteOpened ||
-      (index < this.codeLength && (this.code.charAt(index) === '"' || this.code.charAt(index) === '\''))
+      (index < this.codeLength && (this.code.charAt(index) === '"' || this.code.charAt(index) === '\'' || this.code.charAt(index) === '`'))
     );
   }
 

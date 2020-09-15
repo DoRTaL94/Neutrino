@@ -76,4 +76,6 @@ export const keywords: Map<string, KeywordType> = new Map([
   [']', KeywordType.Structural],
   [',', KeywordType.Structural],
   ['=>', KeywordType.Structural],
+  ['(', KeywordType.Structural],
+  [')', KeywordType.Structural],
 ]);
