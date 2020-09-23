@@ -79,7 +79,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     if (changes.value) {
       if (this.editor && (changes.value.currentValue === null || changes.value.currentValue === '')) {
         (this.editor.nativeElement as HTMLElement).innerHTML =
-          `<div [ngStyle]="{ 'line-height': lineHeight, 'font-size': fontSize }" class="view-line focus"><br></div>`;
+          `<div style="line-height: ${this.lineHeight}; font-size: ${this.fontSize}" class="view-line focus"><br></div>`;
       } else {
         this.refreshEditorValue(this.value, true);
       }
@@ -137,7 +137,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       this.neutrinoService.addEventHandler(this.editor, EventType.Paste,     this.handlePaste.bind(this)                    );
       this.neutrinoService.addEventHandler(this.editor, EventType.Copy,      this.saveToClipboard.bind(this)                );
       this.neutrinoService.addEventHandler(this.editor, EventType.Cut,       this.saveToClipboard.bind(this)                );
-      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleCopy.bind(this)                      );
+      this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleCopy.bind(this)                     );
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleCut.bind(this)                      );
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleDeletion.bind(this)                 );
       this.neutrinoService.addEventHandler(this.editor, EventType.KeyDown,   this.handleInsertTab.bind(this)                );
@@ -426,14 +426,10 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   private handleDeletion(event: KeyboardEvent): void {
     if (event.key === 'Backspace') {
       const line = this.neutrinoService.getClosestViewLine(this.editor);
-      const emptyLine = line.textContent === '';
+      const emptyLine = line?.textContent === '';
       const oneLine = this.editor.nativeElement.querySelectorAll('.view-line').length === 1;
 
-      if (emptyLine && oneLine) {
-        if (!line.firstChild) {
-          this.renderer.appendChild(line, this.renderer.createElement('br'));
-        }
-      } else {
+      if (!emptyLine || !oneLine) {
         document.execCommand('delete');
       }
 
@@ -492,7 +488,11 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     if (event.key === 'Enter') {
       const sel: Selection = document.getSelection();
       const range: Range = sel.getRangeAt(0);
-      const currentLine: HTMLDivElement = this.neutrinoService.getClosestViewLine(this.editor);
+      let currentLine: HTMLDivElement = this.neutrinoService.getClosestViewLine(this.editor);
+
+      if (!currentLine) {
+        currentLine = this.editor.nativeElement.firstChild;
+      }
 
       range.setEndAfter(currentLine.lastChild);
       const content = range.extractContents();

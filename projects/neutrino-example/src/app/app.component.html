@@ -1,6 +1,6 @@
 <main>
   <nt-editor
-    fontSize="1.2rem"
+    fontSize="3rem"
     [codeType]="codeType"
     [value]="value"
     (valueChanged)="onValueChanged($event)"
@@ -8,5 +8,4 @@
     showLineNumber
   ></nt-editor>
   <textarea class="output" (keyup)="onKeyUp($event)">{{ value }}</textarea>
-  <button (click)="changeCodeType($event)">click</button>
 </main>

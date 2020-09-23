@@ -125,7 +125,7 @@ export class JavaHighlighter implements Highlighter {
 
     while (
       currentIndex < this.codeLength &&
-      !(this.code.charAt(currentIndex) === '"' || this.code.charAt(currentIndex) === '\'')
+      keywords.get(this.code.charAt(currentIndex)) !== KeywordType.StrQuote
     ) {
       currentIndex++;
       endIndex = currentIndex;
@@ -133,7 +133,7 @@ export class JavaHighlighter implements Highlighter {
 
     if (
       currentIndex < this.codeLength &&
-      (this.code.charAt(currentIndex) === '"' || this.code.charAt(currentIndex) === '\'')
+      keywords.get(this.code.charAt(currentIndex)) === KeywordType.StrQuote
     ) {
       endIndex = currentIndex;
       this.isQuoteOpened = false;
@@ -173,10 +173,7 @@ export class JavaHighlighter implements Highlighter {
   }
 
   private isQuote(index: number) {
-    return (
-      this.isQuoteOpened ||
-      (index < this.codeLength && (this.code.charAt(index) === '"' || this.code.charAt(index) === '\''))
-    );
+    return this.isQuoteOpened || keywords.get(this.code.charAt(index)) === KeywordType.StrQuote;
   }
 
   private isOneLineComment(index: number): boolean {

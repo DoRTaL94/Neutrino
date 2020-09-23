@@ -123,7 +123,7 @@ export class JSHighlighter implements Highlighter {
 
     while (
       currentIndex < this.codeLength &&
-      !(this.code.charAt(currentIndex) === '"' || this.code.charAt(currentIndex) === '\'' || this.code.charAt(currentIndex) === '`')
+      keywords.get(this.code.charAt(currentIndex)) !== KeywordType.StrQuote
     ) {
       currentIndex++;
       endIndex = currentIndex;
@@ -131,23 +131,13 @@ export class JSHighlighter implements Highlighter {
 
     if (
       currentIndex < this.codeLength &&
-      (this.code.charAt(currentIndex) === '"' || this.code.charAt(currentIndex) === '\'' || this.code.charAt(currentIndex) === '`')
+      keywords.get(this.code.charAt(currentIndex)) === KeywordType.StrQuote
     ) {
       endIndex = currentIndex;
       this.isQuoteOpened = false;
     }
 
     return endIndex === -1 ? -1 : endIndex + 1;
-  }
-
-  private handleAnnotation(currentIndex: number, builder: any[]): void {
-    let endIndexOfAnnotation = this.getEndIndexOfAnnotation(currentIndex + 1);
-    endIndexOfAnnotation = endIndexOfAnnotation === -1 ? this.codeLength : endIndexOfAnnotation;
-    this.appendSubstring(currentIndex, endIndexOfAnnotation, 'annotation');
-
-    if (endIndexOfAnnotation !== this.codeLength) {
-      this.highlightHelper(endIndexOfAnnotation, builder);
-    }
   }
 
   private handleOneLineComment(currentIndex: number, builder: any[]): void {
@@ -171,10 +161,7 @@ export class JSHighlighter implements Highlighter {
   }
 
   private isQuote(index: number) {
-    return (
-      this.isQuoteOpened ||
-      (index < this.codeLength && (this.code.charAt(index) === '"' || this.code.charAt(index) === '\'' || this.code.charAt(index) === '`'))
-    );
+    return this.isQuoteOpened || keywords.get(this.code.charAt(index)) === KeywordType.StrQuote;
   }
 
   private isOneLineComment(index: number): boolean {
