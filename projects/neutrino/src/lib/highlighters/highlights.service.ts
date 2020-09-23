@@ -1,8 +1,9 @@
 import { ElementRef, Injectable, Renderer2 } from '@angular/core';
 import { CodeType } from './code.type';
 import { Highlighter } from './highlighter';
+import { javaKeywords } from './java/java-keywords';
 import { JavaHighlighter } from './java/java.highlighter';
-import { JSHighlighter } from './javascript/js.highlighter';
+import { jsKeywords } from './javascript/js-keywords';
 
 @Injectable({
   providedIn: 'root'
@@ -17,15 +18,15 @@ export class HightlightsService {
           !this.highlighters.has(editor) ||
           !(this.highlighters.get(editor) instanceof JavaHighlighter)
         ) {
-          this.highlighters.set(editor, new JavaHighlighter(renderer));
+          this.highlighters.set(editor, new JavaHighlighter(renderer, javaKeywords));
         }
         break;
       case CodeType.Javascript:
         if (
           !this.highlighters.has(editor) ||
-          !(this.highlighters.get(editor) instanceof JSHighlighter)
+          !(this.highlighters.get(editor) instanceof Highlighter)
         ) {
-          this.highlighters.set(editor, new JSHighlighter(renderer));
+          this.highlighters.set(editor, new Highlighter(renderer, jsKeywords));
         }
         break;
     }

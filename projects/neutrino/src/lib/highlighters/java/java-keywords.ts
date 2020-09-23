@@ -1,6 +1,6 @@
 import { KeywordType } from '../keyword.type';
 
-export const keywords: Map<string, KeywordType> = new Map([
+export const javaKeywords: Map<string, KeywordType> = new Map([
   ['Integer', KeywordType.PrimitiveWrapper],
   ['Double', KeywordType.PrimitiveWrapper],
   ['String', KeywordType.PrimitiveWrapper],

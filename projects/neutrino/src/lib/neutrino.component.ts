@@ -77,12 +77,11 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     }
 
     if (changes.value) {
-      if (this.editor && (changes.value.currentValue === null || changes.value.currentValue === '')) {
-        (this.editor.nativeElement as HTMLElement).innerHTML =
-          `<div style="line-height: ${this.lineHeight}; font-size: ${this.fontSize}" class="view-line focus"><br></div>`;
-      } else {
-        this.refreshEditorValue(this.value, true);
-      }
+      this.onValueChanged(changes);
+    }
+
+    if (changes.fontSize) {
+      this.onFontSizeChanged();
     }
   }
 
@@ -107,7 +106,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
       });
     }
 
-    this.initLineHeight();
+    this.refreshFontSizeAndLineHeight();
   }
 
   public ngOnDestroy(): void {
@@ -172,7 +171,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
   /**
    * @internal
    */
-  private initLineHeight(): void {
+  private refreshFontSizeAndLineHeight(): void {
     let numberLength = 0;
 
     Array.from(this.fontSize).forEach(char => {
@@ -182,20 +181,38 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     });
 
     if (numberLength > 0 && numberLength < this.fontSize.length) {
-      const a = this.fontSize.substring(0, numberLength);
-      const lineHeightNumber = Number(a) * 1.3;
+      const fontSize = this.fontSize.substring(0, numberLength);
+      this.fontSize = `${Math.max(Number(fontSize), 1)}rem`;
+      const lineHeightNumber = Math.max(Number(fontSize), 1) * 1.3;
       this.lineHeight = `${lineHeightNumber}${this.fontSize.substring(numberLength)}`;
+    }
+  }
+
+  private onValueChanged(changes: SimpleChanges): void {
+    if (this.editor && (changes.value.currentValue === null || changes.value.currentValue === '')) {
+      (this.editor.nativeElement as HTMLElement).innerHTML =
+        `<div style="line-height: ${this.lineHeight}; font-size: ${this.fontSize}" class="view-line focus"><br></div>`;
+    } else {
+      this.refreshEditorValue(this.value, true);
+    }
+  }
+
+  private onFontSizeChanged(): void {
+    const editorOptions = this.neutrinoService.getEditorOptions(this.editor);
+
+    if (editorOptions) {
+      this.refreshFontSizeAndLineHeight();
+      editorOptions.fontSize = this.fontSize;
+      editorOptions.lineHeight = this.lineHeight;
+      this.refreshEditorValue(this.value, true, true);
     }
   }
 
   /**
    * @internal
    */
-  private refreshEditorValue(text: string, refreshLines?: boolean) {
-    if (
-      this.editor &&
-      this.neutrinoService.getEditorText(this.editor) !== text
-    ) {
+  private refreshEditorValue(text: string, refreshLines?: boolean, forceRefresh?: boolean) {
+    if ((this.editor && this.neutrinoService.getEditorText(this.editor) !== text) || forceRefresh) {
       this.neutrinoService.render(this.editor, text);
       this.hightlightCode();
 

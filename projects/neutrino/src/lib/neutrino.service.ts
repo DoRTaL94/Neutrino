@@ -58,8 +58,12 @@ export class NeutrinoService {
     this.renderer = rendererFactory.createRenderer(null, null);
   }
 
-  public getEditorState(editor: ElementRef) {
+  public getEditorState(editor: ElementRef): EditorState {
     return this.editorsState.get(editor);
+  }
+
+  public getEditorOptions(editor: ElementRef): EditorOptions {
+    return this.editorsOptions.get(editor);
   }
 
   public setEditorOptions(editor: ElementRef, options: EditorOptions) {

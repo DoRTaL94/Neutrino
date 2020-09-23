@@ -1,6 +1,8 @@
 <main>
+  <button (click)="increaseFontSize()">+</button>
+  <button (click)="decreaseFontSize()">-</button>
   <nt-editor
-    fontSize="3rem"
+    [fontSize]="fontSizeStr"
     [codeType]="codeType"
     [value]="value"
     (valueChanged)="onValueChanged($event)"

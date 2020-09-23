@@ -1,6 +1,6 @@
 import { KeywordType } from '../keyword.type';
 
-export const keywords: Map<string, KeywordType> = new Map([
+export const jsKeywords: Map<string, KeywordType> = new Map([
   ['public', KeywordType.AccessModifier],
   ['protected', KeywordType.AccessModifier],
   ['private', KeywordType.AccessModifier],
