@@ -1,6 +1,6 @@
 import { Renderer2 } from '@angular/core';
-import { KeywordType } from 'dist/neutrino/lib/highlighters/keyword.type';
 import { Highlighter } from '../highlighter';
+import { KeywordType } from '../keyword.type';
 
 export class JavaHighlighter extends Highlighter {
   constructor(renderer: Renderer2, keywords: Map<string, KeywordType>) {

@@ -83,6 +83,10 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     if (changes.fontSize) {
       this.onFontSizeChanged();
     }
+
+    if (changes.tabSpaces) {
+      this.onTabSpacesChanged();
+    }
   }
 
   public ngOnInit(): void {
@@ -119,7 +123,7 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
    * This is the place to add configurations and controls for the editor view.
    */
   public ngAfterViewInit(): void {
-    this.tabSpacesParsed = isNaN(Number(this.tabSpaces)) ? 2 : Number(this.tabSpaces);
+    this.tabSpacesParsed = isNaN(Number(this.tabSpaces)) || Number(this.tabSpaces) <= 0 ? 2 : Number(this.tabSpaces);
     this.neutrinoService.setEditorOptions(this.editor, {
       tabSpaces: this.tabSpacesParsed,
       lineHeight: this.lineHeight,
@@ -194,6 +198,16 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
         `<div style="line-height: ${this.lineHeight}; font-size: ${this.fontSize}" class="view-line focus"><br></div>`;
     } else {
       this.refreshEditorValue(this.value, true);
+    }
+  }
+
+  private onTabSpacesChanged(): void {
+    const editorOptions = this.neutrinoService.getEditorOptions(this.editor);
+
+    if (editorOptions) {
+      this.tabSpacesParsed = isNaN(Number(this.tabSpaces)) || Number(this.tabSpaces) <= 0 ? 2 : Number(this.tabSpaces);
+      editorOptions.tabSpaces = this.tabSpacesParsed;
+      this.refreshEditorValue(this.value, true, true);
     }
   }
 
@@ -344,11 +358,26 @@ export class NeutrinoComponent implements OnDestroy, OnInit, AfterViewInit, OnCh
     }
 
     if (event instanceof KeyboardEvent) {
-      if (event.key === 'ArrowUp' && currentLine.previousSibling) {
+      if (currentLine.previousSibling &&
+        (event.key === 'ArrowUp' || (state.focusIndex === 0 && event.key === 'ArrowLeft'))
+      ) {
         focusedLine = currentLine.previousSibling;
-      } else if (event.key === 'ArrowDown' && currentLine.nextSibling) {
+        state.anchorIndex = state.focusIndex = focusedLine.textContent.length;
+      } else if (currentLine.nextSibling &&
+        (event.key === 'ArrowDown' || (state.focusIndex === currentLine.textContent.length && event.key === 'ArrowRight'))
+      ) {
         focusedLine = currentLine.nextSibling;
+        state.anchorIndex = state.focusIndex = 0;
+      } else if (event.ctrlKey && event.key === 'Home') {
+        focusedLine = this.editor.nativeElement.firstChild;
+      } else if (event.ctrlKey && event.key === 'End') {
+        focusedLine = this.editor.nativeElement.lastChild;
       } else {
+        if (event.key === 'Enter') {
+          state.focusIndex = 0;
+          state.anchorIndex = 0;
+        }
+
         focusedLine = currentLine;
       }
     } else if (event instanceof MouseEvent) {

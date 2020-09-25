@@ -249,11 +249,7 @@ export class NeutrinoService {
     let res = true;
 
     if (event instanceof KeyboardEvent) {
-      if (event.shiftKey && event.key.indexOf('Arrow') !== -1) {
-        res = false;
-      } else {
-        res = event.key !== 'Control' && event.key !== 'Alt' && event.key !== 'Shift';
-      }
+      res = event.key !== 'Control' && event.key !== 'Alt' && event.key !== 'Shift';
     }
 
     return  res;
@@ -266,13 +262,7 @@ export class NeutrinoService {
     return  event                      &&
             !event.shiftKey            &&
             !event.ctrlKey             &&
-            !event.altKey              &&
-            event.key !== 'ArrowUp'    &&
-            event.key !== 'ArrowRight' &&
-            event.key !== 'ArrowDown'  &&
-            event.key !== 'ArrowLeft'  &&
-            event.key !== 'End'        &&
-            event.key !== 'Home';
+            !event.altKey;
   }
 
   /**
@@ -591,13 +581,11 @@ export class NeutrinoService {
   }
 
   /**
-   * @internal
-   *
    * Refreshes the state of a given editor.
    *
    * @param editor A editor reference to refresh its state.
    */
-  private refreshEditorState(editor: ElementRef) {
+  public refreshEditorState(editor: ElementRef) {
     const sel: Selection = document.getSelection();
     const line: HTMLDivElement = this.getClosestViewLine(editor);
     const state: EditorState = this.editorsState.get(editor);

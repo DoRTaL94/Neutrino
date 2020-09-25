@@ -12,6 +12,32 @@ nt-editor {
   border: 1px solid black;
 }
 
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+
+.toolbar .group:not(:last-child) {
+  margin-right: 1rem;
+}
+.toolbar .group {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+}
+
+.toolbar .group *:not(:last-child) {
+  margin-right: 0.25rem;
+}
+
+.toolbar button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .output {
   margin-top: 2rem;
   background-color: rgb(243, 243, 243);

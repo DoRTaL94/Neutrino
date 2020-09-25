@@ -1,7 +1,19 @@
 <main>
-  <button (click)="increaseFontSize()">+</button>
-  <button (click)="decreaseFontSize()">-</button>
+  <div class="toolbar">
+    <div class="group">
+      <span>Font Size </span>
+      <button (click)="increaseFontSize()">+</button>
+      <button (click)="decreaseFontSize()">-</button>
+    </div>
+    <div class="group">
+      <span>Tab Length </span>
+      <button (click)="incTabLength()">+</button>
+      <span>{{ tabSpaces }}</span>
+      <button (click)="decTabLength()">-</button>
+    </div>
+  </div>
   <nt-editor
+    [tabSpaces]="tabSpaces"
     [fontSize]="fontSizeStr"
     [codeType]="codeType"
     [value]="value"

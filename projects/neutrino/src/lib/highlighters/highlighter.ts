@@ -39,7 +39,7 @@ export class Highlighter {
     } else if (this.isMultiLineComment(currentIndex)) {
       this.handleMultiLineComment(currentIndex, builder);
     } else if (!this.checkCases(currentIndex, builder) && currentIndex < this.codeLength) {
-      this.checkForKeywords(currentIndex, builder);
+      this.updateBuilderOrLine(currentIndex, builder);
     }
   }
 
@@ -59,7 +59,7 @@ export class Highlighter {
     return handlerExecuted;
   }
 
-  protected checkForKeywords(currentIndex: number, builder: any[]): void {
+  protected updateBuilderOrLine(currentIndex: number, builder: any[]): void {
     const currentChar = this.code.charAt(currentIndex);
 
     if (
@@ -80,31 +80,7 @@ export class Highlighter {
       if (this.keywords.get(currentWord)) {
         this.appendText(currentWord, this.keywords.get(currentWord));
       } else if (builder.length > 0) {
-        let builderWithoutStructuralKeywords = [];
-
-        for (const char of builder) {
-          if (this.keywords.get(char) === KeywordType.Structural) {
-            const wordWithoutStructuralKeyword = builderWithoutStructuralKeywords.join('');
-
-            if (wordWithoutStructuralKeyword !== '') {
-              if (this.keywords.get(wordWithoutStructuralKeyword)) {
-                this.appendText(wordWithoutStructuralKeyword, this.keywords.get(wordWithoutStructuralKeyword));
-              } else {
-                this.appendText(wordWithoutStructuralKeyword);
-              }
-            }
-
-            this.appendText(char, this.keywords.get(char));
-            builderWithoutStructuralKeywords = [];
-          } else {
-            builderWithoutStructuralKeywords.push(char);
-          }
-        }
-
-        if (builderWithoutStructuralKeywords.length > 0) {
-          const word = builderWithoutStructuralKeywords.join('');
-          this.appendText(word, this.keywords.get(word));
-        }
+        this.checkForKeywords(builder);
       }
 
       if (currentChar === ' ' || currentChar === '\u00a0') {
@@ -118,11 +94,39 @@ export class Highlighter {
     this.highlightHelper(currentIndex + 1, builder);
   }
 
+  protected checkForKeywords(builder: any[]) {
+    let builderWithoutStructuralKeywords = [];
+
+    for (const char of builder) {
+      if (this.keywords.get(char) === KeywordType.Structural) {
+        const wordWithoutStructuralKeyword = builderWithoutStructuralKeywords.join('');
+
+        if (wordWithoutStructuralKeyword !== '') {
+          if (this.keywords.get(wordWithoutStructuralKeyword)) {
+            this.appendText(wordWithoutStructuralKeyword, this.keywords.get(wordWithoutStructuralKeyword));
+          } else {
+            this.appendText(wordWithoutStructuralKeyword);
+          }
+        }
+
+        this.appendText(char, this.keywords.get(char));
+        builderWithoutStructuralKeywords = [];
+      } else {
+        builderWithoutStructuralKeywords.push(char);
+      }
+    }
+
+    if (builderWithoutStructuralKeywords.length > 0) {
+      const word = builderWithoutStructuralKeywords.join('');
+      this.appendText(word, this.keywords.get(word));
+    }
+  }
+
   protected handleQuote(currentIndex: number, builder: any[]): void {
     const quoteLength = 1;
 
     if (builder.length > 0) {
-      this.appendText(builder.join(''));
+      this.checkForKeywords(builder);
       builder = [];
     }
 
